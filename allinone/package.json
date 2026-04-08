@@ -7,9 +7,12 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "json-server db.json -m ./node_modules/json-server-auth"
   },
   "dependencies": {
+    "json-server": "^0.17.4",
+    "json-server-auth": "^2.1.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4"
   },
@@ -23,5 +26,10 @@
     "eslint-plugin-react-refresh": "^0.5.2",
     "globals": "^17.4.0",
     "vite": "^8.0.4"
-  }
+  },
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "eslint.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
