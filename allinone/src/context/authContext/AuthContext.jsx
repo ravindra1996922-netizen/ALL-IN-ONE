@@ -38,6 +38,30 @@ export function AuthProvider({ children }) {
     }
   }, [authState.user]);
 
+
+  useEffect(() => {
+    const handleStorageChange = (event) => {
+      if (event.key === "user") {
+        const newUser = event.newValue;
+
+        if (!newUser) {
+          authDispatch({ type: "LOGOUT" });
+        } else {
+          authDispatch({
+            type: "LOGIN",
+            payload: JSON.parse(newUser),
+          });
+        }
+      }
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+    };
+  }, []);
+
   return (
     <AuthContext.Provider
       value={{ user: authState.user, page: authState.page, authDispatch }}
