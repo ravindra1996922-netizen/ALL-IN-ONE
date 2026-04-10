@@ -47,6 +47,12 @@
       "password": "$2a$10$ky7RE9Yb03wYkd6HMSfM5uh5PYoeCK0M0JBqSZ07w16hq2bhSVxSa",
       "name": "dd",
       "id": 8
+    },
+    {
+      "email": "hh@gmail.com",
+      "password": "$2a$10$VyikEezBubvgGtkl8a9N.e3C01io41VDiYikpY/0gJySbPjcl4ANC",
+      "name": "hh",
+      "id": 9
     }
   ],
   "cart": [],
