@@ -2,6 +2,7 @@ import { useAuth } from "./context/authContext/useAuth";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import HomePage from "./pages/HomePage";
+import InvestOnUS from "./features/invest_on_us_feature/components/InvestOnUS";
 
 function AppContent() {
   const { user, page } = useAuth();
@@ -21,7 +22,8 @@ function AppContent() {
 export default function App() {
   return (
     <>
-      <AppContent></AppContent>
+    <InvestOnUS></InvestOnUS>
+      {/* <AppContent></AppContent> */}
     </>
   );
 }
