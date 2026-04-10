@@ -1,0 +1,79 @@
+[33mcommit bfe64a29eae94ed870d980776ff48ac19874c9d5[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdevelop[m[33m)[m
+Author: maverick <ravindra1996922@gmail.com>
+Date:   Fri Apr 10 22:35:11 2026 +0530
+
+    [200~feat(products): implement paginated product fetching with context + reducer and restructure API layer
+
+[33mcommit 3689809cf418671bb596980e0bdcee5c26a77490[m[33m ([m[1;31morigin/develop[m[33m, [m[1;32mmain[m[33m)[m
+Merge: 7365019 ed1aa6d
+Author: maverick <ravindra1996922@gmail.com>
+Date:   Fri Apr 10 14:25:51 2026 +0530
+
+    Merge branch 'develop' of https://github.com/ravindra1996922-netizen/ALL-IN-ONE into develop
+
+[33mcommit 73650195045e44de85de42f816b5bec725f88b81[m
+Author: maverick <ravindra1996922@gmail.com>
+Date:   Fri Apr 10 14:23:09 2026 +0530
+
+    feat: configure Tailwind CSS, PostCSS, and add Flowbite UI integration
+
+[33mcommit ed1aa6d57826f870f51b25a3c4bb73d8090f5d90[m
+Author: NAYANA S R <nayanasr.04@gmail.com>
+Date:   Fri Apr 10 13:05:04 2026 +0530
+
+    testing
+
+[33mcommit a88c08378ccde4c8e1f36a9d64ca2b460fd5f225[m
+Author: Suraj Gudemane <surajsgudemane@gmail.com>
+Date:   Fri Apr 10 12:48:33 2026 +0530
+
+    feat(auth): implement cross-tab login/logout synchronization
+
+[33mcommit 1e041647278429d901cb9cea4ee105aa21d257d6[m
+Author: Suraj Gudemane <surajsgudemane@gmail.com>
+Date:   Fri Apr 10 12:41:28 2026 +0530
+
+    Test push after clone
+
+[33mcommit 3e2347190d8aa45ccc2b108d4ee4b091c4f4ff29[m
+Author: maverick <ravindra1996922@gmail.com>
+Date:   Fri Apr 10 12:28:20 2026 +0530
+
+    feat(shopping): add initial data in db.json
+
+[33mcommit 19dded115c872d75d22fc0a2ad68dfd97f62b7cb[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: maverick <ravindra1996922@gmail.com>
+Date:   Fri Apr 10 12:04:24 2026 +0530
+
+     issue solved
+
+[33mcommit 662d747b6552727b62b8a5686f621113e1f25e1f[m
+Author: maverick <ravindra1996922@gmail.com>
+Date:   Thu Apr 9 17:47:54 2026 +0530
+
+    feat: implement auth, restructure project, and add API layer
+    
+    - added AuthContext and useAuth hook
+    - created ThemeContext
+    - setup API builder and endpoints structure
+    - reorganized feature folders (shopping, order, invest)
+    - added login, signup, and home pages
+    - updated db.json for json-server
+
+[33mcommit c18afa09ed28980e6ab2b0c419bd6cdaaa8e2bf0[m
+Author: maverick <ravindra1996922@gmail.com>
+Date:   Wed Apr 8 15:39:57 2026 +0530
+
+     json server added for db.json and auth
+
+[33mcommit 489bbaa8fdfdfcfb1bb2cb118b67273de44fdeef[m
+Author: maverick <ravindra1996922@gmail.com>
+Date:   Wed Apr 8 15:18:12 2026 +0530
+
+    project Skeleton
+
+[33mcommit 0c17a183c2650ecefd1afd3a9759689c5d080b55[m
+Author: maverick <ravindra1996922@gmail.com>
+Date:   Wed Apr 8 15:06:06 2026 +0530
+
+     project folder skeleton

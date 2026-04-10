@@ -3,6 +3,7 @@ import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import HomePage from "./pages/HomePage";
 import FoodLanding from "./features/order_food_feature/food_context/FoodLanding";
+import ShopingLanding from "./features/shoping_feature/manage_Shoping_data/components/ShopingLanding";
 
 function AppContent() {
   const { user, page } = useAuth();
@@ -23,7 +24,8 @@ export default function App() {
   return (
     <>
       <AppContent></AppContent>
-      <FoodLanding/>
+      <FoodLanding />
+      <ShopingLanding></ShopingLanding>
     </>
   );
 }

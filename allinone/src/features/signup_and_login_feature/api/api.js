@@ -1,4 +1,4 @@
-import { buildURL } from "../../../api/api_builder";
+import { buildURL } from "../../../utils/api/api_builder";
 import { END_POINTS } from "./endpointsConstant";
 
 export async function registerUser(userData) {
