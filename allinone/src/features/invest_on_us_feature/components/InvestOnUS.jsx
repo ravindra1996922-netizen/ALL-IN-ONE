@@ -1,6 +1,6 @@
 import React from 'react'
 
-const JHH = () => {
+const InvestOnUS = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const JHH = () => {
   )
 }
 
-export default JHH
+export default InvestOnUS
