@@ -53,53 +53,75 @@
       "password": "$2a$10$VyikEezBubvgGtkl8a9N.e3C01io41VDiYikpY/0gJySbPjcl4ANC",
       "name": "hh",
       "id": 9
+    },
+    {
+      "email": "nayanasr.04@gmail.com",
+      "password": "$2a$10$7/CJtD.Ee.2.I12WxVNX/ub7Y/GFatdKduiILnJBpSzYO7AmR139O",
+      "name": "NAYANA S R",
+      "id": 10
     }
   ],
   "cart": [],
   "orders": [],
-
   "categories": [
     {
       "id": 1,
       "name": "clothing",
       "label": "Clothing",
-      "subCategories": ["male", "female"]
+      "subCategories": [
+        "male",
+        "female"
+      ]
     },
     {
       "id": 2,
       "name": "shoes",
       "label": "Shoes",
-      "subCategories": ["male", "female"]
+      "subCategories": [
+        "male",
+        "female"
+      ]
     },
     {
       "id": 3,
       "name": "electronics",
       "label": "Electronics",
-      "subCategories": ["general"]
+      "subCategories": [
+        "general"
+      ]
     },
     {
       "id": 4,
       "name": "home_appliance",
       "label": "Home Appliance",
-      "subCategories": ["general"]
+      "subCategories": [
+        "general"
+      ]
     },
     {
       "id": 5,
       "name": "furniture",
       "label": "Furniture",
-      "subCategories": ["general"]
+      "subCategories": [
+        "general"
+      ]
     },
     {
       "id": 6,
       "name": "beauty",
       "label": "Beauty Products",
-      "subCategories": ["male", "female"]
+      "subCategories": [
+        "male",
+        "female"
+      ]
     },
     {
       "id": 7,
       "name": "pet",
       "label": "Pet Products",
-      "subCategories": ["general"]
+      "subCategories": [
+        "general"
+      ]
     }
   ],
   "products": [
