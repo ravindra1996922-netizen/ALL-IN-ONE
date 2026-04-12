@@ -1,6 +1,6 @@
-import { END_POINTS } from "../../features/signup_and_login_feature/api/endpointsConstant";
+import { BASE_URL } from "../constant/constant";
 
 export function buildURL(path) {
-  const baseURL = END_POINTS.baseUrl;
+  const baseURL = BASE_URL;
   return new URL(path, baseURL);
 }

@@ -61,7 +61,7 @@ export const ProductsProvider = ({ children }) => {
 
   const { cache, currentPage } = productState;
 
-  const serverPage = Math.ceil(currentPage / PAGES_PER_FETCH);
+  const serverPage = Math.ceil(currentPage / PAGES_PER_FETCH); 
   console.log(serverPage, "serverpage");
 
   useEffect(() => {

@@ -1,0 +1,143 @@
+/* src/components/Hero/Hero.css */
+.hero-section {
+  position: relative;
+  min-height: 450px;
+  background: linear-gradient(
+    135deg,
+    #c8d5b0 0%,
+    #a8bf8a 30%,
+    #d4c9a0 60%,
+    #c5b88a 100%
+  );
+  padding: 60px 0 0 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 30px;
+}
+
+.hero-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #2d2d2d;
+  margin-bottom: 25px;
+  letter-spacing: -0.5px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.btn-primary-green {
+  background-color: #4a5c2f !important;
+  color: white !important;
+  border: none !important;
+  padding: 10px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.btn-outline-green {
+  background-color: white !important;
+  color: #4a5c2f !important;
+  border: 2px solid #4a5c2f !important;
+  padding: 10px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.hero-cards {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 30px;
+}
+
+.hero-card {
+  border-radius: 15px;
+  padding: 25px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
+}
+
+.invest-card {
+  background: linear-gradient(135deg, #4a5c2f, #6b7c3f);
+  color: white;
+}
+
+.fashion-card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(245, 240, 230, 0.9)
+  );
+  border: 1px solid #ddd;
+}
+
+.food-card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(245, 240, 230, 0.9)
+  );
+  border: 1px solid #ddd;
+}
+
+.card-content h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.card-content p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.card-content-light h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2d2d2d;
+  margin-bottom: 5px;
+}
+
+.card-content-light p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.growth-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.25);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.hero-card-btn {
+  width: fit-content;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.hero-card-btn-dark {
+  background: #2d2d2d;
+  color: white;
+  width: fit-content;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+}

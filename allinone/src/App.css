@@ -1,0 +1,18 @@
+/* src/App.css */
+.App {
+  min-height: 100vh;
+  background-color: #f5f3ee;
+}
+
+.main-content {
+  padding: 25px 0;
+}
+
+/* Section Card Global */
+.section-card {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  height: 100%;
+}
