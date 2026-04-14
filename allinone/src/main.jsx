@@ -7,8 +7,10 @@ import App from "./App.jsx";
 import { AuthProvider } from "./context/authContext/AuthContext.jsx";
 import { ProductsProvider } from "./context/product_context/ProductsContext.jsx";
 import FoodProvider from "./context/foodContext/FoodCentext.jsx";
+import { BrowserRouter } from "react-router-dom";
 
 createRoot(document.getElementById("root")).render(
+   <BrowserRouter>
   <AuthProvider>
     <ProductsProvider>
       <FoodProvider>
@@ -16,4 +18,5 @@ createRoot(document.getElementById("root")).render(
       </FoodProvider>
     </ProductsProvider>
   </AuthProvider>,
+  </BrowserRouter>
 );

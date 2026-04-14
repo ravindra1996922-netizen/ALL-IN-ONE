@@ -38,7 +38,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="text-center py-3 mt-4 border-top small text-muted">© 2024 Metal UI</div>
+      <div className="text-center py-3 mt-4 border-top small text-muted">© 2026 ALL IN ONE BUSINESS...</div>
     </footer>
   );
 };

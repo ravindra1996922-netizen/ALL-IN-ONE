@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {  Routes, Route } from "react-router-dom";
 
 import HomePage from "./pages/HomePage";
 import Investment from "./pages/Investment";
@@ -12,9 +12,7 @@ import Navbar from "./components/layout/Navbar";
 function App() {
   return (
     <>
-    
-    <BrowserRouter>
-    <Navbar></Navbar>
+      <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/invest" element={<Investment />} />
@@ -24,7 +22,6 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
       </Routes>
-    </BrowserRouter>
     </>
   );
 }
