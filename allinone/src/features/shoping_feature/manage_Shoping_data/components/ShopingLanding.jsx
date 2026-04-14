@@ -16,7 +16,7 @@ const ShopingLanding = () => {
         <div key={item.id}>{item.title || item.price}</div>
       ))}
 
-      {/* Pagination */}
+
       <div style={{ marginTop: 20 }}>
         <button
           onClick={() =>

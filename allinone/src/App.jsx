@@ -8,6 +8,7 @@ import InvestOnUS from "./features/invest_on_us_feature/components/InvestOnUS";
 import FoodLanding from "./features/order_food_feature/food_context/FoodLanding";
 
 import ShopingLanding from "./features/shoping_feature/manage_Shoping_data/components/ShopingLanding";
+import Food from "./features/order_food_feature/food_context/Food";
 
 function AppContent() {
   const { user, page } = useAuth();
@@ -31,6 +32,7 @@ export default function App() {
       <AppContent></AppContent>
       <ShopingLanding></ShopingLanding>
       <FoodLanding />
+      <Food/>
     </>
   );
 }
