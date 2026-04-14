@@ -1,36 +1,50 @@
-import FoodSection from "../components/section/HomepageSection/Food/Food";
-import GrocerySection from "../components/section/HomepageSection/Grocery/Grocery";
-import Hero from "../components/section/HomepageSection/Hero/Hero";
-import InvestmentDashboard from "../components/section/HomepageSection/Investment/Investment";
-import Shopping from "../components/section/HomepageSection/Shopping/Shopping";
+import React from 'react';
+import Navbar from '../components/layout/Navbar';
+import Hero from '../components/ui/Hero';
+import FeatureCard from '../components/ui/FeatureCard';
+import Footer from '../components/layout/Footer';
 
-export default function HomePage() {
+import investImg from '../assets/images/invest.jpg';
+import ecommerceImg from '../assets/images/shoe.jpg';
+import foodImg from '../assets/images/food.jpg';
+import groceryImg from '../assets/images/grocery.jpg';
+
+const HomePage = () => {
   return (
     <>
+      
       <Hero />
-      <div className="main-content">
-        <div className="container-fluid px-4">
-          {/* Row 1: Investment + Clothing */}
-          <div className="row g-4 mb-4">
-            <div className="col-lg-6">
-              <InvestmentDashboard />
-            </div>
-            <div className="col-lg-6">
-              <Shopping />
-            </div>
-          </div>
 
-          {/* Row 2: Food + Grocery */}
-          <div className="row g-4 mb-4">
-            <div className="col-lg-6">
-              <FoodSection />
+      {/* 4 Cards Section */}
+      <section className="py-5">
+        <div className="container">
+          <div className="row g-4">
+            <div className="col-md-6 col-lg-3">
+              <FeatureCard title="Investment" image={investImg} />
             </div>
-            <div className="col-lg-6">
-              <GrocerySection />
+
+            <div className="col-md-6 col-lg-3">
+              <FeatureCard title="E-Commerce" image={ecommerceImg}>
+                <button className="btn btn-dark position-absolute bottom-0 start-50 translate-middle-x mb-3 px-4" style={{opacity:0.8}}>Latest Trends</button>
+              </FeatureCard>
+            </div>
+
+            <div className="col-md-6 col-lg-3">
+              <FeatureCard title="Food & Dining" image={foodImg}>
+                <button className="btn text-white position-absolute bottom-0 start-50 translate-middle-x mb-3 px-4" style={{backgroundColor:'#008060'}}>Order Now</button>
+              </FeatureCard>
+            </div>
+
+            <div className="col-md-6 col-lg-3">
+              <FeatureCard title="Groceries" image={groceryImg} badge={<>Same-Day<br/>Delivery</>}/>
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      <Footer />
     </>
   );
-}
+};
+
+export default HomePage;

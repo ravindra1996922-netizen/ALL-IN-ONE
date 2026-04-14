@@ -2,9 +2,17 @@ import React from "react";
 import { useProducts } from "../../../../context/product_context/useProducts";
 
 const ShopingLanding = () => {
-  const { visibleProducts, loading, error, currentPage, ProductDispatch } =
-    useProducts();
+  const {
+    visibleProducts,
+    loading,
+    error,
+    currentPage,
+    ProductDispatch,
+    searchProducts,
+  } = useProducts();
 
+  const result = searchProducts("JBL");
+  console.log(result,"result");
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
 
@@ -15,7 +23,6 @@ const ShopingLanding = () => {
       {visibleProducts.map((item) => (
         <div key={item.id}>{item.title || item.price}</div>
       ))}
-
 
       <div style={{ marginTop: 20 }}>
         <button

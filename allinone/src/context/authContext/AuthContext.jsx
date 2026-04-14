@@ -1,35 +1,47 @@
 import React, { createContext, useReducer, useEffect } from "react";
+
 export const AuthContext = createContext();
+
 const initialState = {
   user: null,
-  page: "home",
+  page:"home"
 };
-function reducer(authState, action) {
+
+function reducer(state, action) {
   switch (action.type) {
     case "LOGIN":
-      console.log(action.payload);
-      return { ...authState, user: action.payload };
+      return {
+        ...state,
+        user: action.payload,
+      };
+
     case "LOGOUT":
-      return { ...authState, user: null, page: "home" };
-    case "SET_PAGE":
-      console.log(action.payload);
-      return { ...authState, page: action.payload };
+      return {
+        ...state,
+        user: null,
+      };
 
     default:
-      return authState;
+      return state;
   }
 }
 
 export function AuthProvider({ children }) {
   const [authState, authDispatch] = useReducer(reducer, initialState);
 
+  // 🔥 1. Load user from localStorage on first load
   useEffect(() => {
-    const stored = localStorage.getItem("user");
-    if (stored) {
-      authDispatch({ type: "LOGIN", payload: JSON.parse(stored) });
+    const storedUser = localStorage.getItem("user");
+
+    if (storedUser) {
+      authDispatch({
+        type: "LOGIN",
+        payload: JSON.parse(storedUser),
+      });
     }
   }, []);
 
+  // 🔥 2. Sync state → localStorage
   useEffect(() => {
     if (authState.user) {
       localStorage.setItem("user", JSON.stringify(authState.user));
@@ -38,15 +50,17 @@ export function AuthProvider({ children }) {
     }
   }, [authState.user]);
 
-
+  // 🔥 3. MULTI TAB SYNC (IMPORTANT PART)
   useEffect(() => {
     const handleStorageChange = (event) => {
       if (event.key === "user") {
         const newUser = event.newValue;
 
         if (!newUser) {
+          // 👉 logout in all tabs
           authDispatch({ type: "LOGOUT" });
         } else {
+          // 👉 login sync (rare case)
           authDispatch({
             type: "LOGIN",
             payload: JSON.parse(newUser),
@@ -64,7 +78,10 @@ export function AuthProvider({ children }) {
 
   return (
     <AuthContext.Provider
-      value={{ user: authState.user, page: authState.page, authDispatch }}
+      value={{
+        user: authState.user,
+        authDispatch,
+      }}
     >
       {children}
     </AuthContext.Provider>
