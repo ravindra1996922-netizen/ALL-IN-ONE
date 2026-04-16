@@ -4,7 +4,9 @@ export const AuthContext = createContext();
 
 const initialState = {
   user: null,
-  page:"home"
+  page: "home",
+  stockQuantity: [],
+  stockPrice: []
 };
 
 function reducer(state, action) {
@@ -14,6 +16,13 @@ function reducer(state, action) {
         ...state,
         user: action.payload,
       };
+
+    case "STOCK_BUY":
+      return {
+        ...state,
+        stockQuantity: [...state.stockQuantity, Number(action.payload.sq)],
+        stockPrice: [...state.stockPrice, Number(action.payload.sp)]
+      };  
 
     case "LOGOUT":
       return {
@@ -28,8 +37,9 @@ function reducer(state, action) {
 
 export function AuthProvider({ children }) {
   const [authState, authDispatch] = useReducer(reducer, initialState);
+  console.log("Price : ", authState.stockPrice)
+  console.log("Quantity : ", authState.stockQuantity)
 
-  // 🔥 1. Load user from localStorage on first load
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
 
@@ -78,9 +88,12 @@ export function AuthProvider({ children }) {
 
   return (
     <AuthContext.Provider
+
       value={{
+        ...authState,
         user: authState.user,
         authDispatch,
+
       }}
     >
       {children}

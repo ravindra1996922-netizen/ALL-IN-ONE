@@ -1,8 +1,6 @@
 import React from "react";
-import Navbar from "../components/layout/Navbar";
 import Hero from "../components/ui/Hero";
 import FeatureCard from "../components/ui/FeatureCard";
-import Footer from "../components/layout/Footer";
 
 import investImg from "../assets/images/invest.jpg";
 import ecommerceImg from "../assets/images/shoe.jpg";
@@ -83,7 +81,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      <Footer />
+      
     </>
   );
 };

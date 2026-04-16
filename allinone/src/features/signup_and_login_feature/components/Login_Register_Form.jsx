@@ -6,6 +6,8 @@ const Login_Register_Form = ({ type, onSubmit }) => {
      name: "",
      email: "",
      password: "",
+     stockQty:"",
+     stockPrice:""
    });
  
    const handleChange = (e) => {
