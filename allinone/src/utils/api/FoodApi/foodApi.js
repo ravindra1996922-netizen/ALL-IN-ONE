@@ -1,8 +1,9 @@
-import { buildURL } from "../../../utils/api/api_builder";
-import { FOODS_ENDPOINTS } from "./foods_endpoint";
+import { END_POINTS } from "../../constant/constant";
+import { buildURL } from "../apibuilder/api_builder";
+
 
 export async function fetchFoods(page) {
-  const foods = FOODS_ENDPOINTS.foods;
+  const foods = END_POINTS.foods;
   const url = buildURL(foods);
   url.searchParams.set("_page", page);
   url.searchParams.set("_limit", 30);
@@ -15,7 +16,7 @@ export async function fetchFoods(page) {
 
 // Recipe
 export async function fetchRecipes(page) {
-  const recipes = FOODS_ENDPOINTS.recipes;
+  const recipes = END_POINTS.recipes;
 
   const url = buildURL(recipes);
   url.searchParams.set("_page", page);
@@ -24,6 +25,5 @@ export async function fetchRecipes(page) {
     const recipesResponse = await fetch(url);
     const recipesData = await recipesResponse.json();
     return recipesData;
-    console.log(recipesData.length);
   } catch (error) {}
 }

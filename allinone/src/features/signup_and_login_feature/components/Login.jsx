@@ -1,8 +1,9 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../../context/authContext/useAuth";
-import { loginUser } from "../api/api";
+
 import Login_Register_Form from "./Login_Register_Form";
+import { loginUser } from "../api/authapis";
 
 export default function LoginForm() {
   const { authDispatch } = useAuth();
@@ -14,7 +15,7 @@ export default function LoginForm() {
 
     if (user) {
       authDispatch({ type: "LOGIN", payload: user });
-     navigate("/")
+      navigate("/");
     } else {
       alert("Invalid credentials");
     }
@@ -22,16 +23,12 @@ export default function LoginForm() {
 
   return (
     <div className="page-container">
-
       <Login_Register_Form type="login" onSubmit={handleLogin} />
 
       <p>
         Don't have an account?{" "}
-        <button onClick={() => navigate("/signup")}>
-          click to Register
-        </button>
+        <button onClick={() => navigate("/signup")}>click to Register</button>
       </p>
-
     </div>
   );
 }

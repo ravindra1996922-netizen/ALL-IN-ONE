@@ -5,8 +5,9 @@ import {
   PAGES_PER_FETCH,
   SERVER_LIMIT,
 } from "../../utils/constant/constant";
+import { fetchProducts } from "../../utils/api/ShoppingApis/shopProductApi";
 
-import { fetchProducts } from "../../features/shoping_feature/api/api";
+// import { fetchProducts } from "../../features/shoping_feature/api/api";
 
 const initialState = {
   cache: {},
