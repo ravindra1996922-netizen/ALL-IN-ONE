@@ -1,20 +1,15 @@
 import React, { createContext, useReducer, useEffect } from "react";
 
-import {
-  ITEMS_PER_PAGE,
-  PAGES_PER_FETCH,
-  SERVER_LIMIT,
-} from "../../utils/constant/constant";
+import { ITEMS_PER_PAGE } from "../../utils/constant/constant";
 import { fetchProducts } from "../../utils/api/ShoppingApis/shopProductApi";
 
-// import { fetchProducts } from "../../features/shoping_feature/api/api";
-
 const initialState = {
-  cache: {},
-  searchKey: {},
+  cache: [],
+  displayProduct: [],
   loading: false,
   error: null,
   currentPage: 1,
+  selectedCategory: "all",
 };
 
 function productsReducer(productState, action) {
@@ -27,18 +22,14 @@ function productsReducer(productState, action) {
       };
 
     case "FETCH_SUCCESS": {
-      const updatedCache = {
-        ...productState.cache,
-        [action.payload.page]: action.payload.data,
-      };
-
-      const allProducts = Object.values(updatedCache).flat();
+      const updatedCache = [...productState.cache, ...action.payload];
 
       return {
         ...productState,
         loading: false,
         cache: updatedCache,
-        searchKey: buildSearchIndex(allProducts), // 🔥 build index
+        displayProduct: updatedCache,
+        error: null,
       };
     }
 
@@ -55,6 +46,35 @@ function productsReducer(productState, action) {
         currentPage: action.payload,
       };
 
+    // ✅ NEW: category set
+    case "SET_CATEGORY":
+      return {
+        ...productState,
+        selectedCategory: action.payload,
+      };
+
+    case "FILTER_PRODUCTS": {
+      const { search, category } = action.payload;
+
+      let filtered = [...productState.cache];
+
+      if (category !== "all") {
+        filtered = filtered.filter((p) => p.category === category);
+      }
+
+      if (search) {
+        filtered = filtered.filter((p) =>
+          p.searchKey.toLowerCase().includes(search.toLowerCase()),
+        );
+      }
+
+      return {
+        ...productState,
+        displayProduct: filtered,
+        currentPage: 1,
+      };
+    }
+
     default:
       return productState;
   }
@@ -62,49 +82,27 @@ function productsReducer(productState, action) {
 
 export const ProductsContext = createContext();
 
-const buildSearchIndex = (allProducts) => {
-  const index = {};
-
-  allProducts.forEach((product) => {
-    const words = product.searchKey.toLowerCase().split(" ");
-
-    words.forEach((word) => {
-      if (!index[word]) {
-        index[word] = [];
-      }
-
-      index[word].push(product.id);
-    });
-  });
-
-  return index;
-};
-
 export const ProductsProvider = ({ children }) => {
-  const [productState, ProductDispatch] = useReducer(
+  const [productState, productDispatch] = useReducer(
     productsReducer,
     initialState,
   );
 
-  const { cache, currentPage, searchKey } = productState;
-
-  const serverPage = Math.ceil(currentPage / PAGES_PER_FETCH);
+  const { displayProduct, cache, currentPage } = productState;
 
   useEffect(() => {
     const loadProducts = async () => {
-      if (cache[serverPage]) return;
-
-      ProductDispatch({ type: "FETCH_START" });
+      productDispatch({ type: "FETCH_START" });
 
       try {
-        const data = await fetchProducts(serverPage);
+        const data = await fetchProducts();
 
-        ProductDispatch({
+        productDispatch({
           type: "FETCH_SUCCESS",
-          payload: { page: serverPage, data },
+          payload: data,
         });
       } catch (error) {
-        ProductDispatch({
+        productDispatch({
           type: "FETCH_ERROR",
           payload: error.message,
         });
@@ -112,38 +110,20 @@ export const ProductsProvider = ({ children }) => {
     };
 
     loadProducts();
-  }, [serverPage]);
-
-  const allProducts = Object.values(cache).flat();
+  }, []);
 
   const start = (currentPage - 1) * ITEMS_PER_PAGE;
   const end = start + ITEMS_PER_PAGE;
 
-  const visibleProducts = allProducts.slice(start, end);
-
-  const searchProducts = (value) => {
-    if (!value) return visibleProducts;
-
-    const words = value.toLowerCase().split(" ");
-
-    let resultIds = searchKey[words[0]] || [];
-
-    for (let i = 1; i < words.length; i++) {
-      const ids = searchKey[words[i]] || [];
-
-      resultIds = resultIds.filter((id) => ids.includes(id));
-    }
-
-    return allProducts.filter((product) => resultIds.includes(product.id));
-  };
+  const visibleProducts = displayProduct.slice(start, end);
 
   return (
     <ProductsContext.Provider
       value={{
         ...productState,
-        ProductDispatch,
+        cache,
+        productDispatch,
         visibleProducts,
-        searchProducts, // 🔥 ADDED
       }}
     >
       {children}

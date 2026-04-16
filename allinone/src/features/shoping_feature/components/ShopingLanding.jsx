@@ -1,25 +1,39 @@
-import React, { useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { useProducts } from "../../../context/product_context/useProducts";
 
 const ShopingLanding = () => {
-  const { visibleProducts, loading, error, currentPage, ProductDispatch } =
-    useProducts();
+  const {
+    visibleProducts,
+    loading,
+    error,
+    currentPage,
+    productDispatch,
+    selectedCategory,
+    cache,
+  } = useProducts();
 
-  const searchRef = useRef();
+  const [searchText, setSearchText] = useState("");
 
-  const handleSearch = () => {
-    const value = searchRef.current.value.trim().toLowerCase();
+  // ✅ categories generate
+  const categories = ["all", ...new Set(cache.map((p) => p.category))];
 
-    ProductDispatch({
-      type: "SET_SEARCH",
-      payload: value,
-    });
-  };
+  // 🔥 Debounce Search + Category
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      productDispatch({
+        type: "FILTER_PRODUCTS",
+        payload: {
+          search: searchText,
+          category: selectedCategory,
+        },
+      });
+    }, 500);
 
-  const handleKeyDown = (e) => {
-    if (e.key === "Enter") {
-      handleSearch();
-    }
+    return () => clearTimeout(timer);
+  }, [searchText, selectedCategory, productDispatch]);
+
+  const handleChange = (e) => {
+    setSearchText(e.target.value);
   };
 
   if (loading) return <p>Loading...</p>;
@@ -29,19 +43,40 @@ const ShopingLanding = () => {
     <>
       <h1>Products</h1>
 
-      {/* 🔍 SEARCH INPUT */}
+      {/* 🔥 CATEGORY BUTTONS */}
+      <div style={{ marginBottom: 20 }}>
+        {categories.map((cat) => (
+          <button
+            key={cat}
+            onClick={() =>
+              productDispatch({
+                type: "SET_CATEGORY",
+                payload: cat,
+              })
+            }
+            style={{
+              marginRight: 10,
+              padding: "6px 12px",
+              backgroundColor: selectedCategory === cat ? "black" : "lightgray",
+              color: selectedCategory === cat ? "white" : "black",
+              border: "none",
+              cursor: "pointer",
+            }}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+
+      {/* 🔍 SEARCH */}
       <div style={{ marginBottom: 20 }}>
         <input
           type="text"
           placeholder="Search products..."
-          ref={searchRef}
-          onKeyDown={handleKeyDown}
+          value={searchText}
+          onChange={handleChange}
           style={{ padding: 8, width: 250 }}
         />
-
-        <button onClick={handleSearch} style={{ marginLeft: 10 }}>
-          Search
-        </button>
       </div>
 
       {/* 📦 PRODUCTS */}
@@ -59,7 +94,7 @@ const ShopingLanding = () => {
       <div style={{ marginTop: 20 }}>
         <button
           onClick={() =>
-            ProductDispatch({
+            productDispatch({
               type: "SET_PAGE",
               payload: Math.max(currentPage - 1, 1),
             })
@@ -72,7 +107,7 @@ const ShopingLanding = () => {
 
         <button
           onClick={() =>
-            ProductDispatch({
+            productDispatch({
               type: "SET_PAGE",
               payload: currentPage + 1,
             })
