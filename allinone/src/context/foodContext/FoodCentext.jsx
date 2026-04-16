@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useEffect, useReducer } from 'react'
-import { fetchFoods, fetchRecipes } from '../../features/order_food_feature/api/api';
+import { fetchFoods, fetchRecipes } from '../../utils/api/FoodApi/foodApi';
+
 
 export const FoodContext = createContext();
 

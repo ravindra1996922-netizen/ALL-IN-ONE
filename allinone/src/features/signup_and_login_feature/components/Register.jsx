@@ -1,8 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../../context/authContext/useAuth";
-import { registerUser } from "../api/api";
+// import { registerUser } from "../api/api";
 import Login_Register_Form from "./Login_Register_Form";
+import { registerUser } from "../api/authapis";
+// import { registerUser } from "../../../utils/api/api/api";
 
 export default function Register() {
   const { authDispatch } = useAuth();
