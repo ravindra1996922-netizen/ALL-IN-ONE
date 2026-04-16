@@ -72,6 +72,18 @@
       "password": "$2a$10$ldoW2QYmVBhVNA4jktU.1OXf11/VVHgEslux/BQpEQ.hFPvoRi5fu",
       "name": "hi",
       "id": 12
+    },
+    {
+      "email": "s@gmail.com",
+      "password": "$2a$10$R2p6d0LqHvwBS0OfL9uf5uoR6mIlVquRJOv/.Z1RDXgecrFpm1HS.",
+      "name": "Suraj S",
+      "id": 13
+    },
+    {
+      "email": "n@gmail.com",
+      "password": "$2a$10$r/M.Sx7UTRdiNss2yz.7EOTxW1M3HXRElEL6QK4kI2nrEFnZV0M0m",
+      "name": "Nayana",
+      "id": 14
     }
   ],
   "cart": [],

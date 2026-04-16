@@ -8,7 +8,7 @@ import { loginUser } from "../api/authapis";
 export default function LoginForm() {
   const { authDispatch } = useAuth();
   const navigate = useNavigate();
-  const location = useLocation();
+  // const location = useLocation();
 
   const handleLogin = async (data) => {
     const user = await loginUser(data);

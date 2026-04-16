@@ -17,6 +17,6 @@ createRoot(document.getElementById("root")).render(
         <App />
       </FoodProvider>
     </ProductsProvider>
-  </AuthProvider>,
+  </AuthProvider>
   </BrowserRouter>
 );
