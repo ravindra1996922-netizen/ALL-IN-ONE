@@ -1,7 +1,6 @@
 import { END_POINTS } from "../../constant/constant";
 import { buildURL } from "../apibuilder/api_builder";
 
-
 export async function fetchFoods(page) {
   const foods = END_POINTS.foods;
   const url = buildURL(foods);

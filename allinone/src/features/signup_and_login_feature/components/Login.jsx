@@ -3,7 +3,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../../context/authContext/useAuth";
 
 import Login_Register_Form from "./Login_Register_Form";
-import { loginUser } from "../api/authapis";
+import { loginUser } from "../../../utils/api/authApis/authapis";
+
 
 export default function LoginForm() {
   const { authDispatch } = useAuth();

@@ -29,6 +29,7 @@ const ShopingLanding = () => {
       });
     }, 500);
 
+    console.log("object")
     return () => clearTimeout(timer);
   }, [searchText, selectedCategory, productDispatch]);
 

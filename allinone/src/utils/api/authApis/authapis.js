@@ -1,5 +1,5 @@
-import { END_POINTS } from "../../../utils/constant/constant";
-import { buildURL } from "../../../utils/api/apibuilder/api_builder";
+import { END_POINTS } from "../../constant/constant";
+import { buildURL } from "../apibuilder/api_builder";
 
 export async function registerUser(userData) {
   try {
@@ -43,28 +43,33 @@ export async function loginUser(credentials) {
     throw error;
   }
 }
+const BASE_URL = "http://localhost:3000";
 
-// export async function loginUser(credentials) {
-//   try {
-//     const login = END_POINTS.login;
-//     const response = await fetch(buildURL(login), {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify(credentials),
-//     });
+// GET
+export async function getPortfolio(userId) {
+  const res = await fetch(`${BASE_URL}/portfolios?userId=${userId}`);
+  const data = await res.json();
+  return data[0];
+}
 
-//     if (!response.ok) {
-//       const errorText = await response.text();
-//       console.log("Server Error:", errorText);
-//       throw new Error("Login failed");
-//     }
+// POST
+export async function createPortfolio(payload) {
+  const res = await fetch(`${BASE_URL}/portfolios`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
 
-//     const data = await response.json();
-//     return data;
-//   } catch (error) {
-//     console.error("Error logging in user:", error);
-//     throw error;
-//   }
-// }
+  return res.json();
+}
+
+// PUT
+export async function updatePortfolio(id, payload) {
+  const res = await fetch(`${BASE_URL}/portfolios/${id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+
+  return res.json();
+}

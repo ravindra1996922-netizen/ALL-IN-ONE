@@ -2,9 +2,10 @@ import React, { createContext, useContext, useEffect, useReducer } from 'react'
 import { fetchFoods, fetchRecipes } from '../../utils/api/FoodApi/foodApi';
 
 
+
 export const FoodContext = createContext();
 
-export const useFood = () => useContext(FoodContext);
+
 
 const initialValue = {
     foodCache: {},
@@ -57,7 +58,7 @@ const FoodProvider = ({ children }) => {
          const loadingFoodData = async () => {
 
         try {
-                const foodResponse = await fetchFoods(fectPageNo);
+                const foodResponse = await fetchFoods (fectPageNo);
                 const recipieResponse = await fetchRecipes(fectPageNo);
                 foodDispatcher({type: "FETCH_SUCESS", payload: {page: fectPageNo ,foodResponse, recipieResponse}});
 

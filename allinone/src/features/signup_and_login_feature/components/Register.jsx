@@ -1,10 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../../context/authContext/useAuth";
-// import { registerUser } from "../api/api";
+
 import Login_Register_Form from "./Login_Register_Form";
-import { registerUser } from "../api/authapis";
-// import { registerUser } from "../../../utils/api/api/api";
+import { registerUser } from "../../../utils/api/authApis/authapis";
 
 export default function Register() {
   const { authDispatch } = useAuth();
@@ -19,16 +18,12 @@ export default function Register() {
 
   return (
     <div className="page-container">
-
       <Login_Register_Form type="register" onSubmit={handleRegister} />
 
       <p>
         Already have an account?{" "}
-        <button onClick={() => navigate("/login")}>
-          go to Login
-        </button>
+        <button onClick={() => navigate("/login")}>go to Login</button>
       </p>
-
     </div>
   );
 }
