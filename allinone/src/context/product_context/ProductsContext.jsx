@@ -46,7 +46,7 @@ function productsReducer(productState, action) {
         currentPage: action.payload,
       };
 
-    // ✅ NEW: category set
+  
     case "SET_CATEGORY":
       return {
         ...productState,
@@ -88,7 +88,8 @@ export const ProductsProvider = ({ children }) => {
     initialState,
   );
 
-  const { displayProduct, cache, currentPage } = productState;
+  const { displayProduct, cache, currentPage, selectedCategory } = productState;
+  console.log(selectedCategory, "selectedcatogory");
 
   useEffect(() => {
     const loadProducts = async () => {

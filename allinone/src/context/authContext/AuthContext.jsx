@@ -16,14 +16,6 @@ function reducer(state, action) {
         ...state,
         user: action.payload,
       };
-
-    case "STOCK_BUY":
-      return {
-        ...state,
-        stockQuantity: [...state.stockQuantity, Number(action.payload.sq)],
-        stockPrice: [...state.stockPrice, Number(action.payload.sp)]
-      };  
-
     case "LOGOUT":
       return {
         ...state,
@@ -37,8 +29,7 @@ function reducer(state, action) {
 
 export function AuthProvider({ children }) {
   const [authState, authDispatch] = useReducer(reducer, initialState);
-  console.log("Price : ", authState.stockPrice)
-  console.log("Quantity : ", authState.stockQuantity)
+  
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
@@ -51,7 +42,7 @@ export function AuthProvider({ children }) {
     }
   }, []);
 
-  // 🔥 2. Sync state → localStorage
+ 
   useEffect(() => {
     if (authState.user) {
       localStorage.setItem("user", JSON.stringify(authState.user));
@@ -60,17 +51,17 @@ export function AuthProvider({ children }) {
     }
   }, [authState.user]);
 
-  // 🔥 3. MULTI TAB SYNC (IMPORTANT PART)
+
   useEffect(() => {
     const handleStorageChange = (event) => {
       if (event.key === "user") {
         const newUser = event.newValue;
 
         if (!newUser) {
-          // 👉 logout in all tabs
+        
           authDispatch({ type: "LOGOUT" });
         } else {
-          // 👉 login sync (rare case)
+          
           authDispatch({
             type: "LOGIN",
             payload: JSON.parse(newUser),

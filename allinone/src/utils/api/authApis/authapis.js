@@ -1,7 +1,9 @@
+import { toast } from "react-toastify";
 import { END_POINTS } from "../../constant/constant";
 import { buildURL } from "../apibuilder/api_builder";
 
 export async function registerUser(userData) {
+  console.log(userData,"ud")
   try {
     const register = END_POINTS.register;
     const response = await fetch(buildURL(register), {
@@ -12,14 +14,22 @@ export async function registerUser(userData) {
       body: JSON.stringify(userData),
     });
     const data = await response.json();
+    console.log(data)
     return data;
   } catch (error) {
     console.error("Error registering user:", error);
+     toast.error(`Invalid credentials :${errorText}`, {
+              style: {
+                background: "red",
+                color: "black",
+              },
+            });
     throw error;
   }
 }
 
 export async function loginUser(credentials) {
+  console.log("login")
   try {
     const login = END_POINTS.login;
     const response = await fetch(buildURL(login), {
@@ -33,10 +43,17 @@ export async function loginUser(credentials) {
     if (!response.ok) {
       const errorText = await response.text();
       console.log("Server Error:", errorText);
-      throw new Error("Login failed");
+       toast.error(`Invalid credentials :${errorText}`, {
+              style: {
+                background: "red",
+                color: "black",
+              },
+            });
+      // throw new Error("Login failed");
     }
 
     const data = await response.json();
+    console.log(data)
     return data;
   } catch (error) {
     console.error("Error logging in user:", error);
