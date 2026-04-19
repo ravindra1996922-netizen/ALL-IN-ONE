@@ -31,7 +31,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Stats Bar */}
+     
       <div className="border-top border-bottom bg-white mt-4 py-3">
         <div className="container d-flex justify-content-center gap-5 flex-wrap text-dark">
           <div>
