@@ -6,7 +6,7 @@ const initialState = {
   user: null,
   page: "home",
   stockQuantity: [],
-  stockPrice: []
+  stockPrice: [],
 };
 
 function reducer(state, action) {
@@ -14,16 +14,8 @@ function reducer(state, action) {
     case "LOGIN":
       return {
         ...state,
-        user: action.payload,
+        user: action.payload.user,
       };
-
-    case "STOCK_BUY":
-      return {
-        ...state,
-        stockQuantity: [...state.stockQuantity, Number(action.payload.sq)],
-        stockPrice: [...state.stockPrice, Number(action.payload.sp)]
-      };  
-
     case "LOGOUT":
       return {
         ...state,
@@ -37,8 +29,6 @@ function reducer(state, action) {
 
 export function AuthProvider({ children }) {
   const [authState, authDispatch] = useReducer(reducer, initialState);
-  console.log("Price : ", authState.stockPrice)
-  console.log("Quantity : ", authState.stockQuantity)
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
@@ -51,26 +41,23 @@ export function AuthProvider({ children }) {
     }
   }, []);
 
-  // 🔥 2. Sync state → localStorage
   useEffect(() => {
     if (authState.user) {
       localStorage.setItem("user", JSON.stringify(authState.user));
-    } else {
+    }
+     else {
       localStorage.removeItem("user");
     }
   }, [authState.user]);
 
-  // 🔥 3. MULTI TAB SYNC (IMPORTANT PART)
   useEffect(() => {
     const handleStorageChange = (event) => {
       if (event.key === "user") {
         const newUser = event.newValue;
 
         if (!newUser) {
-          // 👉 logout in all tabs
           authDispatch({ type: "LOGOUT" });
         } else {
-          // 👉 login sync (rare case)
           authDispatch({
             type: "LOGIN",
             payload: JSON.parse(newUser),
@@ -88,12 +75,10 @@ export function AuthProvider({ children }) {
 
   return (
     <AuthContext.Provider
-
       value={{
         ...authState,
         user: authState.user,
         authDispatch,
-
       }}
     >
       {children}

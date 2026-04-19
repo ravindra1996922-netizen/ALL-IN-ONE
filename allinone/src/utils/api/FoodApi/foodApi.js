@@ -13,7 +13,7 @@ export async function fetchFoods(page) {
   } catch (error) {}
 }
 
-// Recipe
+
 export async function fetchRecipes(page) {
   const recipes = END_POINTS.recipes;
 

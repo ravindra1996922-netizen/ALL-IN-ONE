@@ -7,7 +7,7 @@ export function useFood() {
   
 
   if (!context) {
-    throw new Error("useAuth must be used within FoodProvider");
+    throw new Error("useFood must be used within FoodProvider");
   }
 
   return context;
