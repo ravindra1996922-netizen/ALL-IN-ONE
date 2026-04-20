@@ -6,7 +6,7 @@ const SearchBar = ({ value, onChange, placeholder }) => {
     <div className="position-relative">
       <FiSearch
         className="position-absolute"
-        style={{ top: "50%", left: "10px", transform: "translateY(-50%)" }}
+        style={{ height: "55px" ,top: "50%", left: "10px", transform: "translateY(-50%)" }}
       />
 
       <input

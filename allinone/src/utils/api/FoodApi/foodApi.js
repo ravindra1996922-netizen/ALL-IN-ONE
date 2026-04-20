@@ -1,28 +1,27 @@
 import { END_POINTS } from "../../constant/constant";
 import { buildURL } from "../apibuilder/api_builder";
 
-export async function fetchFoods(page) {
+export async function fetchFoods() {
   const foods = END_POINTS.foods;
   const url = buildURL(foods);
-  url.searchParams.set("_page", page);
-  url.searchParams.set("_limit", 30);
   try {
     const foodsResponse = await fetch(url);
     const foodsData = await foodsResponse.json();
+    // console.log(foodsData)
     return foodsData;
   } catch (error) {}
 }
 
 
-export async function fetchRecipes(page) {
+export async function fetchRecipes() {
   const recipes = END_POINTS.recipes;
 
   const url = buildURL(recipes);
-  url.searchParams.set("_page", page);
-  url.searchParams.set("_limit", 30);
+
   try {
     const recipesResponse = await fetch(url);
     const recipesData = await recipesResponse.json();
+    // console.log(recipesData)
     return recipesData;
   } catch (error) {}
 }

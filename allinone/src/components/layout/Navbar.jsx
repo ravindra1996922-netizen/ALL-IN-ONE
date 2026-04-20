@@ -35,7 +35,7 @@ const Navbar = () => {
   return (
     <nav
       className="navbar navbar-expand-lg bg-white shadow-sm sticky-top"
-      style={{ minHeight: "55px" }}
+      style={{ height: "55px" }}
     >
       <div className="container-fluid px-4 px-lg-5">
         {/* Logo */}

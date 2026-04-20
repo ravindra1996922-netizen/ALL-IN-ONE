@@ -11,7 +11,6 @@ import SignupPage from "./pages/SignupPage";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import CategoryPage from "./pages/CategoryPage";
-import CartPage from "./pages/CartsPage";
 import CartsPage from "./pages/CartsPage";
 
 function App() {

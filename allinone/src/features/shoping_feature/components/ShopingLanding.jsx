@@ -90,7 +90,14 @@ const ShopingLanding = () => {
 
   return (
     <>
-      <FilterBar searchText={searchText} setSearchText={setSearchText} />
+      <FilterBar
+  data={cache}
+  selectedCategory={selectedCategory}
+  dispatch={productDispatch}
+  searchText={searchText}
+  setSearchText={setSearchText}
+  type="shopping"
+/>
 
       <div className="container my-4">
         <div className="bg-dark text-white p-5 rounded mb-5 text-center">

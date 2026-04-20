@@ -94,13 +94,45 @@
       "email": "qwerty12@gmail.com",
       "password": "$2a$10$CAdWRFdDZbui118YqVQaNOcWUsTS4gcS2vtKzhLajGA0GBfXFH/zC",
       "name": "qwerty",
-      "id": 13
+      "id": 13,
+      "cart": [
+        {
+          "id": 4,
+          "title": "Signature Olive Denim Jeans",
+          "category": "clothing",
+          "subCategory": "male",
+          "brand": "Van Heusen",
+          "price": 1062,
+          "discount": 12,
+          "rating": 4.4,
+          "stock": 12,
+          "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQiaUGCzLOYxWTn5BebG2gHxsWCDo54MNY9gk4dJUVc1c5ezEbpqWDoR6UAcUZFmmcA3piBB677K6QcEVb8dCGKwSu5wnijNjZUH-xGF3ji",
+          "searchKey": "signature olive denim jeans van heusen vanheusen clothing clothes apparel fashion wear outfit style male men mens boys pants bottoms",
+          "qty": 1
+        }
+      ]
     },
     {
       "email": "a@gmail.com",
       "password": "$2a$10$SXLQTFzoBmDdoHkXVxEuxuoTfsgJ8CQ1scsmEWKqBdPQ0GDfTNLRW",
       "name": "a",
-      "id": 14
+      "id": 14,
+      "cart": [
+        {
+          "id": 2,
+          "title": "Modern Black Cotton T-Shirt",
+          "category": "clothing",
+          "subCategory": "male",
+          "brand": "Levis",
+          "price": 931,
+          "discount": 8,
+          "rating": 4.2,
+          "stock": 8,
+          "image": "https://tse3.mm.bing.net/th/id/OIP.8Jl07l3Zw_oZ10Y_d7a2AwHaJQ?pid=Api&P=0&h=180",
+          "searchKey": "modern black cotton tshirt levis clothing clothes fashion wear outfit style male men mens boys tshirt ",
+          "qty": 1
+        }
+      ]
     },
     {
       "email": "qq@gmail.com",

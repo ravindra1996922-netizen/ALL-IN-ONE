@@ -19,8 +19,9 @@ const CategoryPage = () => {
   const { cartDispatch } = useCart();
 
   const { user } = useAuth();
-  const userId = user?.id;
+  const userId = user?.user?.id;
 
+  
   useEffect(() => {
     if (name === "all") return;
 
@@ -29,9 +30,10 @@ const CategoryPage = () => {
       payload: name,
     });
     window.scrollTo({ top: 0, behavior: "smooth" });
-    setCurrentPage(1);
+    setCurrentPage(1); 
   }, [name]);
 
+ 
   const filteredProducts = cache.filter((item) => {
     const matchCategory = name === "all" || item.category === name;
 
@@ -42,6 +44,7 @@ const CategoryPage = () => {
     return matchCategory && matchSearch;
   });
 
+ 
   const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE);
 
   const start = (currentPage - 1) * ITEMS_PER_PAGE;
@@ -49,12 +52,13 @@ const CategoryPage = () => {
 
   const paginatedProducts = filteredProducts.slice(start, end);
 
+ 
   useEffect(() => {
     setCurrentPage(1);
   }, [searchText]);
 
   const handleAddToCart = async (item) => {
-    if (userId) {
+    if (!user?.user?.id) {
       toast.error("Please login first to add items in cart", {
         style: {
           background: "red",
@@ -77,21 +81,26 @@ const CategoryPage = () => {
 
   return (
     <>
+     
       <FilterBar searchText={searchText} setSearchText={setSearchText} />
 
       <div className="container my-4">
+      
         <h3 className="mb-4 text-capitalize">{name} Products</h3>
 
+     
         <div className="row">
           {paginatedProducts.map((item) => (
             <div className="col-md-3 mb-4 d-flex" key={item.id}>
               <div className="w-100">
                 <FeatureCard title={item.title} image={item.image}>
                   <div className="d-flex flex-column h-100">
+                   
                     <p className="text-success fw-bold text-center mb-2">
                       ₹{item.price}
                     </p>
 
+                  
                     <button
                       className="btn btn-dark btn-sm mt-auto w-100"
                       onClick={() => handleAddToCart(item)}
@@ -105,8 +114,10 @@ const CategoryPage = () => {
           ))}
         </div>
 
+       
         {filteredProducts.length > ITEMS_PER_PAGE && (
           <div className="d-flex justify-content-center align-items-center gap-3 mt-4">
+           
             {currentPage > 1 && (
               <button
                 className="btn btn-outline-dark"
@@ -116,10 +127,12 @@ const CategoryPage = () => {
               </button>
             )}
 
+           
             <span className="fw-bold">
               Page {currentPage} of {totalPages}
             </span>
 
+           
             {currentPage < totalPages && (
               <button
                 className="btn btn-outline-dark"
