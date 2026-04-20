@@ -53,22 +53,7 @@
       "password": "$2a$10$cw7Sg0SdUU.szkreH4eQj.kM383gJ9qxaJuOiC4XkVb4qTo/KEAnu",
       "name": "kk",
       "id": 7,
-      "cart": [
-        {
-          "id": 1,
-          "title": "Classic Navy Slim Fit Shirt",
-          "category": "clothing",
-          "subCategory": "male",
-          "brand": "H&M",
-          "price": 865,
-          "discount": 5,
-          "rating": 4.1,
-          "stock": 6,
-          "image": "https://www.aristobrat.in/cdn/shop/files/ClassicShirt25_French5.jpg?v=1755254057&width=1000",
-          "searchKey": " navy slim fit shirt h&M clothing clothes  fashion wear outfit style male men mens boys shirts formal casual",
-          "qty": 3
-        }
-      ]
+      "cart": []
     },
     {
       "email": "dd@gmail.com",

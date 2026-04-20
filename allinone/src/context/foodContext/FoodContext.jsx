@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useEffect, useReducer } from 'react'
 import { fetchFoods, fetchRecipes } from '../../utils/api/FoodApi/foodApi';
+import { buildFoodModel, buildLandingData, buildRecipeModel } from '../../features/food_feature/food-model/foodModel';
 
 
 
@@ -8,11 +9,11 @@ export const FoodContext = createContext();
 
 
 const initialValue = {
-    foodCache: {},
-    recipesCache: {},
-    loading: true,
-    error: null,
-    currentPage: 1
+        foodCache: [],
+        recipesCache: [],
+        loading: true,
+        error: null,
+        currentPage: 1
 }
 
 function reducer(foodState, action) {
@@ -25,15 +26,17 @@ function reducer(foodState, action) {
             }
         case "FETCH_SUCESS":
             return {
-                ...foodState, loading: false, foodCache : {...foodState.foodCache,[action.payload.page] : action.payload.foodResponse},
-                recipesCache : { ...foodState.recipesCache, [action.payload.page] : action .payload.recipieResponse}
+                ...foodState, loading: false, foodCache : [...foodState.foodCache,...action.payload.foodData],
+                recipesCache : [ ...foodState.recipesCache,...action .payload.recipiedata]
             }
         case "FETCH_ERROR":
             return {
                 ...foodState, loading:false, error: action.payload
             }
-        default:
-            break;
+       
+            default:
+    return foodState;
+           
     }
 }
 
@@ -47,20 +50,23 @@ const FoodProvider = ({ children }) => {
     const [foodState, foodDispatcher] = useReducer(reducer, initialValue);
 
     const { foodCache, recipesCache, currentPage } = foodState;
-    
-    const fectPageNo = Math.ceil(currentPage/PAGES_PER_FETCH);
+
 
     useEffect(() => {
 
-        if(foodCache[fectPageNo]) return;
+        // if(foodCache[fectPageNo]) return;
              
         foodDispatcher({ type: "FETCH_START" });
          const loadingFoodData = async () => {
 
         try {
-                const foodResponse = await fetchFoods (fectPageNo);
-                const recipieResponse = await fetchRecipes(fectPageNo);
-                foodDispatcher({type: "FETCH_SUCESS", payload: {page: fectPageNo ,foodResponse, recipieResponse}});
+                const foodResponse = await fetchFoods ();
+                const recipieResponse = await fetchRecipes();
+             const foodData= buildFoodModel(foodResponse,recipieResponse)
+             const recipiedata=buildRecipeModel(foodResponse,recipieResponse)
+          const land=   buildLandingData(foodResponse,recipieResponse)
+          console.log(land,"ln")
+                foodDispatcher({type: "FETCH_SUCESS", payload: {foodData, recipiedata}});
 
             }
          catch (error) {
@@ -72,11 +78,11 @@ const FoodProvider = ({ children }) => {
 
 loadingFoodData();
 
-    }, [fectPageNo])
+    }, [])
 
 
     return (
-        <FoodContext.Provider value={{ ...foodState,foodDispatcher }} >
+        <FoodContext.Provider value={{ ...foodState,foodCache,foodDispatcher }} >
 
             {children}
 

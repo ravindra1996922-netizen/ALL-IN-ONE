@@ -6,11 +6,11 @@ const initialState = {
   user: null,
   page: "home",
   stockQuantity: [],
-  stockPrice: []
+  stockPrice: [],
 };
 
 function reducer(state, action) {
-  console.log(state)
+  console.log(state);
   switch (action.type) {
     case "LOGIN":
       return {
@@ -30,7 +30,6 @@ function reducer(state, action) {
 
 export function AuthProvider({ children }) {
   const [authState, authDispatch] = useReducer(reducer, initialState);
-  
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
@@ -42,7 +41,6 @@ export function AuthProvider({ children }) {
     }
   }, []);
 
- 
   useEffect(() => {
     if (authState.user) {
       localStorage.setItem("user", JSON.stringify(authState.user));
@@ -51,17 +49,14 @@ export function AuthProvider({ children }) {
     }
   }, [authState.user]);
 
-
   useEffect(() => {
     const handleStorageChange = (event) => {
       if (event.key === "user") {
         const newUser = event.newValue;
 
         if (!newUser) {
-        
           authDispatch({ type: "LOGOUT" });
         } else {
-          
           authDispatch({
             type: "LOGIN",
             payload: JSON.parse(newUser),
@@ -79,12 +74,10 @@ export function AuthProvider({ children }) {
 
   return (
     <AuthContext.Provider
-
       value={{
         ...authState,
         user: authState.user,
         authDispatch,
-
       }}
     >
       {children}

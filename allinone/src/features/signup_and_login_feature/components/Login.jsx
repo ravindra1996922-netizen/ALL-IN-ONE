@@ -17,24 +17,25 @@ export default function LoginForm() {
   const { authDispatch } = useAuth();
   const navigate = useNavigate();
 
-  const handleLogin = async (data) => {
-    try {
-      const user = await loginUser(data);
-      if (!user) {
-        // toast.error("Invalid credentials");
-        return;
-      }
-      
-      authDispatch({ type: "LOGIN", payload: user });
+ const handleLogin = async (data) => {
+  try {
+    const user = await loginUser(data);
 
-      toast.success("Login successful");
-      console.log(user, "handellogin");
-
-      navigate("/");
-    } catch (error) {
-      // toast.error(error.message);
+    if (!user) {
+      // toast.error("Invalid credentials");
+      return;
     }
-  };
+
+    authDispatch({ type: "LOGIN", payload: user });
+
+    toast.success("Login successful");
+
+    navigate("/");
+
+  } catch (error) {
+    // toast.error(error.message);
+  }
+};
 
   return (
     <div className="auth-wrapper container-fluid">
