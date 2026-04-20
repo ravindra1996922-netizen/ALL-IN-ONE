@@ -61,7 +61,7 @@ export const CartProvider = ({ children }) => {
       if (!user) return;
 
       try {
-        const cartData = await getCart(user.id);
+        const cartData = await getCart(user.user.id);
 
         cartDispatch({
           type: "SET_CART",

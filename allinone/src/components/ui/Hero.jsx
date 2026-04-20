@@ -1,7 +1,7 @@
 import React from "react";
 import globeImg from "../../assets/images/globee.png";
 import food2 from "../../assets/images/food2.jpg";
-import shp from "../../assets/images/shp1.jpg";
+import shp from "../../assets/images/shop.jpg";
 
 const Hero = () => {
   return (

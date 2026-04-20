@@ -18,7 +18,6 @@ const HomePage = () => {
   return (
     <>
       <Hero />
-      
 
    
       <section className="py-5">

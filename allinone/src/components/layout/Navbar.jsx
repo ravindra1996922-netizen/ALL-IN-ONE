@@ -20,7 +20,7 @@ const Navbar = () => {
   badgeQuantity();
 
   const handleLogout = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" })
+    window.scrollTo({ top: 0, behavior: "smooth" });
     authDispatch({ type: "LOGOUT" });
     localStorage.removeItem("user");
     toast.info("Logged out successfully", {
@@ -35,7 +35,7 @@ const Navbar = () => {
   return (
     <nav
       className="navbar navbar-expand-lg bg-white shadow-sm sticky-top"
-      style={{ minHeight: "55px" }}
+      style={{ height: "55px" }}
     >
       <div className="container-fluid px-4 px-lg-5">
         {/* Logo */}
@@ -131,7 +131,9 @@ const Navbar = () => {
                     borderRadius: "50%",
                     background: "#f1f1f1",
                   }}
-                  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                  onClick={() =>
+                    window.scrollTo({ top: 0, behavior: "smooth" })
+                  }
                 >
                   <FiShoppingCart />
 

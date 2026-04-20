@@ -55,20 +55,6 @@
       "id": 7,
       "cart": [
         {
-          "id": 2,
-          "title": "Modern Black Cotton T-Shirt",
-          "category": "clothing",
-          "subCategory": "male",
-          "brand": "Levis",
-          "price": 931,
-          "discount": 8,
-          "rating": 4.2,
-          "stock": 8,
-          "image": "https://tse3.mm.bing.net/th/id/OIP.8Jl07l3Zw_oZ10Y_d7a2AwHaJQ?pid=Api&P=0&h=180",
-          "searchKey": "modern black cotton tshirt levis clothing clothes fashion wear outfit style male men mens boys tshirt ",
-          "qty": 2
-        },
-        {
           "id": 1,
           "title": "Classic Navy Slim Fit Shirt",
           "category": "clothing",
@@ -136,6 +122,12 @@
       "password": "$2a$10$U2Rxi0XGytQa41I8WElKkusgNimVL309JwYHltJAJuUMkfl83b//m",
       "name": "kk",
       "id": 15
+    },
+    {
+      "email": "q@gmail.com",
+      "password": "$2a$10$Rwe36qO0gxTJS5GhZLkXWOWvHuBxIt1Fk6JgM1EzcgjUMxH6eo6Vu",
+      "name": "q",
+      "id": 16
     }
   ],
   "userStock": [],

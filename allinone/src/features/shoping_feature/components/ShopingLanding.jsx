@@ -25,7 +25,8 @@ const ShopingLanding = () => {
   const { cartDispatch } = useCart();
 
   const { user } = useAuth();
-  // const userId = user.user.id;
+  const userId = user?.user?.id;
+  // console.log(userId,"shpl")
 
   const previewData = getAllCategoryPreview(displayProduct);
 
@@ -51,7 +52,7 @@ const ShopingLanding = () => {
       ?.scrollIntoView({ behavior: "smooth" });
   };
   const handleAddToCart = async (item) => {
-    if (!user?.id) {
+    if (!user) {
       toast.error("Please login first", {
         style: {
           background: "#d03f3f",
@@ -62,7 +63,7 @@ const ShopingLanding = () => {
     }
 
     try {
-      const updatedCart = await addToCartApi(user?.id, item);
+      const updatedCart = await addToCartApi(userId, item);
 
       cartDispatch({
         type: "SET_CART",

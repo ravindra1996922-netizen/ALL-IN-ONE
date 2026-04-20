@@ -6,14 +6,14 @@ import {
   updateQtyApi,
 } from "../utils/api/cartApis/cartApis";
 
-const CartsPage = () => {
+const CartPage = () => {
   const { cart, cartDispatch } = useCart();
   const { user } = useAuth();
 
   const handleInc = async (id) => {
-    if (!user?.id) return;
+    if (!user.user.id) return;
 
-    const updatedCart = await updateQtyApi(user.id, id, "inc");
+    const updatedCart = await updateQtyApi(user.user.id, id, "inc");
 
     cartDispatch({
       type: "SET_CART",
@@ -22,9 +22,9 @@ const CartsPage = () => {
   };
 
   const handleDec = async (id) => {
-    if (!user?.id) return;
+    if (!user?.user.id) return;
 
-    const updatedCart = await updateQtyApi(user.id, id, "dec");
+    const updatedCart = await updateQtyApi(user.user.id, id, "dec");
 
     cartDispatch({
       type: "SET_CART",
@@ -33,9 +33,9 @@ const CartsPage = () => {
   };
 
   const handleRemove = async (id) => {
-    if (!user?.id) return;
+    if (!user?.user.id) return;
 
-    const updatedCart = await removeFromCartApi(user.id, id);
+    const updatedCart = await removeFromCartApi(user.user.id, id);
 
     cartDispatch({
       type: "SET_CART",
@@ -105,5 +105,4 @@ const CartsPage = () => {
   );
 };
 
-export default CartsPage;
-//
+export default CartPage;
