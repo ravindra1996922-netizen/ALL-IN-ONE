@@ -13,12 +13,13 @@ export async function registerUser(userData) {
       },
       body: JSON.stringify(userData),
     });
+    if(!response.ok){throw new Error("user already exist")}
     const data = await response.json();
     console.log(data)
     return data;
   } catch (error) {
-    console.error("Error registering user:", error);
-     toast.error(`Invalid credentials :${errorText}`, {
+    // console.error("Error registering user:", error);
+     toast.error(`Invalid credentials :${error.message}`, {
               style: {
                 background: "red",
                 color: "black",
