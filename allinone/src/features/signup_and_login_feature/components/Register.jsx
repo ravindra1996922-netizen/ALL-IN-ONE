@@ -32,12 +32,12 @@ export default function Register() {
         navigate("/login");
       }, 1500);
     } catch (err) {
-      toast.error("Registration failed", {
-        style: {
-          background: "red",
-          color: "black",
-        },
-      });
+      // toast.error("Registration failed", {
+      //   style: {
+      //     background: "red",
+      //     color: "black",
+      //   },
+      // });
     }
   };
 
