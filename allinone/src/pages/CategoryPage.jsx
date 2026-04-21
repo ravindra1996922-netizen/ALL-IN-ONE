@@ -9,15 +9,15 @@ import { useCart } from "../context/cartContext/useCart";
 import { useAuth } from "../context/authContext/useAuth";
 import { addToCartApi } from "../utils/api/cartApis/cartApis";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const CategoryPage = ({ type = "shopping" }) => {
   const { name } = useParams();
+  const navigate = useNavigate();
 
-  // ✅ BOTH CONTEXTS
   const productCtx = useProducts();
   const foodCtx = useFood();
 
-  // ✅ SELECT CONTEXT BASED ON TYPE
   const ctx = type === "shopping" ? productCtx : foodCtx;
 
   const cache = ctx.cache || ctx.foodCache || [];
@@ -31,7 +31,6 @@ const CategoryPage = ({ type = "shopping" }) => {
   const { user } = useAuth();
   const userId = user?.user?.id;
 
-  // ✅ SET CATEGORY FROM URL
   useEffect(() => {
     if (!name) return;
 
@@ -44,7 +43,6 @@ const CategoryPage = ({ type = "shopping" }) => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [name]);
 
-  // ✅ FILTER LOGIC (FIXED)
   const filteredData = cache.filter((item) => {
     const matchCategory = name === "all" || item.category === name;
 
@@ -55,7 +53,6 @@ const CategoryPage = ({ type = "shopping" }) => {
     return matchCategory && matchSearch;
   });
 
-  // ✅ PAGINATION
   const totalPages = Math.ceil(filteredData.length / ITEMS_PER_PAGE);
 
   const start = (currentPage - 1) * ITEMS_PER_PAGE;
@@ -65,7 +62,6 @@ const CategoryPage = ({ type = "shopping" }) => {
     setCurrentPage(1);
   }, [searchText]);
 
-  // ✅ CART HANDLER
   const handleAddToCart = async (item) => {
     if (!user?.user?.id) {
       toast.error("Please login first", {
@@ -88,7 +84,6 @@ const CategoryPage = ({ type = "shopping" }) => {
 
   return (
     <>
-      {/* ✅ FILTER BAR */}
       <FilterBar
         searchText={searchText}
         setSearchText={setSearchText}
@@ -101,7 +96,6 @@ const CategoryPage = ({ type = "shopping" }) => {
       <div className="container my-4">
         <h3 className="mb-4 text-capitalize">{name} Items</h3>
 
-        {/* ❌ NO DATA CASE */}
         {filteredData.length === 0 ? (
           <p className="text-center">No items found</p>
         ) : (
@@ -112,6 +106,7 @@ const CategoryPage = ({ type = "shopping" }) => {
                   <FeatureCard
                     title={item.title || item.name}
                     image={item.image}
+                    onClick={() => navigate(`/details/${type}/${item.id}`)}
                   >
                     <div className="d-flex flex-column h-100">
                       {/* ✅ PRICE */}
@@ -121,15 +116,23 @@ const CategoryPage = ({ type = "shopping" }) => {
                         </p>
                       )}
 
-                      {/* 🔥 BUTTON LOGIC */}
                       {type === "food" && item.type === "recipe" ? (
-                        <button className="btn btn-info mt-auto w-100">
+                        <button
+                          className="btn btn-info mt-auto w-100"
+                          onClick={(e) => {
+                            e.stopPropagation(); // 🔥 important
+                            navigate(`/details/food/${item.id}`);
+                          }}
+                        >
                           Show Recipe
                         </button>
                       ) : (
                         <button
                           className="btn btn-dark mt-auto w-100"
-                          onClick={() => handleAddToCart(item)}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleAddToCart(item);
+                          }}
                         >
                           Add to Cart
                         </button>
@@ -142,7 +145,6 @@ const CategoryPage = ({ type = "shopping" }) => {
           </div>
         )}
 
-        {/* ✅ PAGINATION */}
         {filteredData.length > ITEMS_PER_PAGE && (
           <div className="d-flex justify-content-center align-items-center gap-3 mt-4">
             {currentPage > 1 && (
