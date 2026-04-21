@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import { useProducts } from "../../../context/product_context/useProducts";
 import { getAllCategoryPreview } from "../shopingDataModel/buildShopingmodel";
@@ -26,11 +27,10 @@ const ShopingLanding = () => {
 
   const { user } = useAuth();
   const userId = user?.user?.id;
-  // console.log(userId,"shpl")
 
   const previewData = getAllCategoryPreview(displayProduct);
 
-
+  // ✅ FILTER
   useEffect(() => {
     const timer = setTimeout(() => {
       productDispatch({
@@ -45,19 +45,18 @@ const ShopingLanding = () => {
     return () => clearTimeout(timer);
   }, [searchText, selectedCategory, productDispatch]);
 
- 
+  // ✅ SCROLL
   const scrollToProducts = () => {
     document
       .getElementById("products-section")
       ?.scrollIntoView({ behavior: "smooth" });
   };
+
+  // ✅ CART
   const handleAddToCart = async (item) => {
-    if (!user) {
+    if (!user?.user?.id) {
       toast.error("Please login first", {
-        style: {
-          background: "#d03f3f",
-          color: "black",
-        },
+        style: { background: "#d03f3f", color: "black" },
       });
       return;
     }
@@ -70,18 +69,12 @@ const ShopingLanding = () => {
         payload: updatedCart,
       });
 
-      toast.success("Added to cart ", {
-        style: {
-          background: "green",
-          color: "black",
-        },
+      toast.success("Added to cart", {
+        style: { background: "green", color: "black" },
       });
     } catch (err) {
-      toast.error("Failed to add item ", {
-        style: {
-          background: "#d03f3f",
-          color: "black",
-        },
+      toast.error("Failed to add item", {
+        style: { background: "#d03f3f", color: "black" },
       });
     }
   };
@@ -91,9 +84,18 @@ const ShopingLanding = () => {
 
   return (
     <>
-      <FilterBar searchText={searchText} setSearchText={setSearchText} />
+      {/* ✅ IMPORTANT (explicit type) */}
+      <FilterBar
+        searchText={searchText}
+        setSearchText={setSearchText}
+        data={cache}
+        dispatch={productDispatch}
+        activeCategory={selectedCategory}
+        type="shopping" // 🔥 ADD THIS
+      />
 
       <div className="container my-4">
+        {/* HERO */}
         <div className="bg-dark text-white p-5 rounded mb-5 text-center">
           <h1 className="fw-bold">Discover Your Perfect Products</h1>
 
@@ -114,6 +116,7 @@ const ShopingLanding = () => {
           </button>
         </div>
 
+        {/* PRODUCTS */}
         <div id="products-section">
           {Object.keys(previewData).map((category) => (
             <div key={category} className="mb-5">

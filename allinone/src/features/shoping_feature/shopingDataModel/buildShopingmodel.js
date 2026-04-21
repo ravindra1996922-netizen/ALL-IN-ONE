@@ -11,7 +11,7 @@ export const getAllCategoryPreview = (products) => {
     }
   });
 
-  console.log(result);
+  // console.log(result);
   return result;
 };
 

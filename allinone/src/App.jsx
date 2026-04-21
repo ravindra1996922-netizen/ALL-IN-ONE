@@ -13,6 +13,9 @@ import Footer from "./components/layout/Footer";
 import CategoryPage from "./pages/CategoryPage";
 import CartsPage from "./pages/CartsPage";
 
+// ✅ ADD THIS
+// import FoodCategoryPage from "./pages/FoodCategoryPage";
+
 function App() {
   return (
     <>
@@ -26,6 +29,7 @@ function App() {
         newestOnTop
         closeOnClick
       />
+
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/invest" element={<Investment />} />
@@ -34,7 +38,12 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/cart" element={<CartsPage />} />
-        <Route path="/category/:name" element={<CategoryPage />} />
+
+        <Route
+          path="/category/:name"
+          element={<CategoryPage type="shopping" />}
+        />
+        <Route path="/food/:name" element={<CategoryPage type="food" />} />
       </Routes>
 
       <Footer />

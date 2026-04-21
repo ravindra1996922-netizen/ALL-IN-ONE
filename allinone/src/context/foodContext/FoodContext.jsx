@@ -1,94 +1,102 @@
-import React, { createContext, useContext, useEffect, useReducer } from 'react'
-import { fetchFoods, fetchRecipes } from '../../utils/api/FoodApi/foodApi';
-import { buildFoodModel, buildLandingData, buildRecipeModel } from '../../features/food_feature/food-model/foodModel';
 
 
+import React, { createContext, useEffect, useReducer } from "react";
+import { fetchFoods, fetchRecipes } from "../../utils/api/FoodApi/foodApi";
+import { buildUnifiedFoodData } from "../../features/food_feature/food-model/foodModel";
 
 export const FoodContext = createContext();
 
-
-
 const initialValue = {
-        foodCache: [],
-        recipesCache: [],
-        loading: true,
-        error: null,
-        currentPage: 1
-}
+  foodCache: [],
+  displayFoods: [],
+  loading: true,
+  error: null,
+  currentPage: 1,
 
-function reducer(foodState, action) {
+  selectedCategory: "all",
+  showCategory: true,
+};
 
+function reducer(state, action) {
+  switch (action.type) {
+    case "FETCH_START":
+      return { ...state, loading: true, error: null };
 
-    switch (action.type) {
-        case "FETCH_START":
-            return {
-                ...foodState, loading: true, error: null
-            }
-        case "FETCH_SUCESS":
-            return {
-                ...foodState, loading: false, foodCache : [...foodState.foodCache,...action.payload.foodData],
-                recipesCache : [ ...foodState.recipesCache,...action .payload.recipiedata]
-            }
-        case "FETCH_ERROR":
-            return {
-                ...foodState, loading:false, error: action.payload
-            }
-       
-            default:
-    return foodState;
-           
+    case "FETCH_SUCCESS":
+      return {
+        ...state,
+        loading: false,
+        foodCache: action.payload,
+        displayFoods: action.payload,
+      };
+
+    case "FETCH_ERROR":
+      return { ...state, loading: false, error: action.payload };
+
+    case "SET_CATEGORY":
+      return { ...state, selectedCategory: action.payload };
+
+    case "FILTER_FOOD": {
+      const { search, category } = action.payload;
+
+      let filtered = [...state.foodCache];
+
+      if (category !== "all") {
+        filtered = filtered.filter((item) => item.category === category);
+      }
+
+      if (search) {
+        filtered = filtered.filter((item) =>
+          item.name.toLowerCase().includes(search.toLowerCase()),
+        );
+      }
+
+      return {
+        ...state,
+        displayFoods: filtered,
+        currentPage: 1,
+      };
     }
+
+    default:
+      return state;
+  }
 }
-
-export const ITEMS_PER_PAGE = 10;
-export const SERVER_LIMIT = 30;
-export const PAGES_PER_FETCH = SERVER_LIMIT / ITEMS_PER_PAGE;
-
 
 const FoodProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(reducer, initialValue);
+  console.log(state.foodCache, "fc");
 
-    const [foodState, foodDispatcher] = useReducer(reducer, initialValue);
+  useEffect(() => {
+    const loadData = async () => {
+      dispatch({ type: "FETCH_START" });
 
-    const { foodCache, recipesCache, currentPage } = foodState;
+      try {
+        const foods = await fetchFoods();
+        const recipes = await fetchRecipes();
 
+        const unifiedData = buildUnifiedFoodData(foods, recipes);
 
-    useEffect(() => {
+        dispatch({
+          type: "FETCH_SUCCESS",
+          payload: unifiedData,
+        });
+      } catch (err) {
+        dispatch({
+          type: "FETCH_ERROR",
+          payload: err.message,
+        });
+      }
+    };
 
-        // if(foodCache[fectPageNo]) return;
-             
-        foodDispatcher({ type: "FETCH_START" });
-         const loadingFoodData = async () => {
+    loadData();
+  }, []);
 
-        try {
-                const foodResponse = await fetchFoods ();
-                const recipieResponse = await fetchRecipes();
-             const foodData= buildFoodModel(foodResponse,recipieResponse)
-             const recipiedata=buildRecipeModel(foodResponse,recipieResponse)
-          const land=   buildLandingData(foodResponse,recipieResponse)
-          console.log(land,"ln")
-                foodDispatcher({type: "FETCH_SUCESS", payload: {foodData, recipiedata}});
+  return (
+    <FoodContext.Provider value={{ ...state, foodDispatcher: dispatch }}>
+      {children}
+    </FoodContext.Provider>
+  );
+};
 
-            }
-         catch (error) {
-                foodDispatcher({type: "FETCH_ERROR", payload: error.message})
-
-        }
-    }
-
-
-loadingFoodData();
-
-    }, [])
-
-
-    return (
-        <FoodContext.Provider value={{ ...foodState,foodCache,foodDispatcher }} >
-
-            {children}
-
-
-        </FoodContext.Provider>
-    )
-}
-
-export default FoodProvider
+export default FoodProvider;

@@ -10,6 +10,7 @@ const initialState = {
   error: null,
   currentPage: 1,
   selectedCategory: "all",
+  showCategory: true,
 };
 
 function productsReducer(productState, action) {
@@ -45,8 +46,12 @@ function productsReducer(productState, action) {
         ...productState,
         currentPage: action.payload,
       };
+    case "SHOW_CATEGORY":
+      return {
+        ...productState,
+        showCategory: action.payload,
+      };
 
-  
     case "SET_CATEGORY":
       return {
         ...productState,
@@ -89,7 +94,7 @@ export const ProductsProvider = ({ children }) => {
   );
 
   const { displayProduct, cache, currentPage, selectedCategory } = productState;
-  console.log(selectedCategory, "selectedcatogory");
+  // console.log(selectedCategory, "selectedcatogory");
 
   useEffect(() => {
     const loadProducts = async () => {
