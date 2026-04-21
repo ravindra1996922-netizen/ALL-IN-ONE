@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import { useProducts } from "../../../context/product_context/useProducts";
 import { getAllCategoryPreview } from "../shopingDataModel/buildShopingmodel";
@@ -25,11 +26,11 @@ const ShopingLanding = () => {
   const { cartDispatch } = useCart();
 
   const { user } = useAuth();
-  // const userId = user.user.id;
+  const userId = user?.user?.id;
 
   const previewData = getAllCategoryPreview(displayProduct);
 
-
+  // ✅ FILTER
   useEffect(() => {
     const timer = setTimeout(() => {
       productDispatch({
@@ -44,43 +45,36 @@ const ShopingLanding = () => {
     return () => clearTimeout(timer);
   }, [searchText, selectedCategory, productDispatch]);
 
- 
+  // ✅ SCROLL
   const scrollToProducts = () => {
     document
       .getElementById("products-section")
       ?.scrollIntoView({ behavior: "smooth" });
   };
+
+  // ✅ CART
   const handleAddToCart = async (item) => {
-    if (!user?.id) {
+    if (!user?.user?.id) {
       toast.error("Please login first", {
-        style: {
-          background: "#d03f3f",
-          color: "black",
-        },
+        style: { background: "#d03f3f", color: "black" },
       });
       return;
     }
 
     try {
-      const updatedCart = await addToCartApi(user?.id, item);
+      const updatedCart = await addToCartApi(userId, item);
 
       cartDispatch({
         type: "SET_CART",
         payload: updatedCart,
       });
 
-      toast.success("Added to cart ", {
-        style: {
-          background: "green",
-          color: "black",
-        },
+      toast.success("Added to cart", {
+        style: { background: "green", color: "black" },
       });
     } catch (err) {
-      toast.error("Failed to add item ", {
-        style: {
-          background: "#d03f3f",
-          color: "black",
-        },
+      toast.error("Failed to add item", {
+        style: { background: "#d03f3f", color: "black" },
       });
     }
   };
@@ -90,16 +84,18 @@ const ShopingLanding = () => {
 
   return (
     <>
+      {/* ✅ IMPORTANT (explicit type) */}
       <FilterBar
-  data={cache}
-  selectedCategory={selectedCategory}
-  dispatch={productDispatch}
-  searchText={searchText}
-  setSearchText={setSearchText}
-  type="shopping"
-/>
+        searchText={searchText}
+        setSearchText={setSearchText}
+        data={cache}
+        dispatch={productDispatch}
+        activeCategory={selectedCategory}
+        type="shopping" // 🔥 ADD THIS
+      />
 
       <div className="container my-4">
+        {/* HERO */}
         <div className="bg-dark text-white p-5 rounded mb-5 text-center">
           <h1 className="fw-bold">Discover Your Perfect Products</h1>
 
@@ -120,6 +116,7 @@ const ShopingLanding = () => {
           </button>
         </div>
 
+        {/* PRODUCTS */}
         <div id="products-section">
           {Object.keys(previewData).map((category) => (
             <div key={category} className="mb-5">

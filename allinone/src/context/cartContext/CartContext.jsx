@@ -20,7 +20,6 @@ export const cartReducer = (state, action) => {
       const exist = state.cart.find((item) => item.id === action.payload.id);
 
       if (exist) {
-       
         const updatedCart = state.cart.map((item) =>
           item.id === action.payload.id ? { ...item, qty: item.qty + 1 } : item,
         );
@@ -55,13 +54,12 @@ export const CartProvider = ({ children }) => {
   const [state, cartDispatch] = useReducer(cartReducer, initialState);
   const { user } = useAuth();
 
-
   useEffect(() => {
     const loadCart = async () => {
       if (!user) return;
 
       try {
-        const cartData = await getCart(user.id);
+        const cartData = await getCart(user?.user.id);
 
         cartDispatch({
           type: "SET_CART",

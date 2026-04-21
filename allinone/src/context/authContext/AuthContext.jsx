@@ -10,11 +10,12 @@ const initialState = {
 };
 
 function reducer(state, action) {
+  // console.log(state);
   switch (action.type) {
     case "LOGIN":
       return {
         ...state,
-        user: action.payload.user,
+        user: action.payload,
       };
     case "LOGOUT":
       return {
@@ -32,7 +33,6 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
-
     if (storedUser) {
       authDispatch({
         type: "LOGIN",

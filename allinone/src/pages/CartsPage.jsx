@@ -6,7 +6,7 @@ import {
   updateQtyApi,
 } from "../utils/api/cartApis/cartApis";
 
-const CartPage = () => {
+const CartsPage = () => {
   const { cart, cartDispatch } = useCart();
   const { user } = useAuth();
 
@@ -105,4 +105,4 @@ const CartPage = () => {
   );
 };
 
-export default CartPage;
+export default CartsPage;

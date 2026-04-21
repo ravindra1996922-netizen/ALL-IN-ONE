@@ -1,13 +1,19 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useProducts } from "../../context/product_context/useProducts";
 import SearchBar from "./SearchBar";
 
-const FilterBar = ({ searchText, setSearchText }) => {
-  const { cache, selectedCategory, productDispatch } = useProducts();
+const FilterBar = ({
+  searchText,
+  setSearchText,
+  data,
+  dispatch,
+  activeCategory,
+  type = "shopping", // ✅ IMPORTANT
+}) => {
   const navigate = useNavigate();
 
-  const categories = ["all", ...new Set(cache.map((p) => p.category))];
+  // ✅ SAFE CATEGORY BUILD
+  const categories = ["all", ...new Set((data || []).map((p) => p.category))];
 
   return (
     <div
@@ -15,27 +21,32 @@ const FilterBar = ({ searchText, setSearchText }) => {
       style={{ top: "55px", zIndex: 999 }}
     >
       <div className="px-3 py-2 border d-flex justify-content-between flex-wrap gap-2">
-        
+        {/* ✅ CATEGORY BUTTONS */}
         <div className="d-flex gap-2 flex-wrap">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => {
-                productDispatch({
+                dispatch({
                   type: "SET_CATEGORY",
                   payload: cat,
                 });
 
+                // ✅ FIX: DIFFERENT ROUTING
                 if (cat === "all") {
-                  navigate("/shopping"); 
+                  navigate(type === "food" ? "/orderFood" : "/shopping");
                 } else {
-                  navigate(`/category/${cat}`);
+                  navigate(
+                    type === "food"
+                      ? `/food/${cat}` // ✅ FOOD ROUTE
+                      : `/category/${cat}`, // ✅ SHOP ROUTE
+                  );
                 }
 
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
               className={`btn btn-sm ${
-                selectedCategory === cat ? "btn-dark" : "btn-light border"
+                activeCategory === cat ? "btn-dark" : "btn-light border"
               }`}
             >
               {cat}
@@ -43,12 +54,14 @@ const FilterBar = ({ searchText, setSearchText }) => {
           ))}
         </div>
 
-      
+        {/* 🔍 SEARCH */}
         <div style={{ maxWidth: "250px", width: "100%" }}>
           <SearchBar
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
-            placeholder="Search Products..."
+            placeholder={
+              type === "food" ? "Search Food..." : "Search Products..."
+            }
           />
         </div>
       </div>

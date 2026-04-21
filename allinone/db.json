@@ -53,7 +53,64 @@
       "password": "$2a$10$cw7Sg0SdUU.szkreH4eQj.kM383gJ9qxaJuOiC4XkVb4qTo/KEAnu",
       "name": "kk",
       "id": 7,
-      "cart": []
+      "cart": [
+        {
+          "id": 81,
+          "title": "Pro Black Smartphone 5G",
+          "category": "electronics",
+          "subCategory": "general",
+          "brand": "Samsung",
+          "price": 3048,
+          "discount": 5,
+          "rating": 4.1,
+          "stock": 6,
+          "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRB2WjTG5cB6_-tkSTpX2jV7KojPGQZjEiskosbQwEsMvV0lHMgLVlz_YauxXq5HrMk6F2MtuFQ9Haph2kixKRnNDQjEpyjM9K2LbGMuMKDjiqtl8UVSNh7fTMq99euuyswPnkLew&usqp=CAc",
+          "searchKey": "pro black smartphone 5g samsung electronics gadgets tech technology device devices accessories phone mobile android handset",
+          "qty": 1
+        },
+        {
+          "id": 201,
+          "title": "Daily Care Classic Face Wash",
+          "category": "beauty",
+          "subCategory": "male",
+          "brand": "Nivea",
+          "price": 255,
+          "discount": 5,
+          "rating": 4.1,
+          "stock": 6,
+          "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRmjAW4ksWECAaczrRWaBfCb_vQJ1p1IKyfBj3Ii3pfUF9Gbc6HmbyAznx8xHKH8qqQpKtBg4vu1tInweoZo7rRRUX8wdjSb25fcnnItr4mlhWAA56HL27pbjgqCKkKgNnQ6bBRrRIeWgkx&usqp=CAc",
+          "searchKey": "daily care classic face wash nivea beauty skincare grooming self cosmetic cosmetics male men mens boys cleanser",
+          "qty": 1
+        },
+        {
+          "id": 202,
+          "title": "Fresh Cool Beard Oil",
+          "category": "beauty",
+          "subCategory": "male",
+          "brand": "Beardo",
+          "price": 311,
+          "discount": 8,
+          "rating": 4.2,
+          "stock": 8,
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoGcu4PiDgTx3QU4eCmsUPKYtQp0XQDkU1mg&s",
+          "searchKey": "fresh cool beard oil beardo beauty skincare grooming self care cosmetic cosmetics male men mens boys",
+          "qty": 1
+        },
+        {
+          "id": 91,
+          "title": "Pro Black Wireless Earbuds",
+          "category": "electronics",
+          "subCategory": "general",
+          "brand": "Lenovo",
+          "price": 18536,
+          "discount": 12,
+          "rating": 4.3,
+          "stock": 6,
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQk-QaqOBbZBhJYQaUIosws4Y1vmMMgMKRzA&s",
+          "searchKey": "pro black wireless earbuds lenovo electronics gadgets tech technology device devices accessories earbud earphones bluetooth audio tws",
+          "qty": 2
+        }
+      ]
     },
     {
       "email": "dd@gmail.com",
@@ -94,51 +151,25 @@
       "email": "qwerty12@gmail.com",
       "password": "$2a$10$CAdWRFdDZbui118YqVQaNOcWUsTS4gcS2vtKzhLajGA0GBfXFH/zC",
       "name": "qwerty",
-      "id": 13,
-      "cart": [
-        {
-          "id": 4,
-          "title": "Signature Olive Denim Jeans",
-          "category": "clothing",
-          "subCategory": "male",
-          "brand": "Van Heusen",
-          "price": 1062,
-          "discount": 12,
-          "rating": 4.4,
-          "stock": 12,
-          "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQiaUGCzLOYxWTn5BebG2gHxsWCDo54MNY9gk4dJUVc1c5ezEbpqWDoR6UAcUZFmmcA3piBB677K6QcEVb8dCGKwSu5wnijNjZUH-xGF3ji",
-          "searchKey": "signature olive denim jeans van heusen vanheusen clothing clothes apparel fashion wear outfit style male men mens boys pants bottoms",
-          "qty": 1
-        }
-      ]
+      "id": 13
     },
     {
       "email": "a@gmail.com",
       "password": "$2a$10$SXLQTFzoBmDdoHkXVxEuxuoTfsgJ8CQ1scsmEWKqBdPQ0GDfTNLRW",
       "name": "a",
-      "id": 14,
-      "cart": [
-        {
-          "id": 2,
-          "title": "Modern Black Cotton T-Shirt",
-          "category": "clothing",
-          "subCategory": "male",
-          "brand": "Levis",
-          "price": 931,
-          "discount": 8,
-          "rating": 4.2,
-          "stock": 8,
-          "image": "https://tse3.mm.bing.net/th/id/OIP.8Jl07l3Zw_oZ10Y_d7a2AwHaJQ?pid=Api&P=0&h=180",
-          "searchKey": "modern black cotton tshirt levis clothing clothes fashion wear outfit style male men mens boys tshirt ",
-          "qty": 1
-        }
-      ]
+      "id": 14
     },
     {
       "email": "qq@gmail.com",
       "password": "$2a$10$U2Rxi0XGytQa41I8WElKkusgNimVL309JwYHltJAJuUMkfl83b//m",
       "name": "kk",
       "id": 15
+    },
+    {
+      "email": "q@gmail.com",
+      "password": "$2a$10$Rwe36qO0gxTJS5GhZLkXWOWvHuBxIt1Fk6JgM1EzcgjUMxH6eo6Vu",
+      "name": "q",
+      "id": 16
     }
   ],
   "userStock": [],

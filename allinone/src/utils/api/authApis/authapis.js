@@ -53,7 +53,7 @@ export async function loginUser(credentials) {
     }
 
     const data = await response.json();
-    console.log(data)
+    console.log(data,"login data")
     return data;
   } catch (error) {
     console.error("Error logging in user:", error);
