@@ -156,7 +156,12 @@
       "email": "c@gmail.com",
       "password": "$2a$10$HIF8cLi0E64e1dghehzKB.1qyH/yrzL0tX7IZCfNiVkdVHqTd/hbi",
       "name": "Suraj S",
-      "id": 18
+      "id": 18,
+      "cart": [],
+      "portfolio": {
+        "totalShares": 10,
+        "totalInvested": 37340
+      }
     }
   ],
   "userStock": [],
