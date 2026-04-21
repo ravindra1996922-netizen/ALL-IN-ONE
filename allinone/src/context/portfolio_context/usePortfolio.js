@@ -1,0 +1,16 @@
+import { useContext } from "react";
+import { PortfolioContext } from "./PortfolioContext";
+// import { ProductsContext } from "../product_context/ProductsContext";
+;
+
+
+export function usePortfolio() {
+  const context = useContext(PortfolioContext);
+  
+
+  if (!context) {
+    throw new Error("Portfolio must be used within portfolioProvider");
+  }
+
+  return context;
+}
