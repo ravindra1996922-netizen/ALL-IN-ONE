@@ -10,17 +10,24 @@ import { ProductsProvider } from "./context/product_context/ProductsContext.jsx"
 import { BrowserRouter } from "react-router-dom";
 import FoodProvider from "./context/foodContext/FoodContext.jsx";
 import { CartProvider } from "./context/cartContext/CartContext.jsx";
-
+import PortfolioProvider from "./context/portfolio_context/PortfolioContext.jsx";
+import { ThemeProvider } from "./context/ThemeContext/ThemeContext.jsx";
 createRoot(document.getElementById("root")).render(
+  <ThemeProvider>
   <BrowserRouter>
     <AuthProvider>
       <CartProvider>
         <ProductsProvider>
           <FoodProvider>
-            <App />
+            <PortfolioProvider>
+          
+                 <App />
+              
+            </PortfolioProvider>
           </FoodProvider>
         </ProductsProvider>
       </CartProvider>
     </AuthProvider>
-  </BrowserRouter>,
+  </BrowserRouter>
+  </ThemeProvider>
 );

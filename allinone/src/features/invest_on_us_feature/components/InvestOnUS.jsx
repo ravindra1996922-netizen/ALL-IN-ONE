@@ -3,12 +3,21 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Area, AreaChart, CartesianGrid, Line, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import { useNavigate } from "react-router-dom";
 import { useAuth } from '../../../context/authContext/useAuth';
+import { toast } from 'react-toastify';
+import { usePortfolio } from '../../../context/portfolio_context/usePortfolio';
+import { buyAndSell } from '../../../utils/api/PortfolioApis/portfolioapis';
 
 const InvestOnUS = () => {
-  const { stockQuantity, stockPrice, user, authDispatch } = useAuth();
+  
+  const {  user, authDispatch } = useAuth();
   const navigate = useNavigate();
+  const userId=user?.user?.id;
 
-  // Original data preserved
+const{ stockQuantity = [], stockPrice = [] ,portfolioDispatch}=usePortfolio()
+// console.log(portfolioDispatch)
+   
+
+// let{ stockQuantity stockPrice=[] }=portfolio
   const chartData = [ 
     { month: "May", value: 560 },
     { month: "Jun", value: 196 },
@@ -24,11 +33,6 @@ const InvestOnUS = () => {
     { month: "Apr", value: 2172 }
   ];
 
-  const maxValue = chartData[chartData.length - 1].value;
-  const [sharePrice, setSharePrice] = useState([maxValue]);
-  const [userData, setUserData] = useState([]);
-
-  // 20+ Business Categories
   const futureVision = [
     {
       title: "Energy & Utilities",
@@ -92,6 +96,11 @@ const InvestOnUS = () => {
     }
   ];
 
+  const maxValue = chartData[chartData.length - 1].value;
+  const [sharePrice, setSharePrice] = useState([maxValue]);
+  const [userData, setUserData] = useState([]);
+
+
   useEffect(() => {
     const interval = setInterval(() => {
       const randNum = Math.round(Math.random() * 4000);
@@ -106,35 +115,82 @@ const InvestOnUS = () => {
 
   const currentSharePriceStatus = sharePrice.length > 1 && sharePrice[1] - sharePrice[0] > 0;
   const currentPrice = sharePrice[sharePrice.length - 1];
-  const totalQty = stockQuantity.reduce((item, acc) => item + acc, 0);
-  const totalInvested = (stockPrice.map((price, index) => price * stockQuantity[index])).reduce((item, acc) => item + acc, 0);
-  const avgPrice = totalInvested / totalQty;
   const quantity = useRef(null);
 
-  const handleBuy = () => {
-    if (!user) {
-      navigate('/login');
-      return;
-    }
-    const qty = Number(quantity.current.value);
-    if (!qty || qty < 1) {
-      alert("Enter valid quantity");
-      return;
-    }
-    authDispatch({ type: "STOCK_BUY", payload: { sq: quantity.current.value, sp: currentPrice } })
+
+  // ✅ FIXED CALCULATIONS
+const totalQty = stockQuantity.reduce((acc, item) => acc + item, 0);
+
+const totalInvested = stockPrice.reduce(
+  (acc, price, index) => acc + price * (stockQuantity[index] || 0),
+  0
+);
+
+const avgPrice = totalQty > 0 ? totalInvested / totalQty : 0;
+
+const handleBuy = () => {
+  if (!user) {
+    toast.error("login first");
+    return;
   }
 
-  const handleSell = () => {
-    if (!user) {
-      navigate('/login');
-      return;
-    }
-    authDispatch({ type: "STOCK_SELL", payload: { sq: quantity.current.value, sp: currentPrice } })
+  const qty = Number(quantity.current.value);
+
+  if (!qty || qty < 1) {
+    toast.warning("invalid quantity");
+    return;
   }
 
+  portfolioDispatch({
+    type: "BUY_STOCK",
+    payload: {
+      qty,
+      price: currentPrice
+    }
+  });
+
+  quantity.current.value = "";
+};
+
+const handleSell = () => {
+  if (!user) {
+    toast.error("Login first");
+    navigate('/login');
+    return;
+  }
+
+  const qty = Number(quantity.current.value);
+
+  if (!qty || qty < 1) {
+    toast.warning("Invalid quantity");
+    return;
+  }
+
+  if (qty > totalQty) {
+    toast.error("Not enough shares to sell");
+    return;
+  }
+
+  portfolioDispatch({
+    type: "SELL_STOCK",
+    payload: { qty }
+  });
+
+  quantity.current.value = "";
+};
   const isProfit = userData[userData.length - 1]?.value >= userData[0]?.value;
   const strokeColor = isProfit ? "#10B981" : "#EF4444";
   const profitLoss = totalQty > 0 ? (currentPrice - avgPrice) * totalQty : 0;
+
+  useEffect(()=>{
+    if(!user) return 
+  (  async () => {
+      const res= await buyAndSell(userId,totalQty,totalInvested)
+      console.log(res)
+      
+    } )()
+
+  },[totalQty,totalInvested])
 
   return (
     <div style={{

@@ -80,21 +80,37 @@
       "cart": [
         {
           "id": 2,
-          "name": "T-Shirt",
-          "price": 29.99,
-          "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab",
+          "title": "Modern Black Cotton T-Shirt",
           "category": "clothing",
-          "qty": 3
+          "subCategory": "male",
+          "brand": "Levis",
+          "price": 931,
+          "discount": 8,
+          "rating": 4.2,
+          "stock": 8,
+          "image": "https://tse3.mm.bing.net/th/id/OIP.8Jl07l3Zw_oZ10Y_d7a2AwHaJQ?pid=Api&P=0&h=180",
+          "searchKey": "modern black cotton tshirt levis clothing clothes fashion wear outfit style male men mens boys tshirt ",
+          "qty": 1
         },
         {
-          "id": 4,
-          "name": "Jeans",
-          "price": 49.99,
-          "image": "https://images.unsplash.com/photo-1541099649105-f69ad21f3246",
-          "category": "clothing",
+          "id": 83,
+          "title": "Max Blue Wireless Earbuds",
+          "category": "electronics",
+          "subCategory": "general",
+          "brand": "Lenovo",
+          "price": 6145,
+          "discount": 10,
+          "rating": 4.3,
+          "stock": 10,
+          "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTPD8j_QYKQmRWYBnGPBBmVHCDveHLUqCFFSraSE5PA3mkgqRTOWgKFn11a0M1s240iFCcDlXcGIREmMvrkR7CFlxvS7RNS924Igk5KOjMFkLUin44OFGJGN-9-9knlO1CkNiX3WBU&usqp=CAc",
+          "searchKey": "max blue wireless earbuds lenovo electronics gadgets tech technology device devices accessories earbud earphones bluetooth audio tws",
           "qty": 1
         }
-      ]
+      ],
+      "portfolio": {
+        "totalShares": 20,
+        "totalInvested": 89660
+      }
     }
   ],
   "userStock": [],

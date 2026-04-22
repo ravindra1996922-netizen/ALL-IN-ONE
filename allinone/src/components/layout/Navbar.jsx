@@ -5,8 +5,9 @@ import { useAuth } from "../../context/authContext/useAuth";
 import { useProducts } from "../../context/product_context/useProducts";
 import { useCart } from "../../context/cartContext/useCart";
 import { toast } from "react-toastify";
-
+import { useTheme } from "../../context/ThemeContext/ThemeContext";
 const Navbar = () => {
+  const {theme, toggleTheme} = useTheme();
   const { user, authDispatch } = useAuth();
   const { productDispatch } = useProducts();
   const { cart } = useCart();
@@ -95,6 +96,17 @@ const Navbar = () => {
               </Link>
             </li>
           </ul>
+          <div 
+           style={{
+                background: theme === "light" ? "#fff" : "#222",
+                color: theme === "light" ? "#000" : "#fff",
+              
+            }}
+          >
+            <button onClick={toggleTheme}>
+              change Theme
+            </button>
+          </div>
 
           <div className="d-flex flex-column flex-lg-row align-items-center gap-2">
             {!user ? (
