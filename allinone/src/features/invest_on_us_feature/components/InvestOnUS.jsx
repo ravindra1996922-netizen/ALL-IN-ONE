@@ -200,38 +200,7 @@ const handleSell = () => {
       fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
       color: "#1E293B"
     }}>
-      {/* Simple Clean Header */}
-      <div style={{
-        backgroundColor: "white",
-        borderBottom: "1px solid #E2E8F0",
-        padding: "20px 40px",
-        boxShadow: "0 1px 3px rgba(0,0,0,0.05)"
-      }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-
-          <div style={{ textAlign: "right" }}>
-
-            {!user && (
-              <button
-                onClick={() => navigate('/login')}
-                style={{
-                  marginLeft: "16px",
-                  padding: "8px 20px",
-                  backgroundColor: "#2563EB",
-                  color: "white",
-                  border: "none",
-                  borderRadius: "6px",
-                  cursor: "pointer",
-                  fontSize: "14px",
-                  fontWeight: "500"
-                }}
-              >
-                Login to Trade
-              </button>
-            )}
-          </div>
-        </div>
-      </div>
+      
 
       <main style={{ maxWidth: "1200px", margin: "0 auto", padding: "32px 20px" }}>
 
