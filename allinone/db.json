@@ -55,20 +55,6 @@
       "id": 7,
       "cart": [
         {
-          "id": 201,
-          "title": "Daily Care Classic Face Wash",
-          "category": "beauty",
-          "subCategory": "male",
-          "brand": "Nivea",
-          "price": 255,
-          "discount": 5,
-          "rating": 4.1,
-          "stock": 6,
-          "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRmjAW4ksWECAaczrRWaBfCb_vQJ1p1IKyfBj3Ii3pfUF9Gbc6HmbyAznx8xHKH8qqQpKtBg4vu1tInweoZo7rRRUX8wdjSb25fcnnItr4mlhWAA56HL27pbjgqCKkKgNnQ6bBRrRIeWgkx&usqp=CAc",
-          "searchKey": "daily care classic face wash nivea beauty skincare grooming self cosmetic cosmetics male men mens boys cleanser",
-          "qty": 1
-        },
-        {
           "id": 202,
           "title": "Fresh Cool Beard Oil",
           "category": "beauty",
@@ -108,7 +94,7 @@
           "stock": 8,
           "image": "https://tse3.mm.bing.net/th/id/OIP.8Jl07l3Zw_oZ10Y_d7a2AwHaJQ?pid=Api&P=0&h=180",
           "searchKey": "modern black cotton tshirt levis clothing clothes fashion wear outfit style male men mens boys tshirt ",
-          "qty": 10
+          "qty": 13
         },
         {
           "id": 3,
@@ -122,7 +108,7 @@
           "stock": 10,
           "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTXK3kGAR64TqZ2dKh1ao0YvqsA5bJUqjAuO2XEAHlNmu7N3XaaKuba7UdVmi_CvL2DByqaWRTOQ_LPEXc_ESiJz7LimyuZustaP0uoSHJOvWdlQnfVzmuxqg",
           "searchKey": "essential white casual trouser allen solly allensolly clothing clothes apparel fashion wear outfit style male men mens boys trousers pants chinos bottomwear",
-          "qty": 3
+          "qty": 5
         },
         {
           "id": 1,
@@ -215,14 +201,14 @@
             ]
           },
           "quantity": 1,
-          "qty": 9
+          "qty": 15
         },
         {
           "id": "Paneer",
           "title": "Paneer",
           "price": 10,
           "image": "https://i.ytimg.com/vi/U1LVDFwi8qI/hqdefault.jpg",
-          "qty": 1
+          "qty": 2
         },
         {
           "id": 5,
@@ -250,7 +236,7 @@
           "stock": 12,
           "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQiaUGCzLOYxWTn5BebG2gHxsWCDo54MNY9gk4dJUVc1c5ezEbpqWDoR6UAcUZFmmcA3piBB677K6QcEVb8dCGKwSu5wnijNjZUH-xGF3ji",
           "searchKey": "signature olive denim jeans van heusen vanheusen clothing clothes apparel fashion wear outfit style male men mens boys pants bottoms",
-          "qty": 1
+          "qty": 2
         },
         {
           "id": 6,
@@ -265,11 +251,138 @@
           "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcREubP-myCivM-UdtoxRBq2ln0Nq9rIJI-a3-weS3LfJANKkfWPrHHUU-ah7TAPexyGoWMfS4CZocH41gRwAG4eoCv63dANPA",
           "searchKey": "classic navy formal shirt h and m hm clothing clothes apparel fashion wear outfit style male men mens boys shirts office",
           "qty": 1
+        },
+        {
+          "id": 241,
+          "title": "Balanced Chicken Dog Food Premium",
+          "category": "pet",
+          "subCategory": "general",
+          "brand": "Pedigree",
+          "price": 328,
+          "discount": 5,
+          "rating": 4.1,
+          "stock": 6,
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGwXnTXF0n8Yz4jXPP8pZY2M79sD7lE-TH_A&s",
+          "searchKey": "balanced chicken dog food premium pedigree pet pets petcare supplies animal companion kibble dogs canine puppy",
+          "qty": 1
+        },
+        {
+          "id": "Milk",
+          "title": "Milk",
+          "price": 10,
+          "image": "https://i.ytimg.com/vi/T9hQV22Uezw/hqdefault.jpg",
+          "qty": 1
+        },
+        {
+          "id": "Ginger garlic",
+          "title": "Ginger garlic",
+          "price": 10,
+          "image": "https://i.ytimg.com/vi/U1LVDFwi8qI/hqdefault.jpg",
+          "qty": 1
+        },
+        {
+          "id": "Cream",
+          "title": "Cream",
+          "price": 10,
+          "image": "https://i.ytimg.com/vi/U1LVDFwi8qI/hqdefault.jpg",
+          "qty": 1
+        },
+        {
+          "id": 7,
+          "name": "Matar Paneer",
+          "category": "veg",
+          "image": "https://i.ytimg.com/vi/4u-IsmZ5hFI/hqdefault.jpg",
+          "price": 270,
+          "type": "food",
+          "recipe": {
+            "cookTimeMinutes": 45,
+            "cookTimeCategory": "under45min",
+            "videoUrl": "https://youtube.com/watch?v=4u-IsmZ5hFI",
+            "steps": [
+              {
+                "stepNumber": 1,
+                "title": "Prep main",
+                "ingredients": [
+                  {
+                    "name": "Paneer",
+                    "quantity": "180 g"
+                  },
+                  {
+                    "name": "Green peas",
+                    "quantity": "0.75 cup"
+                  }
+                ],
+                "description": "In step 1 of Matar Paneer, which is 'Prep main', the ingredients used are Paneer and Green peas. First, use 180 g of Paneer at the start of the recipe to prepare the main ingredient. Finally, use 0.75 cup of Green peas during the preparation stage to prepare the supporting ingredient. Keep everything measured, cleaned, and organized in this stage so the later cooking steps move smoothly without interruption."
+              },
+              {
+                "stepNumber": 2,
+                "title": "Make base",
+                "ingredients": [
+                  {
+                    "name": "Oil",
+                    "quantity": "1 tbsp"
+                  },
+                  {
+                    "name": "Onion",
+                    "quantity": "2 medium"
+                  },
+                  {
+                    "name": "Tomato",
+                    "quantity": "2 medium"
+                  },
+                  {
+                    "name": "Ginger garlic",
+                    "quantity": "1 tbsp"
+                  }
+                ],
+                "description": "In step 2 of Matar Paneer, which is 'Make base', the ingredients used are Oil, Onion, Tomato, and Ginger garlic. First, use 1 tbsp of Oil when starting the pan to build the base. Next, use 2 medium of Onion after the cooking fat is heated to add body. Next, use 2 medium of Tomato after the onion has started to soften to form the gravy base. Finally, use 1 tbsp of Ginger garlic during the masala stage to add depth. Cook this stage patiently so the aromatics soften properly and the base develops a balanced flavor before you move ahead."
+              },
+              {
+                "stepNumber": 3,
+                "title": "Simmer",
+                "ingredients": [
+                  {
+                    "name": "Tomato gravy",
+                    "quantity": "1 cup"
+                  },
+                  {
+                    "name": "Salt",
+                    "quantity": "1 tsp"
+                  },
+                  {
+                    "name": "Kasuri methi",
+                    "quantity": "0.5 tsp"
+                  }
+                ],
+                "description": "In step 3 of Matar Paneer, which is 'Simmer', the ingredients used are Tomato gravy, Salt, and Kasuri methi. First, use 1 cup of Tomato gravy after the base is ready to set the body and consistency. Next, use 1 tsp of Salt during simmering to set the seasoning. Finally, use 0.5 tsp of Kasuri methi during simmering to add the signature flavor. Maintain controlled heat in this stage so the mixture cooks evenly and each added ingredient integrates without losing its intended texture."
+              },
+              {
+                "stepNumber": 4,
+                "title": "Finish and serve",
+                "ingredients": [
+                  {
+                    "name": "Prepared Paneer",
+                    "quantity": "180 g"
+                  },
+                  {
+                    "name": "Coriander leaves",
+                    "quantity": "1 tbsp"
+                  },
+                  {
+                    "name": "Paratha",
+                    "quantity": "1 portion"
+                  }
+                ],
+                "description": "In step 4 of Matar Paneer, which is 'Finish and serve', the ingredients used are Prepared Paneer, Coriander leaves, and Paratha. First, use 180 g of Prepared Paneer in the last cooking stage to finish the dish. Next, use 1 tbsp of Coriander leaves just before serving to garnish the dish. Finally, use 1 portion of Paratha as a side accompaniment to complete the serving style. Keep this stage short and controlled so the main ingredient does not overcook, the garnish stays fresh, and the serving side is ready at the right moment."
+              }
+            ]
+          },
+          "qty": 1
         }
       ],
       "portfolio": {
-        "totalShares": 0,
-        "totalInvested": 0
+        "totalShares": 10,
+        "totalInvested": 38880
       }
     },
     {
