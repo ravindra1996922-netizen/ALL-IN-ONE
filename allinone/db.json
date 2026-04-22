@@ -108,7 +108,7 @@
           "stock": 8,
           "image": "https://tse3.mm.bing.net/th/id/OIP.8Jl07l3Zw_oZ10Y_d7a2AwHaJQ?pid=Api&P=0&h=180",
           "searchKey": "modern black cotton tshirt levis clothing clothes fashion wear outfit style male men mens boys tshirt ",
-          "qty": 4
+          "qty": 7
         },
         {
           "id": 3,
@@ -222,14 +222,14 @@
           "title": "Paneer",
           "price": 10,
           "image": "https://i.ytimg.com/vi/U1LVDFwi8qI/hqdefault.jpg",
-          "qty": 2
+          "qty": 11
         },
         {
           "id": "Cream",
           "title": "Cream",
           "price": 10,
           "image": "https://i.ytimg.com/vi/U1LVDFwi8qI/hqdefault.jpg",
-          "qty": 2
+          "qty": 10
         },
         {
           "id": "ingredient-Cream-0.20370966428275994",
@@ -528,8 +528,19 @@
           "price": 10,
           "image": "https://i.ytimg.com/vi/T9hQV22Uezw/hqdefault.jpg",
           "qty": 1
+        },
+        {
+          "id": "Butter",
+          "title": "Butter",
+          "price": 10,
+          "image": "https://i.ytimg.com/vi/U1LVDFwi8qI/hqdefault.jpg",
+          "qty": 1
         }
-      ]
+      ],
+      "portfolio": {
+        "totalShares": 0,
+        "totalInvested": 0
+      }
     },
     {
       "email": "dd@gmail.com",
