@@ -1,7 +1,11 @@
 import React from "react";
-const FeatureCard = ({ title, image, children, badge }) => {
+const FeatureCard = ({ title, image, onClick, children, badge }) => {
   return (
-    <div className="card shadow-sm h-100">
+    <div
+      className="card shadow-sm h-100"
+      onClick={onClick}
+      style={{ cursor: onClick ? "pointer" : "default" }}
+    >
       {" "}
       <div className="p-2 text-center" style={{ height: "60px" }}>
         {" "}

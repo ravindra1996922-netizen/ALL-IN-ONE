@@ -118,7 +118,7 @@ const{ stockQuantity = [], stockPrice = [] ,portfolioDispatch}=usePortfolio()
   const quantity = useRef(null);
 
 
-
+  // ✅ FIXED CALCULATIONS
 const totalQty = stockQuantity.reduce((acc, item) => acc + item, 0);
 
 const totalInvested = stockPrice.reduce(

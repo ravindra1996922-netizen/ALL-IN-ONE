@@ -59,10 +59,10 @@ function reducer(state, action) {
           newPriceArr.push(prices[i]);
         } else {
           if (quantities[i] <= sellQty) {
-            
+            // full lot sell
             sellQty -= quantities[i];
           } else {
-          
+            // partial sell
             newQtyArr.push(quantities[i] - sellQty);
             newPriceArr.push(prices[i]);
             sellQty = 0;
@@ -78,6 +78,10 @@ function reducer(state, action) {
         }
       };
     }
+
+
+    case "RESET_PORTFOLIO":
+      return initialState;
 
     default:
       return state;
@@ -108,7 +112,7 @@ const PortfolioProvider = ({ children }) => {
     }
   };
   s();
-}, [userId]);
+}, [userId]); // ✅ important
 
   return (
     <PortfolioContext.Provider value={{ stockQuantity, stockPrice, portfolioDispatch }}>
