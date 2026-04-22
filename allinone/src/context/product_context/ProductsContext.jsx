@@ -23,13 +23,11 @@ function productsReducer(productState, action) {
       };
 
     case "FETCH_SUCCESS": {
-      const updatedCache = [...productState.cache, ...action.payload];
-
       return {
         ...productState,
         loading: false,
-        cache: updatedCache,
-        displayProduct: updatedCache,
+        cache: action.payload,
+        displayProduct: action.payload,
         error: null,
       };
     }
@@ -46,30 +44,32 @@ function productsReducer(productState, action) {
         ...productState,
         currentPage: action.payload,
       };
+
     case "SHOW_CATEGORY":
       return {
         ...productState,
         showCategory: action.payload,
       };
 
-    case "SET_CATEGORY":
+    case "SET_CATEGORY": {
       return {
         ...productState,
         selectedCategory: action.payload,
       };
+    }
 
     case "FILTER_PRODUCTS": {
       const { search, category } = action.payload;
 
       let filtered = [...productState.cache];
 
-      if (category !== "all") {
+      if (category && category !== "all") {
         filtered = filtered.filter((p) => p.category === category);
       }
 
       if (search) {
         filtered = filtered.filter((p) =>
-          p.searchKey.toLowerCase().includes(search.toLowerCase()),
+          (p.name || "").toLowerCase().includes(search.toLowerCase())
         );
       }
 
@@ -90,11 +90,10 @@ export const ProductsContext = createContext();
 export const ProductsProvider = ({ children }) => {
   const [productState, productDispatch] = useReducer(
     productsReducer,
-    initialState,
+    initialState
   );
 
-  const { displayProduct, cache, currentPage, selectedCategory } = productState;
-  // console.log(selectedCategory, "selectedcatogory");
+  const { displayProduct, currentPage } = productState;
 
   useEffect(() => {
     const loadProducts = async () => {
@@ -118,6 +117,7 @@ export const ProductsProvider = ({ children }) => {
     loadProducts();
   }, []);
 
+  // pagination logic
   const start = (currentPage - 1) * ITEMS_PER_PAGE;
   const end = start + ITEMS_PER_PAGE;
 
@@ -127,7 +127,6 @@ export const ProductsProvider = ({ children }) => {
     <ProductsContext.Provider
       value={{
         ...productState,
-        cache,
         productDispatch,
         visibleProducts,
       }}
