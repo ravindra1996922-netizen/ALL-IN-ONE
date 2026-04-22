@@ -1,27 +1,56 @@
-import { useAuth } from "./context/authContext/useAuth";
+import { Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+import HomePage from "./pages/HomePage";
+import Investment from "./pages/Investment";
+import Shopping from "./pages/Shopping";
+import OrderFood from "./pages/OrderFood";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
-import HomePage from "./pages/HomePage";
+import Navbar from "./components/layout/Navbar";
+import Footer from "./components/layout/Footer";
+import CategoryPage from "./pages/CategoryPage";
+import CartsPage from "./pages/CartsPage";
+import DetailsPage from "./pages/DetailsPage";
 
-function AppContent() {
-  const { user, page } = useAuth();
+// ✅ ADD THIS
+// import FoodCategoryPage from "./pages/FoodCategoryPage";
 
-  if (user) return <HomePage />;
-
-  switch (page) {
-    case "login":
-      return <LoginPage />;
-    case "register":
-      return <SignupPage />;
-    default:
-      return <HomePage />;
-  }
-}
-
-export default function App() {
+function App() {
   return (
     <>
-      <AppContent></AppContent>
+      <Navbar />
+
+      <ToastContainer
+        position="bottom-center"
+        autoClose={2000}
+        theme="colored"
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+      />
+
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/invest" element={<Investment />} />
+        <Route path="/shopping" element={<Shopping />} />
+        <Route path="/orderFood" element={<OrderFood />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/cart" element={<CartsPage />} />
+
+        <Route
+          path="/category/:name"
+          element={<CategoryPage type="shopping" />}
+        />
+        <Route path="/food/:name" element={<CategoryPage type="food" />} />
+        <Route path="/details/:type/:id" element={<DetailsPage />} />
+      </Routes>
+
+      <Footer />
     </>
   );
 }
+
+export default App;

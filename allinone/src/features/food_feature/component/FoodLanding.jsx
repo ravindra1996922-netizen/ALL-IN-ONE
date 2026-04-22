@@ -1,0 +1,186 @@
+import React, { useEffect, useState } from "react";
+import { useFood } from "../../../context/foodContext/useFood";
+import { buildLandingData } from "../food-model/foodModel";
+import FeatureCard from "../../../components/ui/FeatureCard";
+import FilterBar from "../../../components/ui/FilterBar";
+import { useNavigate } from "react-router-dom";
+import { FaShoppingCart } from "react-icons/fa";
+import { useCart } from "../../../context/cartContext/useCart";
+import { useAuth } from "../../../context/authContext/useAuth";
+
+// ✅ NEW: group by category (FULL DATA)
+const groupByCategory = (data) => {
+  const result = {};
+
+  data.forEach((item) => {
+    if (!result[item.category]) {
+      result[item.category] = [];
+    }
+    result[item.category].push(item);
+  });
+
+  return result;
+};
+
+const FoodLanding = () => {
+  const {
+    foodCache,
+    displayFoods,
+    loading,
+    error,
+    selectedCategory,
+    foodDispatcher,
+  } = useFood();
+
+  const [searchFood, setSearchFood] = useState("");
+  const navigate = useNavigate();
+  const { cartDispatch } = useCart();
+  const { user } = useAuth();
+  const userId = user?.user?.id;
+
+  // ✅ SEARCH MODE CHECK
+  const isSearching = searchFood.trim() !== "";
+
+  // ✅ FINAL DATA LOGIC
+  const previewData = isSearching
+    ? groupByCategory(displayFoods)
+    : buildLandingData(foodCache);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      foodDispatcher({
+        type: "FILTER_FOOD",
+        payload: {
+          search: searchFood,
+          category: selectedCategory,
+        },
+      });
+    }, 300);
+
+    return () => clearTimeout(timer);
+  }, [searchFood, selectedCategory]);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
+  const scrollToProducts = () => {
+    document
+      .getElementById("products-section")
+      ?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleAddToCart = async (item) => {
+    if (!userId) {
+      toast.error("Please login first");
+      return;
+    }
+
+    const updatedCart = await addToCartApi(userId, item);
+
+    cartDispatch({
+      type: "SET_CART",
+      payload: updatedCart,
+    });
+
+    toast.success("Item added to cart");
+  };
+  return (
+    <>
+      <FilterBar
+        searchText={searchFood}
+        setSearchText={setSearchFood}
+        data={foodCache}
+        dispatch={foodDispatcher}
+        activeCategory={selectedCategory}
+        type="food"
+      />
+
+      <div className="container my-4">
+        <div className="bg-dark text-white p-5 rounded mb-5 text-center">
+          <h1 className="fw-bold">Discover Your Perfect Products</h1>
+
+          <p className="lead mb-2">
+            Explore trending items across all categories
+          </p>
+
+          <p className="text-light mb-4">
+            Best deals on fashion, electronics, home essentials & more — all in
+            one place.
+          </p>
+
+          <button
+            className="btn btn-warning fw-bold"
+            onClick={scrollToProducts}
+          >
+            <FaShoppingCart /> Start Shopping
+          </button>
+        </div>
+        <div id="products-section">
+          {Object.keys(previewData)
+            .filter((cat) => previewData[cat].length > 0)
+            .map((category) => (
+              <div key={category} className="mb-5">
+                {/* ✅ FIX: HEADING + VIEW ALL SAME ROW */}
+                <div className="d-flex justify-content-between align-items-center mb-3">
+                  <h4 className="text-capitalize mb-0">{category}</h4>
+
+                  <button
+                    className="btn btn-outline-primary btn-sm"
+                    onClick={() => navigate(`/food/${category}`)}
+                  >
+                    View All
+                  </button>
+                </div>
+
+                {/* ✅ PRODUCTS */}
+                <div className="row">
+                  {previewData[category].map((item) => (
+                    <div className="col-md-3 mb-4" key={item.id}>
+                      <FeatureCard
+                        title={item.name}
+                        image={item.image}
+                        onClick={() => navigate(`/details/food/${item.id}`)}
+                      >
+                        <div className="d-flex flex-column h-100">
+                          {/* ✅ PRICE (ONLY FOR NON-RECIPE) */}
+                          {item.type !== "recipe" && item.price && (
+                            <p className="text-success fw-bold text-center mb-2">
+                              ₹{item.price}
+                            </p>
+                          )}
+
+                          {/* ✅ BUTTON */}
+                          {item.type === "recipe" ? (
+                            <button
+                              className="btn btn-info mt-auto w-100"
+                              onClick={(e) => {
+                                e.stopPropagation(); // 🔥 important
+                                navigate(`/details/food/${item.id}`);
+                              }}
+                            >
+                              Show Recipe
+                            </button>
+                          ) : (
+                            <button
+                              className="btn btn-dark mt-auto w-100"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                handleAddToCart(item); // ✅ ADD THIS
+                              }}
+                            >
+                              Add to Cart
+                            </button>
+                          )}
+                        </div>
+                      </FeatureCard>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default FoodLanding;
