@@ -1,22 +1,18 @@
-import { createContext, useState, useContext, useEffect } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 const ThemeContext = createContext();
 
-// custom hook
 export const useTheme = () => useContext(ThemeContext);
 
-// provider (IMPORTANT: Capital letter)
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState("light");
 
-  // toggle function
   const toggleTheme = () => {
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
   };
 
-  // apply theme to body
   useEffect(() => {
-    document.body.className = theme;
+    document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
 
   return (
