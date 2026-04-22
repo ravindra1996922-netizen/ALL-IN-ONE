@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { useFood } from "../../../context/foodContext/useFood";
 import { buildLandingData } from "../food-model/foodModel";
@@ -6,6 +5,8 @@ import FeatureCard from "../../../components/ui/FeatureCard";
 import FilterBar from "../../../components/ui/FilterBar";
 import { useNavigate } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
+import { useCart } from "../../../context/cartContext/useCart";
+import { useAuth } from "../../../context/authContext/useAuth";
 
 // ✅ NEW: group by category (FULL DATA)
 const groupByCategory = (data) => {
@@ -33,14 +34,17 @@ const FoodLanding = () => {
 
   const [searchFood, setSearchFood] = useState("");
   const navigate = useNavigate();
+  const { cartDispatch } = useCart();
+  const { user } = useAuth();
+  const userId = user?.user?.id;
 
   // ✅ SEARCH MODE CHECK
   const isSearching = searchFood.trim() !== "";
 
   // ✅ FINAL DATA LOGIC
   const previewData = isSearching
-    ? groupByCategory(displayFoods) // 🔥 FULL DATA (search)
-    : buildLandingData(foodCache); // 🔥 PREVIEW (normal)
+    ? groupByCategory(displayFoods)
+    : buildLandingData(foodCache);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -64,6 +68,21 @@ const FoodLanding = () => {
       ?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const handleAddToCart = async (item) => {
+    if (!userId) {
+      toast.error("Please login first");
+      return;
+    }
+
+    const updatedCart = await addToCartApi(userId, item);
+
+    cartDispatch({
+      type: "SET_CART",
+      payload: updatedCart,
+    });
+
+    toast.success("Item added to cart");
+  };
   return (
     <>
       <FilterBar
@@ -116,16 +135,42 @@ const FoodLanding = () => {
                 <div className="row">
                   {previewData[category].map((item) => (
                     <div className="col-md-3 mb-4" key={item.id}>
-                      <FeatureCard title={item.name} image={item.image}>
-                        {item.type === "recipe" ? (
-                          <button className="btn btn-info w-100">
-                            Show Recipe
-                          </button>
-                        ) : (
-                          <button className="btn btn-dark w-100">
-                            Add to Cart
-                          </button>
-                        )}
+                      <FeatureCard
+                        title={item.name}
+                        image={item.image}
+                        onClick={() => navigate(`/details/food/${item.id}`)}
+                      >
+                        <div className="d-flex flex-column h-100">
+                          {/* ✅ PRICE (ONLY FOR NON-RECIPE) */}
+                          {item.type !== "recipe" && item.price && (
+                            <p className="text-success fw-bold text-center mb-2">
+                              ₹{item.price}
+                            </p>
+                          )}
+
+                          {/* ✅ BUTTON */}
+                          {item.type === "recipe" ? (
+                            <button
+                              className="btn btn-info mt-auto w-100"
+                              onClick={(e) => {
+                                e.stopPropagation(); // 🔥 important
+                                navigate(`/details/food/${item.id}`);
+                              }}
+                            >
+                              Show Recipe
+                            </button>
+                          ) : (
+                            <button
+                              className="btn btn-dark mt-auto w-100"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                handleAddToCart(item); // ✅ ADD THIS
+                              }}
+                            >
+                              Add to Cart
+                            </button>
+                          )}
+                        </div>
                       </FeatureCard>
                     </div>
                   ))}

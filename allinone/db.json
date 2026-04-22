@@ -40,7 +40,495 @@
       "email": "kk@gmail.com",
       "password": "$2a$10$cw7Sg0SdUU.szkreH4eQj.kM383gJ9qxaJuOiC4XkVb4qTo/KEAnu",
       "name": "kk",
-      "id": 7
+      "id": 7,
+      "cart": [
+        {
+          "id": 201,
+          "title": "Daily Care Classic Face Wash",
+          "category": "beauty",
+          "subCategory": "male",
+          "brand": "Nivea",
+          "price": 255,
+          "discount": 5,
+          "rating": 4.1,
+          "stock": 6,
+          "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRmjAW4ksWECAaczrRWaBfCb_vQJ1p1IKyfBj3Ii3pfUF9Gbc6HmbyAznx8xHKH8qqQpKtBg4vu1tInweoZo7rRRUX8wdjSb25fcnnItr4mlhWAA56HL27pbjgqCKkKgNnQ6bBRrRIeWgkx&usqp=CAc",
+          "searchKey": "daily care classic face wash nivea beauty skincare grooming self cosmetic cosmetics male men mens boys cleanser",
+          "qty": 1
+        },
+        {
+          "id": 202,
+          "title": "Fresh Cool Beard Oil",
+          "category": "beauty",
+          "subCategory": "male",
+          "brand": "Beardo",
+          "price": 311,
+          "discount": 8,
+          "rating": 4.2,
+          "stock": 8,
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoGcu4PiDgTx3QU4eCmsUPKYtQp0XQDkU1mg&s",
+          "searchKey": "fresh cool beard oil beardo beauty skincare grooming self care cosmetic cosmetics male men mens boys",
+          "qty": 1
+        },
+        {
+          "id": 91,
+          "title": "Pro Black Wireless Earbuds",
+          "category": "electronics",
+          "subCategory": "general",
+          "brand": "Lenovo",
+          "price": 18536,
+          "discount": 12,
+          "rating": 4.3,
+          "stock": 6,
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQk-QaqOBbZBhJYQaUIosws4Y1vmMMgMKRzA&s",
+          "searchKey": "pro black wireless earbuds lenovo electronics gadgets tech technology device devices accessories earbud earphones bluetooth audio tws",
+          "qty": 2
+        },
+        {
+          "id": 2,
+          "title": "Modern Black Cotton T-Shirt",
+          "category": "clothing",
+          "subCategory": "male",
+          "brand": "Levis",
+          "price": 931,
+          "discount": 8,
+          "rating": 4.2,
+          "stock": 8,
+          "image": "https://tse3.mm.bing.net/th/id/OIP.8Jl07l3Zw_oZ10Y_d7a2AwHaJQ?pid=Api&P=0&h=180",
+          "searchKey": "modern black cotton tshirt levis clothing clothes fashion wear outfit style male men mens boys tshirt ",
+          "qty": 7
+        },
+        {
+          "id": 3,
+          "title": "Essential White Casual Trouser",
+          "category": "clothing",
+          "subCategory": "male",
+          "brand": "Allen Solly",
+          "price": 997,
+          "discount": 10,
+          "rating": 4.3,
+          "stock": 10,
+          "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTXK3kGAR64TqZ2dKh1ao0YvqsA5bJUqjAuO2XEAHlNmu7N3XaaKuba7UdVmi_CvL2DByqaWRTOQ_LPEXc_ESiJz7LimyuZustaP0uoSHJOvWdlQnfVzmuxqg",
+          "searchKey": "essential white casual trouser allen solly allensolly clothing clothes apparel fashion wear outfit style male men mens boys trousers pants chinos bottomwear",
+          "qty": 1
+        },
+        {
+          "id": 1,
+          "name": "Paneer Butter Masala",
+          "category": "veg",
+          "image": "https://i.ytimg.com/vi/U1LVDFwi8qI/hqdefault.jpg",
+          "price": 300,
+          "type": "food",
+          "recipe": {
+            "cookTimeMinutes": 45,
+            "cookTimeCategory": "under45min",
+            "videoUrl": "https://youtube.com/watch?v=U1LVDFwi8qI",
+            "steps": [
+              {
+                "stepNumber": 1,
+                "title": "Prep main",
+                "ingredients": [
+                  {
+                    "name": "Paneer",
+                    "quantity": "200 g"
+                  },
+                  {
+                    "name": "Cream",
+                    "quantity": "2 tbsp"
+                  }
+                ],
+                "description": "In step 1 of Paneer Butter Masala, which is 'Prep main', the ingredients used are Paneer and Cream. First, use 200 g of Paneer at the start of the recipe to prepare the main ingredient. Finally, use 2 tbsp of Cream during the preparation stage to prepare the supporting ingredient. Keep everything measured, cleaned, and organized in this stage so the later cooking steps move smoothly without interruption."
+              },
+              {
+                "stepNumber": 2,
+                "title": "Make base",
+                "ingredients": [
+                  {
+                    "name": "Butter",
+                    "quantity": "1 tbsp"
+                  },
+                  {
+                    "name": "Onion",
+                    "quantity": "2 medium"
+                  },
+                  {
+                    "name": "Tomato",
+                    "quantity": "2 medium"
+                  },
+                  {
+                    "name": "Ginger garlic",
+                    "quantity": "1 tbsp"
+                  }
+                ],
+                "description": "In step 2 of Paneer Butter Masala, which is 'Make base', the ingredients used are Butter, Onion, Tomato, and Ginger garlic. First, use 1 tbsp of Butter when starting the pan to build the base. Next, use 2 medium of Onion after the cooking fat is heated to add body. Next, use 2 medium of Tomato after the onion has started to soften to form the gravy base. Finally, use 1 tbsp of Ginger garlic during the masala stage to add depth. Cook this stage patiently so the aromatics soften properly and the base develops a balanced flavor before you move ahead."
+              },
+              {
+                "stepNumber": 3,
+                "title": "Simmer",
+                "ingredients": [
+                  {
+                    "name": "Tomato cashew puree",
+                    "quantity": "1 cup"
+                  },
+                  {
+                    "name": "Salt",
+                    "quantity": "1 tsp"
+                  },
+                  {
+                    "name": "Kasuri methi",
+                    "quantity": "1 tsp"
+                  }
+                ],
+                "description": "In step 3 of Paneer Butter Masala, which is 'Simmer', the ingredients used are Tomato cashew puree, Salt, and Kasuri methi. First, use 1 cup of Tomato cashew puree after the base is ready to set the body and consistency. Next, use 1 tsp of Salt during simmering to set the seasoning. Finally, use 1 tsp of Kasuri methi during simmering to add the signature flavor. Maintain controlled heat in this stage so the mixture cooks evenly and each added ingredient integrates without losing its intended texture."
+              },
+              {
+                "stepNumber": 4,
+                "title": "Finish and serve",
+                "ingredients": [
+                  {
+                    "name": "Prepared Paneer",
+                    "quantity": "200 g"
+                  },
+                  {
+                    "name": "Coriander leaves",
+                    "quantity": "1 tbsp"
+                  },
+                  {
+                    "name": "Naan or roti",
+                    "quantity": "1 portion"
+                  }
+                ],
+                "description": "In step 4 of Paneer Butter Masala, which is 'Finish and serve', the ingredients used are Prepared Paneer, Coriander leaves, and Naan or roti. First, use 200 g of Prepared Paneer in the last cooking stage to finish the dish. Next, use 1 tbsp of Coriander leaves just before serving to garnish the dish. Finally, use 1 portion of Naan or roti as a side accompaniment to complete the serving style. Keep this stage short and controlled so the main ingredient does not overcook, the garnish stays fresh, and the serving side is ready at the right moment."
+              }
+            ]
+          },
+          "quantity": 1,
+          "qty": 7
+        },
+        {
+          "id": "Paneer",
+          "title": "Paneer",
+          "price": 10,
+          "image": "https://i.ytimg.com/vi/U1LVDFwi8qI/hqdefault.jpg",
+          "qty": 11
+        },
+        {
+          "id": "Cream",
+          "title": "Cream",
+          "price": 10,
+          "image": "https://i.ytimg.com/vi/U1LVDFwi8qI/hqdefault.jpg",
+          "qty": 10
+        },
+        {
+          "id": "ingredient-Cream-0.20370966428275994",
+          "title": "Cream",
+          "quantity": "2 tbsp",
+          "price": 50,
+          "image": "https://i.ytimg.com/vi/U1LVDFwi8qI/hqdefault.jpg",
+          "qty": 1
+        },
+        {
+          "id": "ingredient-Paneer-0.02058061732864913",
+          "title": "Paneer",
+          "quantity": "200 g",
+          "price": 50,
+          "image": "https://i.ytimg.com/vi/U1LVDFwi8qI/hqdefault.jpg",
+          "qty": 1
+        },
+        {
+          "id": "ingredient-Naan-or-roti-0.44608332165097353",
+          "title": "Naan or roti",
+          "quantity": "1 portion",
+          "price": 50,
+          "image": "https://i.ytimg.com/vi/U1LVDFwi8qI/hqdefault.jpg",
+          "qty": 1
+        },
+        {
+          "id": "ingredient-Coriander-leaves-0.7475231371065391",
+          "title": "Coriander leaves",
+          "quantity": "1 tbsp",
+          "price": 50,
+          "image": "https://i.ytimg.com/vi/U1LVDFwi8qI/hqdefault.jpg",
+          "qty": 1
+        },
+        {
+          "id": 6,
+          "name": "Chicken Curry",
+          "category": "nonveg",
+          "image": "https://i.ytimg.com/vi/jwyge5daKUQ/hqdefault.jpg",
+          "price": 300,
+          "type": "food",
+          "recipe": {
+            "cookTimeMinutes": 45,
+            "cookTimeCategory": "under45min",
+            "videoUrl": "https://youtube.com/watch?v=jwyge5daKUQ",
+            "steps": [
+              {
+                "stepNumber": 1,
+                "title": "Prep main protein",
+                "ingredients": [
+                  {
+                    "name": "Chicken",
+                    "quantity": "500 g"
+                  },
+                  {
+                    "name": "Curd",
+                    "quantity": "2 tbsp"
+                  }
+                ],
+                "description": "In step 1 of Chicken Curry, prepare 500 g of Chicken first so the main protein is cleaned, portioned, and ready for cooking. Then measure 2 tbsp of Curd and keep it ready because it supports marination, richness, or flavor balance later in the recipe. This stage matters because the protein and the supporting ingredient must both be ready before the curry base is built."
+              },
+              {
+                "stepNumber": 2,
+                "title": "Build the curry base",
+                "ingredients": [
+                  {
+                    "name": "Oil",
+                    "quantity": "1 tbsp"
+                  },
+                  {
+                    "name": "Onion",
+                    "quantity": "2 medium"
+                  },
+                  {
+                    "name": "Tomato",
+                    "quantity": "2 medium"
+                  },
+                  {
+                    "name": "Ginger garlic",
+                    "quantity": "1 tbsp"
+                  }
+                ],
+                "description": "In step 2 of Chicken Curry, heat 1 tbsp of Oil first to start the base. Next, add 2 medium Onion and cook it until it softens and creates body. Then add 2 medium Tomato so the curry gains moisture and a proper gravy foundation. Finally, add 1 tbsp of Ginger garlic so the base develops depth before the simmering stage."
+              },
+              {
+                "stepNumber": 3,
+                "title": "Simmer the gravy",
+                "ingredients": [
+                  {
+                    "name": "Onion tomato gravy",
+                    "quantity": "1 cup"
+                  },
+                  {
+                    "name": "Salt",
+                    "quantity": "1 tsp"
+                  },
+                  {
+                    "name": "Garam masala",
+                    "quantity": "0.5 tsp"
+                  }
+                ],
+                "description": "In step 3 of Chicken Curry, add 1 cup of Onion tomato gravy once the masala base is ready so the dish develops its main body and consistency. Season with 1 tsp of Salt so the gravy becomes balanced. Then add 0.5 tsp of Garam masala during simmering so the curry develops its final signature flavor and aroma. Keep the heat controlled so the sauce thickens evenly and does not burn."
+              },
+              {
+                "stepNumber": 4,
+                "title": "Finish and serve",
+                "ingredients": [
+                  {
+                    "name": "Prepared Chicken",
+                    "quantity": "500 g"
+                  },
+                  {
+                    "name": "Coriander leaves",
+                    "quantity": "1 tbsp"
+                  },
+                  {
+                    "name": "Rice",
+                    "quantity": "1 portion"
+                  }
+                ],
+                "description": "In step 4 of Chicken Curry, add the prepared 500 g of Chicken in the final cooking stage so the protein cooks through in the gravy and absorbs flavor. Sprinkle 1 tbsp of Coriander leaves just before serving to add freshness. Finally, serve the dish with 1 portion of Rice so the meal is complete and ready to eat."
+              }
+            ]
+          },
+          "qty": 1
+        },
+        {
+          "id": "Curd",
+          "title": "Curd",
+          "price": 10,
+          "image": "https://i.ytimg.com/vi/jwyge5daKUQ/hqdefault.jpg",
+          "qty": 1
+        },
+        {
+          "id": "Chicken",
+          "title": "Chicken",
+          "price": 10,
+          "image": "https://i.ytimg.com/vi/jwyge5daKUQ/hqdefault.jpg",
+          "qty": 3
+        },
+        {
+          "id": "Onion tomato gravy",
+          "title": "Onion tomato gravy",
+          "price": 10,
+          "image": "https://i.ytimg.com/vi/jwyge5daKUQ/hqdefault.jpg",
+          "qty": 1
+        },
+        {
+          "id": "Prepared Chicken",
+          "title": "Prepared Chicken",
+          "price": 10,
+          "image": "https://i.ytimg.com/vi/jwyge5daKUQ/hqdefault.jpg",
+          "qty": 1
+        },
+        {
+          "id": "recipe-4",
+          "name": "Kadai Paneer Recipe",
+          "category": "recipe",
+          "type": "recipe",
+          "image": "https://i.ytimg.com/vi/gBnHovVnNwo/hqdefault.jpg",
+          "cookTimeMinutes": 45,
+          "cookTimeCategory": "under45min",
+          "videoUrl": "https://youtube.com/watch?v=gBnHovVnNwo",
+          "steps": [
+            {
+              "stepNumber": 1,
+              "title": "Prep main",
+              "ingredients": [
+                {
+                  "id": 37,
+                  "name": "Paneer",
+                  "qty": 200,
+                  "unit": "g",
+                  "price": 90
+                },
+                {
+                  "id": 38,
+                  "name": "Capsicum",
+                  "qty": 1,
+                  "unit": "medium",
+                  "price": 8
+                }
+              ],
+              "description": "In step 1 of Kadai Paneer, which is 'Prep main', the ingredients used are Paneer and Capsicum. First, use 200 g of Paneer at the start of the recipe to prepare the main ingredient. Finally, use 1 medium of Capsicum during the preparation stage to prepare the supporting ingredient. Keep everything measured, cleaned, and organized in this stage so the later cooking steps move smoothly without interruption."
+            },
+            {
+              "stepNumber": 2,
+              "title": "Make base",
+              "ingredients": [
+                {
+                  "id": 39,
+                  "name": "Oil",
+                  "qty": 1,
+                  "unit": "tbsp",
+                  "price": 14
+                },
+                {
+                  "id": 40,
+                  "name": "Onion",
+                  "qty": 2,
+                  "unit": "medium",
+                  "price": 16
+                },
+                {
+                  "id": 41,
+                  "name": "Tomato",
+                  "qty": 2,
+                  "unit": "medium",
+                  "price": 16
+                },
+                {
+                  "id": 42,
+                  "name": "Ginger garlic",
+                  "qty": 1,
+                  "unit": "tbsp",
+                  "price": 6
+                }
+              ],
+              "description": "In step 2 of Kadai Paneer, which is 'Make base', the ingredients used are Oil, Onion, Tomato, and Ginger garlic. First, use 1 tbsp of Oil when starting the pan to build the base. Next, use 2 medium of Onion after the cooking fat is heated to add body. Next, use 2 medium of Tomato after the onion has started to soften to form the gravy base. Finally, use 1 tbsp of Ginger garlic during the masala stage to add depth. Cook this stage patiently so the aromatics soften properly and the base develops a balanced flavor before you move ahead."
+            },
+            {
+              "stepNumber": 3,
+              "title": "Simmer",
+              "ingredients": [
+                {
+                  "id": 43,
+                  "name": "Onion tomato gravy",
+                  "qty": 1,
+                  "unit": "cup",
+                  "price": 32
+                },
+                {
+                  "id": 44,
+                  "name": "Salt",
+                  "qty": 1,
+                  "unit": "tsp",
+                  "price": 1
+                },
+                {
+                  "id": 45,
+                  "name": "Kadai masala",
+                  "qty": 1,
+                  "unit": "tsp",
+                  "price": 4
+                }
+              ],
+              "description": "In step 3 of Kadai Paneer, which is 'Simmer', the ingredients used are Onion tomato gravy, Salt, and Kadai masala. First, use 1 cup of Onion tomato gravy after the base is ready to set the body and consistency. Next, use 1 tsp of Salt during simmering to set the seasoning. Finally, use 1 tsp of Kadai masala during simmering to add the signature flavor. Maintain controlled heat in this stage so the mixture cooks evenly and each added ingredient integrates without losing its intended texture."
+            },
+            {
+              "stepNumber": 4,
+              "title": "Finish and serve",
+              "ingredients": [
+                {
+                  "id": 46,
+                  "name": "Prepared Paneer",
+                  "qty": 200,
+                  "unit": "g",
+                  "price": 90
+                },
+                {
+                  "id": 47,
+                  "name": "Coriander leaves",
+                  "qty": 1,
+                  "unit": "tbsp",
+                  "price": 3
+                },
+                {
+                  "id": 48,
+                  "name": "Roti",
+                  "qty": 1,
+                  "unit": "portion",
+                  "price": 15
+                }
+              ],
+              "description": "In step 4 of Kadai Paneer, which is 'Finish and serve', the ingredients used are Prepared Paneer, Coriander leaves, and Roti. First, use 200 g of Prepared Paneer in the last cooking stage to finish the dish. Next, use 1 tbsp of Coriander leaves just before serving to garnish the dish. Finally, use 1 portion of Roti as a side accompaniment to complete the serving style. Keep this stage short and controlled so the main ingredient does not overcook, the garnish stays fresh, and the serving side is ready at the right moment."
+            }
+          ],
+          "qty": 1
+        },
+        {
+          "id": "Naan",
+          "title": "Naan",
+          "price": 10,
+          "image": "https://i.ytimg.com/vi/T9hQV22Uezw/hqdefault.jpg",
+          "qty": 1
+        },
+        {
+          "id": "Coriander leaves",
+          "title": "Coriander leaves",
+          "price": 10,
+          "image": "https://i.ytimg.com/vi/T9hQV22Uezw/hqdefault.jpg",
+          "qty": 1
+        },
+        {
+          "id": "Prepared Paneer",
+          "title": "Prepared Paneer",
+          "price": 10,
+          "image": "https://i.ytimg.com/vi/T9hQV22Uezw/hqdefault.jpg",
+          "qty": 1
+        },
+        {
+          "id": "Butter",
+          "title": "Butter",
+          "price": 10,
+          "image": "https://i.ytimg.com/vi/U1LVDFwi8qI/hqdefault.jpg",
+          "qty": 1
+        }
+      ],
+      "portfolio": {
+        "totalShares": 0,
+        "totalInvested": 0
+      }
     },
     {
       "email": "dd@gmail.com",
@@ -73,44 +561,28 @@
       "id": 12
     },
     {
-      "email": "nayana@gmail.com",
-      "password": "$2a$10$iXNrhIH4sDxgfviZXqRnDecHrQZKGhjnSYQePmiczBU11bBRFmNxK",
-      "name": "Nayana S R",
-      "id": 13,
-      "cart": [
-        {
-          "id": 2,
-          "title": "Modern Black Cotton T-Shirt",
-          "category": "clothing",
-          "subCategory": "male",
-          "brand": "Levis",
-          "price": 931,
-          "discount": 8,
-          "rating": 4.2,
-          "stock": 8,
-          "image": "https://tse3.mm.bing.net/th/id/OIP.8Jl07l3Zw_oZ10Y_d7a2AwHaJQ?pid=Api&P=0&h=180",
-          "searchKey": "modern black cotton tshirt levis clothing clothes fashion wear outfit style male men mens boys tshirt ",
-          "qty": 1
-        },
-        {
-          "id": 83,
-          "title": "Max Blue Wireless Earbuds",
-          "category": "electronics",
-          "subCategory": "general",
-          "brand": "Lenovo",
-          "price": 6145,
-          "discount": 10,
-          "rating": 4.3,
-          "stock": 10,
-          "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTPD8j_QYKQmRWYBnGPBBmVHCDveHLUqCFFSraSE5PA3mkgqRTOWgKFn11a0M1s240iFCcDlXcGIREmMvrkR7CFlxvS7RNS924Igk5KOjMFkLUin44OFGJGN-9-9knlO1CkNiX3WBU&usqp=CAc",
-          "searchKey": "max blue wireless earbuds lenovo electronics gadgets tech technology device devices accessories earbud earphones bluetooth audio tws",
-          "qty": 1
-        }
-      ],
-      "portfolio": {
-        "totalShares": 20,
-        "totalInvested": 89660
-      }
+      "email": "qwerty12@gmail.com",
+      "password": "$2a$10$CAdWRFdDZbui118YqVQaNOcWUsTS4gcS2vtKzhLajGA0GBfXFH/zC",
+      "name": "qwerty",
+      "id": 13
+    },
+    {
+      "email": "a@gmail.com",
+      "password": "$2a$10$SXLQTFzoBmDdoHkXVxEuxuoTfsgJ8CQ1scsmEWKqBdPQ0GDfTNLRW",
+      "name": "a",
+      "id": 14
+    },
+    {
+      "email": "qq@gmail.com",
+      "password": "$2a$10$U2Rxi0XGytQa41I8WElKkusgNimVL309JwYHltJAJuUMkfl83b//m",
+      "name": "kk",
+      "id": 15
+    },
+    {
+      "email": "q@gmail.com",
+      "password": "$2a$10$Rwe36qO0gxTJS5GhZLkXWOWvHuBxIt1Fk6JgM1EzcgjUMxH6eo6Vu",
+      "name": "q",
+      "id": 16
     }
   ],
   "userStock": [],

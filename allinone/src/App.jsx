@@ -12,6 +12,7 @@ import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import CategoryPage from "./pages/CategoryPage";
 import CartsPage from "./pages/CartsPage";
+import DetailsPage from "./pages/DetailsPage";
 
 // ✅ ADD THIS
 // import FoodCategoryPage from "./pages/FoodCategoryPage";
@@ -44,6 +45,7 @@ function App() {
           element={<CategoryPage type="shopping" />}
         />
         <Route path="/food/:name" element={<CategoryPage type="food" />} />
+        <Route path="/details/:type/:id" element={<DetailsPage />} />
       </Routes>
 
       <Footer />

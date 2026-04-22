@@ -65,7 +65,7 @@ function reducer(state, action) {
 
 const FoodProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialValue);
-  console.log(state.foodCache, "fc");
+  console.log(state.foodCache[0], "fc");
 
   useEffect(() => {
     const loadData = async () => {
