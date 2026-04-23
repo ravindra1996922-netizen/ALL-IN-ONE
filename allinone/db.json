@@ -104,7 +104,7 @@
           "title": "Paneer",
           "price": 10,
           "image": "https://i.ytimg.com/vi/U1LVDFwi8qI/hqdefault.jpg",
-          "qty": 3
+          "qty": 4
         },
         {
           "id": 1,
@@ -139,6 +139,20 @@
           "title": "Coriander leaves",
           "price": 10,
           "image": "https://i.ytimg.com/vi/cjGDsV6FvNE/hqdefault.jpg",
+          "qty": 1
+        },
+        {
+          "id": "Cream",
+          "title": "Cream",
+          "price": 10,
+          "image": "https://i.ytimg.com/vi/U1LVDFwi8qI/hqdefault.jpg",
+          "qty": 1
+        },
+        {
+          "id": "Kadai masala",
+          "title": "Kadai masala",
+          "price": 10,
+          "image": "https://i.ytimg.com/vi/gBnHovVnNwo/hqdefault.jpg",
           "qty": 1
         }
       ],

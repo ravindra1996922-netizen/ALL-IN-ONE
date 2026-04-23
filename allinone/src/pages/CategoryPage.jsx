@@ -107,6 +107,7 @@ const CategoryPage = ({ type = "shopping" }) => {
                     title={item.title || item.name}
                     image={item.image}
                     onClick={() => {
+                      window.scrollTo({ top: 0, behavior: "smooth" });
                       if (type === "food") {
                         navigate(`/details/food/${item.id}`);
                       }
@@ -126,6 +127,7 @@ const CategoryPage = ({ type = "shopping" }) => {
                           onClick={(e) => {
                             e.stopPropagation(); // 🔥 important
                             navigate(`/details/food/${item.id}`);
+                            window.scrollTo({ top: 0, behavior: "smooth" });
                           }}
                         >
                           Show Recipe

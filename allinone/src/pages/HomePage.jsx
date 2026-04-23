@@ -208,9 +208,14 @@ const HomePage = () => {
           <div className="row g-4">
 
             {/* Clothing */}
-            <div className="col-lg-6">
+            <div className="col-lg-6"
+              onClick={()=> {
+                  navigate("/shopping")
+                  productDispatch({type: "SET_CATEGORY", payload: "all"})
+                }}>
               <div className="border rounded-4 p-3 h-100" style={{ background: '#fdfcfa' }}>
-                <h5 className="mb-3">🛍️ Products</h5>
+                <h5 className="mb-3"
+                >🛍️ Products</h5>
                 <div id="carouselExample" className="carousel slide">
                   <div className="carousel-inner">
 

@@ -356,7 +356,9 @@ const DetailsPage = () => {
                 <div
                   key={rel.id}
                   className="col-lg-3 col-md-6"
-                  onClick={() => navigate(`/details/${type}/${rel.id}`)}
+                  onClick={() => {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                    navigate(`/details/${type}/${rel.id}`)}}
                   style={{ cursor: "pointer" }}
                 >
                   <div className="card border rounded-3 overflow-hidden h-100">

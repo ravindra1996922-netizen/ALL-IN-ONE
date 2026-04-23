@@ -141,7 +141,9 @@ const FoodLanding = () => {
                       <FeatureCard
                         title={item.name}
                         image={item.image}
-                        onClick={() => navigate(`/details/food/${item.id}`)}
+                        onClick={() =>{
+                          window.scrollTo({ top: 0, behavior: "smooth" });
+                          navigate(`/details/food/${item.id}`)}}
                       >
                         <div className="d-flex flex-column h-100">
                           {/* ✅ PRICE (ONLY FOR NON-RECIPE) */}
