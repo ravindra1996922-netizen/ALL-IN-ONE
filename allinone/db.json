@@ -171,7 +171,193 @@
       "portfolio": {
         "totalShares": 20,
         "totalInvested": 43440
-      }
+      },
+      "cart": [
+        {
+          "id": 4,
+          "name": "Kadai Paneer",
+          "category": "veg",
+          "image": "https://i.ytimg.com/vi/gBnHovVnNwo/hqdefault.jpg",
+          "price": 260,
+          "type": "food",
+          "recipe": {
+            "cookTimeMinutes": 45,
+            "cookTimeCategory": "under45min",
+            "videoUrl": "https://youtube.com/watch?v=gBnHovVnNwo",
+            "steps": [
+              {
+                "stepNumber": 1,
+                "title": "Prep main",
+                "ingredients": [
+                  {
+                    "name": "Paneer",
+                    "quantity": "200 g"
+                  },
+                  {
+                    "name": "Capsicum",
+                    "quantity": "1 medium"
+                  }
+                ],
+                "description": "In step 1 of Kadai Paneer, which is 'Prep main', the ingredients used are Paneer and Capsicum. First, use 200 g of Paneer at the start of the recipe to prepare the main ingredient. Finally, use 1 medium of Capsicum during the preparation stage to prepare the supporting ingredient. Keep everything measured, cleaned, and organized in this stage so the later cooking steps move smoothly without interruption."
+              },
+              {
+                "stepNumber": 2,
+                "title": "Make base",
+                "ingredients": [
+                  {
+                    "name": "Oil",
+                    "quantity": "1 tbsp"
+                  },
+                  {
+                    "name": "Onion",
+                    "quantity": "2 medium"
+                  },
+                  {
+                    "name": "Tomato",
+                    "quantity": "2 medium"
+                  },
+                  {
+                    "name": "Ginger garlic",
+                    "quantity": "1 tbsp"
+                  }
+                ],
+                "description": "In step 2 of Kadai Paneer, which is 'Make base', the ingredients used are Oil, Onion, Tomato, and Ginger garlic. First, use 1 tbsp of Oil when starting the pan to build the base. Next, use 2 medium of Onion after the cooking fat is heated to add body. Next, use 2 medium of Tomato after the onion has started to soften to form the gravy base. Finally, use 1 tbsp of Ginger garlic during the masala stage to add depth. Cook this stage patiently so the aromatics soften properly and the base develops a balanced flavor before you move ahead."
+              },
+              {
+                "stepNumber": 3,
+                "title": "Simmer",
+                "ingredients": [
+                  {
+                    "name": "Onion tomato gravy",
+                    "quantity": "1 cup"
+                  },
+                  {
+                    "name": "Salt",
+                    "quantity": "1 tsp"
+                  },
+                  {
+                    "name": "Kadai masala",
+                    "quantity": "1 tsp"
+                  }
+                ],
+                "description": "In step 3 of Kadai Paneer, which is 'Simmer', the ingredients used are Onion tomato gravy, Salt, and Kadai masala. First, use 1 cup of Onion tomato gravy after the base is ready to set the body and consistency. Next, use 1 tsp of Salt during simmering to set the seasoning. Finally, use 1 tsp of Kadai masala during simmering to add the signature flavor. Maintain controlled heat in this stage so the mixture cooks evenly and each added ingredient integrates without losing its intended texture."
+              },
+              {
+                "stepNumber": 4,
+                "title": "Finish and serve",
+                "ingredients": [
+                  {
+                    "name": "Prepared Paneer",
+                    "quantity": "200 g"
+                  },
+                  {
+                    "name": "Coriander leaves",
+                    "quantity": "1 tbsp"
+                  },
+                  {
+                    "name": "Roti",
+                    "quantity": "1 portion"
+                  }
+                ],
+                "description": "In step 4 of Kadai Paneer, which is 'Finish and serve', the ingredients used are Prepared Paneer, Coriander leaves, and Roti. First, use 200 g of Prepared Paneer in the last cooking stage to finish the dish. Next, use 1 tbsp of Coriander leaves just before serving to garnish the dish. Finally, use 1 portion of Roti as a side accompaniment to complete the serving style. Keep this stage short and controlled so the main ingredient does not overcook, the garnish stays fresh, and the serving side is ready at the right moment."
+              }
+            ]
+          },
+          "qty": 9
+        },
+        {
+          "id": 2,
+          "name": "Shahi Paneer",
+          "category": "veg",
+          "image": "https://i.ytimg.com/vi/T9hQV22Uezw/hqdefault.jpg",
+          "price": 290,
+          "type": "food",
+          "recipe": {
+            "cookTimeMinutes": 45,
+            "cookTimeCategory": "under45min",
+            "videoUrl": "https://youtube.com/watch?v=T9hQV22Uezw",
+            "steps": [
+              {
+                "stepNumber": 1,
+                "title": "Prep main",
+                "ingredients": [
+                  {
+                    "name": "Paneer",
+                    "quantity": "200 g"
+                  },
+                  {
+                    "name": "Milk",
+                    "quantity": "0.25 cup"
+                  }
+                ],
+                "description": "In step 1 of Shahi Paneer, which is 'Prep main', the ingredients used are Paneer and Milk. First, use 200 g of Paneer at the start of the recipe to prepare the main ingredient. Finally, use 0.25 cup of Milk during the preparation stage to prepare the supporting ingredient. Keep everything measured, cleaned, and organized in this stage so the later cooking steps move smoothly without interruption."
+              },
+              {
+                "stepNumber": 2,
+                "title": "Make base",
+                "ingredients": [
+                  {
+                    "name": "Butter",
+                    "quantity": "1 tbsp"
+                  },
+                  {
+                    "name": "Onion",
+                    "quantity": "2 medium"
+                  },
+                  {
+                    "name": "Tomato",
+                    "quantity": "2 medium"
+                  },
+                  {
+                    "name": "Ginger garlic",
+                    "quantity": "1 tbsp"
+                  }
+                ],
+                "description": "In step 2 of Shahi Paneer, which is 'Make base', the ingredients used are Butter, Onion, Tomato, and Ginger garlic. First, use 1 tbsp of Butter when starting the pan to build the base. Next, use 2 medium of Onion after the cooking fat is heated to add body. Next, use 2 medium of Tomato after the onion has started to soften to form the gravy base. Finally, use 1 tbsp of Ginger garlic during the masala stage to add depth. Cook this stage patiently so the aromatics soften properly and the base develops a balanced flavor before you move ahead."
+              },
+              {
+                "stepNumber": 3,
+                "title": "Simmer",
+                "ingredients": [
+                  {
+                    "name": "Cashew gravy",
+                    "quantity": "1 cup"
+                  },
+                  {
+                    "name": "Salt",
+                    "quantity": "1 tsp"
+                  },
+                  {
+                    "name": "Cardamom powder",
+                    "quantity": "0.25 tsp"
+                  }
+                ],
+                "description": "In step 3 of Shahi Paneer, which is 'Simmer', the ingredients used are Cashew gravy, Salt, and Cardamom powder. First, use 1 cup of Cashew gravy after the base is ready to set the body and consistency. Next, use 1 tsp of Salt during simmering to set the seasoning. Finally, use 0.25 tsp of Cardamom powder during simmering to add the signature flavor. Maintain controlled heat in this stage so the mixture cooks evenly and each added ingredient integrates without losing its intended texture."
+              },
+              {
+                "stepNumber": 4,
+                "title": "Finish and serve",
+                "ingredients": [
+                  {
+                    "name": "Prepared Paneer",
+                    "quantity": "200 g"
+                  },
+                  {
+                    "name": "Coriander leaves",
+                    "quantity": "1 tbsp"
+                  },
+                  {
+                    "name": "Naan",
+                    "quantity": "1 portion"
+                  }
+                ],
+                "description": "In step 4 of Shahi Paneer, which is 'Finish and serve', the ingredients used are Prepared Paneer, Coriander leaves, and Naan. First, use 200 g of Prepared Paneer in the last cooking stage to finish the dish. Next, use 1 tbsp of Coriander leaves just before serving to garnish the dish. Finally, use 1 portion of Naan as a side accompaniment to complete the serving style. Keep this stage short and controlled so the main ingredient does not overcook, the garnish stays fresh, and the serving side is ready at the right moment."
+              }
+            ]
+          },
+          "qty": 1
+        }
+      ]
     }
   ],
   "userStock": [],
