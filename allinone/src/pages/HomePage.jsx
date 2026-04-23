@@ -280,7 +280,7 @@ const HomePage = () => {
                   navigate("/orderFood")
                   foodDispatcher({type: "SET_CATEGORY", payload: "all"})
                    window.scrollTo({ top: 0, behavior: "smooth" });
-                }}>
+                }} >
                 <h5 className="mb-3">🍴 Food </h5>
 
                 <div id="foodCarousel" className="carousel slide">
@@ -363,7 +363,12 @@ const HomePage = () => {
             </div>
 
 
-            <div className="col-lg-6">
+            <div className="col-lg-6"
+            onClick={()=> {
+                  navigate("/food/recipe")
+                  foodDispatcher({type: "SET_CATEGORY", payload: "recipe"})
+                   window.scrollTo({ top: 0, behavior: "smooth" });
+                }}>
               <div className="border rounded-4 p-3 h-100" style={{ background: '#fdfcfa' }}>
                 <h5 className="mb-3">🧾 Recipe</h5>
 
