@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useProducts } from "../context/product_context/useProducts";
@@ -20,7 +19,6 @@ const DetailsPage = () => {
   const { id, type } = useParams();
   const navigate = useNavigate();
   const [addedIngredients, setAddedIngredients] = useState([]);
-  const [expandedSteps, setExpandedSteps] = useState({ 0: true }); // First step open by default
 
   const { cartDispatch } = useCart();
   const { user } = useAuth();
@@ -40,15 +38,8 @@ const DetailsPage = () => {
 
   const item = data.find((d) => String(d.id) === String(id));
 
-  if (!item)
-    return (
-      <div className="container my-5 text-center">
-        <h4>Item not found</h4>
-        <button className="btn btn-primary mt-3" onClick={() => navigate(-1)}>
-          Go Back
-        </button>
-      </div>
-    );
+
+  const recipeData = item.recipe || item;
 
   const getEmbed = (url) => {
     if (!url) return null;
@@ -56,7 +47,7 @@ const DetailsPage = () => {
     return match ? `https://www.youtube.com/embed/${match[1]}` : url;
   };
 
-  const videoUrl = getEmbed(item.videoUrl || item.recipe?.videoUrl);
+  const videoUrl = getEmbed(item.videoUrl || recipeData?.videoUrl);
 
   const handleAddIngredient = async (ing) => {
     if (!userId) {
@@ -92,16 +83,11 @@ const DetailsPage = () => {
     toast.success(`${item.name} added!`);
   };
 
+  const totalTime = recipeData?.cookTimeMinutes || 0;
   const allIngredients =
-    item.recipe?.steps?.flatMap((step) => step.ingredients || []) || [];
-  const totalTime = item.recipe?.cookTimeMinutes || 0;
+    recipeData?.steps?.flatMap((step) => step.ingredients || []) || [];
 
-  const toggleStep = (index) => {
-    setExpandedSteps((prev) => ({
-      ...prev,
-      [index]: !prev[index],
-    }));
-  };
+
 
   return (
     <div className="bg-light min-vh-100">
@@ -125,12 +111,14 @@ const DetailsPage = () => {
                   style={{ height: "280px", objectFit: "cover" }}
                 />
 
-                <button
-                  onClick={handleAddFood}
-                  className="btn btn-success position-absolute bottom-0 end-0 m-2 rounded-pill px-3 py-2"
-                >
-                  Add to Cart
-                </button>
+                {item.type !== "recipe" && (
+                  <button
+                    onClick={handleAddFood}
+                    className="btn btn-success position-absolute bottom-0 end-0 m-2 rounded-pill px-3 py-2"
+                  >
+                    Add to Cart
+                  </button>
+                )}
 
                 {item.category === "veg" && (
                   <span className="badge bg-success position-absolute top-0 start-0 m-2 rounded-pill">
@@ -148,10 +136,15 @@ const DetailsPage = () => {
                 </div>
 
                 <div className="mt-auto d-flex justify-content-between border-top pt-2">
-                  <span className="fw-bold text-success fs-5">
-                    ₹{item.price}
-                  </span>
-                  <span className="text-muted small">per portion</span>
+                  {item.type !== "recipe" && (
+                    <>
+                      <span className="fw-bold text-success fs-5">
+                        ₹{item.price}
+                      </span>
+
+                      <span className="text-muted small">per portion</span>
+                    </>
+                  )}
                 </div>
               </div>
             </div>
@@ -187,7 +180,7 @@ const DetailsPage = () => {
               <div className="col-4">
                 <div className="card border rounded-3 p-2 text-center h-100">
                   <p className="mb-0 fw-bold">
-                    {item.recipe?.steps?.length || 0}
+                    {recipeData?.steps?.length || 0}
                   </p>
                   <small className="text-muted">Steps</small>
                 </div>
@@ -203,7 +196,7 @@ const DetailsPage = () => {
           </div>
         </div>
 
-        
+       
         <div className="mb-4">
           <h4 className="fw-bold text-dark mb-3">
             <ChefHat size={22} className="me-2 text-success" />
@@ -211,7 +204,7 @@ const DetailsPage = () => {
           </h4>
 
           <div className="row g-3">
-            {item.recipe?.steps?.map((step, i) => (
+            {recipeData?.steps?.map((step, i) => (
               <div key={i} className="col-12">
                 <div className="card border rounded-3 shadow-sm">
                   <div className="card-header bg-white d-flex align-items-center gap-2">
@@ -238,7 +231,7 @@ const DetailsPage = () => {
                       {step.description}
                     </p>
 
-                    {/* INGREDIENTS */}
+                   
                     <div className="d-flex flex-wrap gap-2">
                       {step.ingredients?.map((ing, idx) => {
                         const isAdded = addedIngredients.includes(ing.name);
@@ -246,7 +239,7 @@ const DetailsPage = () => {
                         return (
                           <button
                             key={idx}
-                            onClick={() => handleAddIngredient(ing)}
+                            onClick={() => !isAdded && handleAddIngredient(ing)}
                             className={`btn btn-sm rounded-pill px-3 ${
                               isAdded
                                 ? "btn-success text-white"
@@ -261,7 +254,7 @@ const DetailsPage = () => {
                             ) : (
                               <>
                                 <Plus size={12} className="me-1" />
-                                {ing.name} ({ing.quantity})
+                                {ing.name} {ing.quantity && `(${ing.quantity})`}
                               </>
                             )}
                           </button>
@@ -304,7 +297,7 @@ const DetailsPage = () => {
                     ) : (
                       <>
                         <Plus size={12} className="me-1 text-success" />
-                        {ing.name} ({ing.quantity})
+                        {ing.name} {ing.quantity ? `(${ing.quantity})` : ""}
                       </>
                     )}
                   </button>
@@ -328,7 +321,9 @@ const DetailsPage = () => {
                 <div
                   key={rel.id}
                   className="col-lg-3 col-md-6"
-                  onClick={() => navigate(`/details/${type}/${rel.id}`)}
+                  onClick={() => {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                    navigate(`/details/${type}/${rel.id}`)}}
                   style={{ cursor: "pointer" }}
                 >
                   <div className="card border rounded-3 overflow-hidden h-100">

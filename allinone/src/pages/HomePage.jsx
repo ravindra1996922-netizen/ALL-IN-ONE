@@ -12,11 +12,10 @@ import FeatureCard from "../components/ui/FeatureCard";
 import { useProducts } from "../context/product_context/useProducts";
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { useFood } from "../context/foodContext/useFood";
-
 const HomePage = () => {
   const navigate = useNavigate();
   const { productDispatch, cache } = useProducts()
-  const { foodCache } = useFood();
+  const { foodCache , foodDispatcher} = useFood();
 
   console.log(foodCache)
 
@@ -64,19 +63,16 @@ const HomePage = () => {
     return (foods) => {
       if (cachedSlides) return cachedSlides;
 
-      // ✅ filter only required categories
       const filtered = foods.filter(
         (item) => item.category === "veg" || item.category === "nonveg"
       );
 
-      // ✅ group only veg & non-veg
       const grouped = filtered.reduce((acc, item) => {
         if (!acc[item.category]) acc[item.category] = [];
         acc[item.category].push(item);
         return acc;
       }, {});
 
-      // ✅ ensure both categories exist (even if empty)
       const categories = ["veg", "nonveg"];
 
       cachedSlides = categories.map((cat) => ({
@@ -91,7 +87,6 @@ const HomePage = () => {
   const foodSlides = getFoodSlides(foodCache);
 
 
-  // ✅ get random recipe (only once)
   const getRandomRecipe = (() => {
     let cached = null;
 
@@ -112,7 +107,6 @@ const HomePage = () => {
 
   const randomRecipe = getRandomRecipe(foodCache);
 
-  // ✅ convert youtube link → embed link
   const getEmbedUrl = (url) => {
     if (!url) return "";
 
@@ -144,7 +138,6 @@ const HomePage = () => {
     <>
       <Hero />
 
-      {/* Top Headline - Image jaisa */}
       <section className="py-4" style={{ background: '#f8f6f0' }}>
         <div className="container text-center">
           <h1 className="fw-bold mb-3" style={{ color: '#3e432e', letterSpacing: '1px' }}>Invest • Shop • Eat • Learn</h1>
@@ -152,12 +145,10 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Top 3 Cards - PEHLE SHOP & FOOD */}
       <section className="py-5" style={{ background: '#f8f6f0' }}>
         <div className="container">
           <div className="row g-4">
 
-            {/* 1. SHOP - PEHLA */}
             <div className="col-lg-4">
               <FeatureCard title="Fashion & Clothing" image={ecommerceImg}>
                 <div className="position-absolute bottom-0 start-0 w-100 p-3" style={{ background: 'linear-gradient(transparent, rgba(0,0,0,0.7))' }}>
@@ -168,8 +159,8 @@ const HomePage = () => {
               </FeatureCard>
             </div>
 
-            {/* 2. FOOD - DUSRA */}
-            <div className="col-lg-4">
+            <div className="col-lg-4"
+             >
               <FeatureCard title="Food & Dining" image={foodImg}>
                 <div className="position-absolute bottom-0 start-0 w-100 p-3" style={{ background: 'linear-gradient(transparent, rgba(0,0,0,0.7))' }}>
                   <p className="text-white-50 mb-1 small">20 Min Delivery</p>
@@ -179,7 +170,6 @@ const HomePage = () => {
               </FeatureCard>
             </div>
 
-            {/* 3. INVEST - LAST ME */}
             <div className="col-lg-4">
               <FeatureCard title="Invest with Us" image={investImg}>
                 <div className="position-absolute top-0 start-0 w-100 h-100 p-3 d-flex flex-column justify-content-between" style={{ background: 'rgba(90,98,56,0.85)' }}>
@@ -197,17 +187,21 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* 2x2 Dashboard Grid */}
       <section className="py-5 bg-white">
         <div className="container">
           <div className="row g-4">
 
             {/* Clothing */}
-            <div className="col-lg-6">
-              <div className="border rounded-4 p-3 h-100" style={{ background: '#fdfcfa', cursor:"pointer"}}>
-                <h5 className="mb-3">🛍️ Products</h5>
-                <div id="carouselExample" className="carousel slide ">
-                  <div className="carousel-inner ">
+            <div className="col-lg-6"
+              onClick={()=> {
+                  navigate("/shopping")
+                  productDispatch({type: "SET_CATEGORY", payload: "all"})
+                }}>
+              <div className="border rounded-4 p-3 h-100" style={{ background: '#fdfcfa' }}>
+                <h5 className="mb-3"
+                >🛍️ Products</h5>
+                <div id="carouselExample" className="carousel slide">
+                  <div className="carousel-inner">
 
                     {productSlides.map((slide, index) => (
                       <div
@@ -222,7 +216,7 @@ const HomePage = () => {
 
                               <div className="card border-0 text-center h-100">
 
-                                {/* ✅ FIXED IMAGE BOX */}
+                               
                                 <div
                                   style={{
                                     height: "120px",
@@ -242,7 +236,7 @@ const HomePage = () => {
                                   />
                                 </div>
 
-                                {/* ✅ FIXED PRICE POSITION */}
+                              
                                 <div className="mt-2">
                                   <p className="mb-0 fw-semibold text-dark">
                                     ₹{item.price}
@@ -259,7 +253,6 @@ const HomePage = () => {
 
                   </div>
 
-                  {/* Controls */}
                   <button
                     className="carousel-control-prev"
                     type="button"
@@ -282,7 +275,12 @@ const HomePage = () => {
             </div>
 
             <div className="col-lg-6">
-              <div className="border rounded-4 p-3 h-100" style={{ background: '#fdfcfa' }}>
+              <div className="border rounded-4 p-3 h-100" style={{ background: '#fdfcfa' }}
+               onClick={()=> {
+                  navigate("/orderFood")
+                  foodDispatcher({type: "SET_CATEGORY", payload: "all"})
+                   window.scrollTo({ top: 0, behavior: "smooth" });
+                }}>
                 <h5 className="mb-3">🍴 Food </h5>
 
                 <div id="foodCarousel" className="carousel slide">
@@ -295,7 +293,7 @@ const HomePage = () => {
                       >
                         <h5 className="mb-3 text-capitalize">{slide.category}</h5>
 
-                        {/* ✅ CENTERED ROW */}
+                        
                         <div className="row g-2 justify-content-center">
                           {slide.foods.map((item, i) => (
                             <div key={i} className="col-6 col-md-4 col-lg-2">

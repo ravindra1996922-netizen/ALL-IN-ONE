@@ -106,7 +106,12 @@ const CategoryPage = ({ type = "shopping" }) => {
                   <FeatureCard
                     title={item.title || item.name}
                     image={item.image}
-                    onClick={() => navigate(`/details/${type}/${item.id}`)}
+                    onClick={() => {
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                      if (type === "food") {
+                        navigate(`/details/food/${item.id}`);
+                      }
+                    }}
                   >
                     <div className="d-flex flex-column h-100">
                       {/* ✅ PRICE */}
@@ -122,6 +127,7 @@ const CategoryPage = ({ type = "shopping" }) => {
                           onClick={(e) => {
                             e.stopPropagation(); // 🔥 important
                             navigate(`/details/food/${item.id}`);
+                            window.scrollTo({ top: 0, behavior: "smooth" });
                           }}
                         >
                           Show Recipe

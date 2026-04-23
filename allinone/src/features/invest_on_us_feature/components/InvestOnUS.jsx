@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react'
 import { Area, AreaChart, CartesianGrid, Line, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import { useNavigate } from "react-router-dom";
@@ -106,7 +105,7 @@ const{ stockQuantity = [], stockPrice = [] ,portfolioDispatch}=usePortfolio()
       const randNum = Math.round(Math.random() * 4000);
       setSharePrice(p => [...p, maxValue + randNum].slice(-2));
       setUserData(p => [...p, { "value": maxValue + randNum }])
-    }, 4000);
+    }, 800);
 
     return () => {
       clearInterval(interval);

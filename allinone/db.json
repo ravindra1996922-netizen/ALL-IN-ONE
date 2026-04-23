@@ -4,120 +4,122 @@
       "email": "lakdd123@gmail.com",
       "password": "$2a$10$1.N3QbJlDK2zOzjstCz7ReIRsmaHQqP5mhB2IlQQuPtKyOHqhB/eO",
       "name": "ravindra",
-      "id": 1,
-      "cart": [],
-      "portfolio": {
-        "stockQuantity": [],
-        "Stockprice": []
-      }
+      "id": 1
     },
     {
       "email": "lkdd123@gmail.com",
       "password": "$2a$10$eY.uzHoAlard6FHBZ0Oe8.a5f7hKPz4.vnrm3tUVJwVYA.0qkp50G",
       "username": "ravindra",
-      "id": 2,
-      "wallet": 3400,
-      "portfolio": {},
-      "cart": []
+      "id": 2
     },
     {
       "email": "ravindra2291996@gmail.com",
       "password": "$2a$10$6Bp2WsQahP2GjJK7glERkeJqwqbW4OgRNyY8fvC6t22ILSb/rD92G",
       "name": "Ravindra Kumar",
-      "id": 3,
-      "cart": []
+      "id": 3
     },
     {
       "email": "surya@gmail.com",
       "password": "$2a$10$j1QztU1gF/R7pYrzml.V1eiSS.rkdCxaol5mprxIDt4XW1uppm8OS",
       "name": "Generic H2 (Embedded)",
-      "id": 4,
-      "cart": []
+      "id": 4
     },
     {
       "email": "lall@gmail.com",
       "password": "$2a$10$YXMOosxTtq.fXVp5VQJBD.cOHD6v.Dyx1PYQZT59qsDSs6LySLHp.",
       "name": "llalo",
-      "id": 5,
-      "cart": []
+      "id": 5
     },
     {
       "email": "rnalApp@gmail.com",
       "password": "$2a$10$u.2jcBCO4OmkuFbg.mT2aeRa/rdpFEi2tUYIdoAe20oghE..qMo.S",
       "name": "mankdjd",
-      "id": 6,
-      "cart": []
+      "id": 6
     },
     {
       "email": "kk@gmail.com",
       "password": "$2a$10$cw7Sg0SdUU.szkreH4eQj.kM383gJ9qxaJuOiC4XkVb4qTo/KEAnu",
       "name": "kk",
-      "id": 7,
-      "cart": []
+      "id": 7
     },
     {
       "email": "dd@gmail.com",
       "password": "$2a$10$ky7RE9Yb03wYkd6HMSfM5uh5PYoeCK0M0JBqSZ07w16hq2bhSVxSa",
       "name": "dd",
-      "id": 8,
-      "cart": []
+      "id": 8
     },
     {
       "email": "hh@gmail.com",
       "password": "$2a$10$VyikEezBubvgGtkl8a9N.e3C01io41VDiYikpY/0gJySbPjcl4ANC",
       "name": "hh",
-      "id": 9,
-      "cart": []
+      "id": 9
     },
     {
       "email": "nayanasr.04@gmail.com",
       "password": "$2a$10$7/CJtD.Ee.2.I12WxVNX/ub7Y/GFatdKduiILnJBpSzYO7AmR139O",
       "name": "NAYANA S R",
-      "id": 10,
-      "cart": []
+      "id": 10
     },
     {
       "email": "qw@gmail.com",
       "password": "$2a$10$5WnziA1KkLjqbEPUC3/pVeVsqbdD//O.13ooofKIrpCoF7Zo1BOCi",
       "name": "qw",
-      "id": 11,
-      "cart": []
+      "id": 11
     },
     {
       "email": "hi@gmail.com",
       "password": "$2a$10$ldoW2QYmVBhVNA4jktU.1OXf11/VVHgEslux/BQpEQ.hFPvoRi5fu",
       "name": "hi",
-      "id": 12,
-      "cart": []
+      "id": 12
     },
     {
-      "email": "qwerty12@gmail.com",
-      "password": "$2a$10$CAdWRFdDZbui118YqVQaNOcWUsTS4gcS2vtKzhLajGA0GBfXFH/zC",
-      "name": "qwerty",
+      "email": "nayana@gmail.com",
+      "password": "$2a$10$iXNrhIH4sDxgfviZXqRnDecHrQZKGhjnSYQePmiczBU11bBRFmNxK",
+      "name": "Nayana S R",
       "id": 13,
       "cart": [
         {
-          "id": 4,
-          "title": "Signature Olive Denim Jeans",
+          "id": 83,
+          "title": "Max Blue Wireless Earbuds",
+          "category": "electronics",
+          "subCategory": "general",
+          "brand": "Lenovo",
+          "price": 6145,
+          "discount": 10,
+          "rating": 4.3,
+          "stock": 10,
+          "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTPD8j_QYKQmRWYBnGPBBmVHCDveHLUqCFFSraSE5PA3mkgqRTOWgKFn11a0M1s240iFCcDlXcGIREmMvrkR7CFlxvS7RNS924Igk5KOjMFkLUin44OFGJGN-9-9knlO1CkNiX3WBU&usqp=CAc",
+          "searchKey": "max blue wireless earbuds lenovo electronics gadgets tech technology device devices accessories earbud earphones bluetooth audio tws",
+          "qty": 1
+        },
+        {
+          "id": "Cardamom powder",
+          "title": "Cardamom powder",
+          "price": 10,
+          "image": "https://i.ytimg.com/vi/T9hQV22Uezw/hqdefault.jpg",
+          "qty": 1
+        },
+        {
+          "id": "Paneer",
+          "title": "Paneer",
+          "price": 10,
+          "image": "https://i.ytimg.com/vi/U1LVDFwi8qI/hqdefault.jpg",
+          "qty": 4
+        },
+        {
+          "id": 1,
+          "title": "Classic Navy Slim Fit Shirt",
           "category": "clothing",
           "subCategory": "male",
-          "brand": "Van Heusen",
-          "price": 1062,
-          "discount": 12,
-          "rating": 4.4,
-          "stock": 12,
-          "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQiaUGCzLOYxWTn5BebG2gHxsWCDo54MNY9gk4dJUVc1c5ezEbpqWDoR6UAcUZFmmcA3piBB677K6QcEVb8dCGKwSu5wnijNjZUH-xGF3ji",
-          "searchKey": "signature olive denim jeans van heusen vanheusen clothing clothes apparel fashion wear outfit style male men mens boys pants bottoms",
+          "brand": "H&M",
+          "price": 865,
+          "discount": 5,
+          "rating": 4.1,
+          "stock": 6,
+          "image": "https://www.aristobrat.in/cdn/shop/files/ClassicShirt25_French5.jpg?v=1755254057&width=1000",
+          "searchKey": " navy slim fit shirt h&M clothing clothes  fashion wear outfit style male men mens boys shirts formal casual",
           "qty": 1
-        }
-      ]
-    },
-    {
-      "email": "a@gmail.com",
-      "password": "$2a$10$SXLQTFzoBmDdoHkXVxEuxuoTfsgJ8CQ1scsmEWKqBdPQ0GDfTNLRW",
-      "name": "a",
-      "id": 14,
-      "cart": [
+        },
         {
           "id": 2,
           "title": "Modern Black Cotton T-Shirt",
@@ -130,6 +132,13 @@
           "stock": 8,
           "image": "https://tse3.mm.bing.net/th/id/OIP.8Jl07l3Zw_oZ10Y_d7a2AwHaJQ?pid=Api&P=0&h=180",
           "searchKey": "modern black cotton tshirt levis clothing clothes fashion wear outfit style male men mens boys tshirt ",
+          "qty": 2
+        },
+        {
+          "id": "Coriander leaves",
+          "title": "Coriander leaves",
+          "price": 10,
+          "image": "https://i.ytimg.com/vi/cjGDsV6FvNE/hqdefault.jpg",
           "qty": 1
         }
       ]

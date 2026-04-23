@@ -5,12 +5,14 @@ import { useAuth } from "../../context/authContext/useAuth";
 import { useProducts } from "../../context/product_context/useProducts";
 import { useCart } from "../../context/cartContext/useCart";
 import { toast } from "react-toastify";
+import { useFood } from "../../context/foodContext/useFood";
 
 const Navbar = () => {
   const { user, authDispatch } = useAuth();
   const { productDispatch } = useProducts();
   const { cart } = useCart();
   const navigate = useNavigate();
+  const{foodDispatcher}=useFood()
 
   function badgeQuantity() {
     return cart.reduce((acc, curr) => {
@@ -83,7 +85,6 @@ const Navbar = () => {
         style={{ height: "55px" }}
       >
         <div className="container-fluid px-4 px-lg-5">
-
           {/* Logo */}
           <Link
             className="navbar-brand fs-4 fw-bold"
@@ -104,10 +105,8 @@ const Navbar = () => {
           </button>
 
           <div className="collapse navbar-collapse" id="nav">
-
             {/* Center Links */}
             <ul className="navbar-nav mx-auto gap-lg-4 text-center custom-nav">
-
               <li className="nav-item">
                 <NavLink
                   to="/invest"
@@ -138,7 +137,9 @@ const Navbar = () => {
                   to="/orderFood"
                   end
                   className="nav-link"
-                  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                  onClick={() =>{
+                  foodDispatcher({type:"SET_CATEGORY",payload:"all"})
+                    window.scrollTo({ top: 0, behavior: "smooth" })}}
                 >
                   Order Food
                 </NavLink>
