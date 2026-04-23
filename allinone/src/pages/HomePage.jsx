@@ -12,11 +12,10 @@ import FeatureCard from "../components/ui/FeatureCard";
 import { useProducts } from "../context/product_context/useProducts";
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { useFood } from "../context/foodContext/useFood";
-
 const HomePage = () => {
   const navigate = useNavigate();
   const { productDispatch, cache } = useProducts()
-  const { foodCache } = useFood();
+  const { foodCache , foodDispatcher} = useFood();
 
   console.log(foodCache)
 
@@ -174,7 +173,8 @@ const HomePage = () => {
             </div>
 
             {/* 2. FOOD - DUSRA */}
-            <div className="col-lg-4">
+            <div className="col-lg-4"
+             >
               <FeatureCard title="Food & Dining" image={foodImg}>
                 <div className="position-absolute bottom-0 start-0 w-100 p-3" style={{ background: 'linear-gradient(transparent, rgba(0,0,0,0.7))' }}>
                   <p className="text-white-50 mb-1 small">20 Min Delivery</p>
@@ -292,7 +292,11 @@ const HomePage = () => {
             </div>
 
             <div className="col-lg-6">
-              <div className="border rounded-4 p-3 h-100" style={{ background: '#fdfcfa' }}>
+              <div className="border rounded-4 p-3 h-100" style={{ background: '#fdfcfa' }}
+               onClick={()=> {
+                  navigate("/orderFood")
+                  foodDispatcher({type: "SET_CATEGORY", payload: "all"})
+                }}>
                 <h5 className="mb-3">🍴 Food </h5>
 
                 <div id="foodCarousel" className="carousel slide">

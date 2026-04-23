@@ -154,6 +154,98 @@
           "price": 10,
           "image": "https://i.ytimg.com/vi/gBnHovVnNwo/hqdefault.jpg",
           "qty": 1
+        },
+        {
+          "id": 9,
+          "name": "Kadai Chicken",
+          "category": "nonveg",
+          "image": "https://i.ytimg.com/vi/rvU3VVQqZQU/hqdefault.jpg",
+          "price": 260,
+          "type": "food",
+          "recipe": {
+            "cookTimeMinutes": 45,
+            "cookTimeCategory": "under45min",
+            "videoUrl": "https://youtube.com/watch?v=rvU3VVQqZQU",
+            "steps": [
+              {
+                "stepNumber": 1,
+                "title": "Prep main protein",
+                "ingredients": [
+                  {
+                    "name": "Chicken",
+                    "quantity": "500 g"
+                  },
+                  {
+                    "name": "Capsicum",
+                    "quantity": "1 medium"
+                  }
+                ],
+                "description": "In step 1 of Kadai Chicken, prepare 500 g of Chicken first so the main protein is cleaned, portioned, and ready for cooking. Then measure 1 medium of Capsicum and keep it ready because it supports marination, richness, or flavor balance later in the recipe. This stage matters because the protein and the supporting ingredient must both be ready before the curry base is built."
+              },
+              {
+                "stepNumber": 2,
+                "title": "Build the curry base",
+                "ingredients": [
+                  {
+                    "name": "Oil",
+                    "quantity": "1 tbsp"
+                  },
+                  {
+                    "name": "Onion",
+                    "quantity": "2 medium"
+                  },
+                  {
+                    "name": "Tomato",
+                    "quantity": "2 medium"
+                  },
+                  {
+                    "name": "Ginger garlic",
+                    "quantity": "1 tbsp"
+                  }
+                ],
+                "description": "In step 2 of Kadai Chicken, heat 1 tbsp of Oil first to start the base. Next, add 2 medium Onion and cook it until it softens and creates body. Then add 2 medium Tomato so the curry gains moisture and a proper gravy foundation. Finally, add 1 tbsp of Ginger garlic so the base develops depth before the simmering stage."
+              },
+              {
+                "stepNumber": 3,
+                "title": "Simmer the gravy",
+                "ingredients": [
+                  {
+                    "name": "Onion tomato gravy",
+                    "quantity": "1 cup"
+                  },
+                  {
+                    "name": "Salt",
+                    "quantity": "1 tsp"
+                  },
+                  {
+                    "name": "Crushed kadai masala",
+                    "quantity": "1 tsp"
+                  }
+                ],
+                "description": "In step 3 of Kadai Chicken, add 1 cup of Onion tomato gravy once the masala base is ready so the dish develops its main body and consistency. Season with 1 tsp of Salt so the gravy becomes balanced. Then add 1 tsp of Crushed kadai masala during simmering so the curry develops its final signature flavor and aroma. Keep the heat controlled so the sauce thickens evenly and does not burn."
+              },
+              {
+                "stepNumber": 4,
+                "title": "Finish and serve",
+                "ingredients": [
+                  {
+                    "name": "Prepared Chicken",
+                    "quantity": "500 g"
+                  },
+                  {
+                    "name": "Coriander leaves",
+                    "quantity": "1 tbsp"
+                  },
+                  {
+                    "name": "Roti",
+                    "quantity": "1 portion"
+                  }
+                ],
+                "description": "In step 4 of Kadai Chicken, add the prepared 500 g of Chicken in the final cooking stage so the protein cooks through in the gravy and absorbs flavor. Sprinkle 1 tbsp of Coriander leaves just before serving to add freshness. Finally, serve the dish with 1 portion of Roti so the meal is complete and ready to eat."
+              }
+            ]
+          },
+          "qty": 1
         }
       ],
       "portfolio": {
