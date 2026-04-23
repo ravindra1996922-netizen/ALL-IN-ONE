@@ -55,190 +55,6 @@
       "id": 7,
       "cart": [
         {
-          "id": 1,
-          "name": "Paneer Butter Masala",
-          "category": "veg",
-          "image": "https://i.ytimg.com/vi/U1LVDFwi8qI/hqdefault.jpg",
-          "price": 300,
-          "type": "food",
-          "recipe": {
-            "cookTimeMinutes": 45,
-            "cookTimeCategory": "under45min",
-            "videoUrl": "https://youtube.com/watch?v=U1LVDFwi8qI",
-            "steps": [
-              {
-                "stepNumber": 1,
-                "title": "Prep main",
-                "ingredients": [
-                  {
-                    "name": "Paneer",
-                    "quantity": "200 g"
-                  },
-                  {
-                    "name": "Cream",
-                    "quantity": "2 tbsp"
-                  }
-                ],
-                "description": "In step 1 of Paneer Butter Masala, which is 'Prep main', the ingredients used are Paneer and Cream. First, use 200 g of Paneer at the start of the recipe to prepare the main ingredient. Finally, use 2 tbsp of Cream during the preparation stage to prepare the supporting ingredient. Keep everything measured, cleaned, and organized in this stage so the later cooking steps move smoothly without interruption."
-              },
-              {
-                "stepNumber": 2,
-                "title": "Make base",
-                "ingredients": [
-                  {
-                    "name": "Butter",
-                    "quantity": "1 tbsp"
-                  },
-                  {
-                    "name": "Onion",
-                    "quantity": "2 medium"
-                  },
-                  {
-                    "name": "Tomato",
-                    "quantity": "2 medium"
-                  },
-                  {
-                    "name": "Ginger garlic",
-                    "quantity": "1 tbsp"
-                  }
-                ],
-                "description": "In step 2 of Paneer Butter Masala, which is 'Make base', the ingredients used are Butter, Onion, Tomato, and Ginger garlic. First, use 1 tbsp of Butter when starting the pan to build the base. Next, use 2 medium of Onion after the cooking fat is heated to add body. Next, use 2 medium of Tomato after the onion has started to soften to form the gravy base. Finally, use 1 tbsp of Ginger garlic during the masala stage to add depth. Cook this stage patiently so the aromatics soften properly and the base develops a balanced flavor before you move ahead."
-              },
-              {
-                "stepNumber": 3,
-                "title": "Simmer",
-                "ingredients": [
-                  {
-                    "name": "Tomato cashew puree",
-                    "quantity": "1 cup"
-                  },
-                  {
-                    "name": "Salt",
-                    "quantity": "1 tsp"
-                  },
-                  {
-                    "name": "Kasuri methi",
-                    "quantity": "1 tsp"
-                  }
-                ],
-                "description": "In step 3 of Paneer Butter Masala, which is 'Simmer', the ingredients used are Tomato cashew puree, Salt, and Kasuri methi. First, use 1 cup of Tomato cashew puree after the base is ready to set the body and consistency. Next, use 1 tsp of Salt during simmering to set the seasoning. Finally, use 1 tsp of Kasuri methi during simmering to add the signature flavor. Maintain controlled heat in this stage so the mixture cooks evenly and each added ingredient integrates without losing its intended texture."
-              },
-              {
-                "stepNumber": 4,
-                "title": "Finish and serve",
-                "ingredients": [
-                  {
-                    "name": "Prepared Paneer",
-                    "quantity": "200 g"
-                  },
-                  {
-                    "name": "Coriander leaves",
-                    "quantity": "1 tbsp"
-                  },
-                  {
-                    "name": "Naan or roti",
-                    "quantity": "1 portion"
-                  }
-                ],
-                "description": "In step 4 of Paneer Butter Masala, which is 'Finish and serve', the ingredients used are Prepared Paneer, Coriander leaves, and Naan or roti. First, use 200 g of Prepared Paneer in the last cooking stage to finish the dish. Next, use 1 tbsp of Coriander leaves just before serving to garnish the dish. Finally, use 1 portion of Naan or roti as a side accompaniment to complete the serving style. Keep this stage short and controlled so the main ingredient does not overcook, the garnish stays fresh, and the serving side is ready at the right moment."
-              }
-            ]
-          },
-          "qty": 7
-        },
-        {
-          "id": 2,
-          "name": "Shahi Paneer",
-          "category": "veg",
-          "image": "https://i.ytimg.com/vi/T9hQV22Uezw/hqdefault.jpg",
-          "price": 290,
-          "type": "food",
-          "recipe": {
-            "cookTimeMinutes": 45,
-            "cookTimeCategory": "under45min",
-            "videoUrl": "https://youtube.com/watch?v=T9hQV22Uezw",
-            "steps": [
-              {
-                "stepNumber": 1,
-                "title": "Prep main",
-                "ingredients": [
-                  {
-                    "name": "Paneer",
-                    "quantity": "200 g"
-                  },
-                  {
-                    "name": "Milk",
-                    "quantity": "0.25 cup"
-                  }
-                ],
-                "description": "In step 1 of Shahi Paneer, which is 'Prep main', the ingredients used are Paneer and Milk. First, use 200 g of Paneer at the start of the recipe to prepare the main ingredient. Finally, use 0.25 cup of Milk during the preparation stage to prepare the supporting ingredient. Keep everything measured, cleaned, and organized in this stage so the later cooking steps move smoothly without interruption."
-              },
-              {
-                "stepNumber": 2,
-                "title": "Make base",
-                "ingredients": [
-                  {
-                    "name": "Butter",
-                    "quantity": "1 tbsp"
-                  },
-                  {
-                    "name": "Onion",
-                    "quantity": "2 medium"
-                  },
-                  {
-                    "name": "Tomato",
-                    "quantity": "2 medium"
-                  },
-                  {
-                    "name": "Ginger garlic",
-                    "quantity": "1 tbsp"
-                  }
-                ],
-                "description": "In step 2 of Shahi Paneer, which is 'Make base', the ingredients used are Butter, Onion, Tomato, and Ginger garlic. First, use 1 tbsp of Butter when starting the pan to build the base. Next, use 2 medium of Onion after the cooking fat is heated to add body. Next, use 2 medium of Tomato after the onion has started to soften to form the gravy base. Finally, use 1 tbsp of Ginger garlic during the masala stage to add depth. Cook this stage patiently so the aromatics soften properly and the base develops a balanced flavor before you move ahead."
-              },
-              {
-                "stepNumber": 3,
-                "title": "Simmer",
-                "ingredients": [
-                  {
-                    "name": "Cashew gravy",
-                    "quantity": "1 cup"
-                  },
-                  {
-                    "name": "Salt",
-                    "quantity": "1 tsp"
-                  },
-                  {
-                    "name": "Cardamom powder",
-                    "quantity": "0.25 tsp"
-                  }
-                ],
-                "description": "In step 3 of Shahi Paneer, which is 'Simmer', the ingredients used are Cashew gravy, Salt, and Cardamom powder. First, use 1 cup of Cashew gravy after the base is ready to set the body and consistency. Next, use 1 tsp of Salt during simmering to set the seasoning. Finally, use 0.25 tsp of Cardamom powder during simmering to add the signature flavor. Maintain controlled heat in this stage so the mixture cooks evenly and each added ingredient integrates without losing its intended texture."
-              },
-              {
-                "stepNumber": 4,
-                "title": "Finish and serve",
-                "ingredients": [
-                  {
-                    "name": "Prepared Paneer",
-                    "quantity": "200 g"
-                  },
-                  {
-                    "name": "Coriander leaves",
-                    "quantity": "1 tbsp"
-                  },
-                  {
-                    "name": "Naan",
-                    "quantity": "1 portion"
-                  }
-                ],
-                "description": "In step 4 of Shahi Paneer, which is 'Finish and serve', the ingredients used are Prepared Paneer, Coriander leaves, and Naan. First, use 200 g of Prepared Paneer in the last cooking stage to finish the dish. Next, use 1 tbsp of Coriander leaves just before serving to garnish the dish. Finally, use 1 portion of Naan as a side accompaniment to complete the serving style. Keep this stage short and controlled so the main ingredient does not overcook, the garnish stays fresh, and the serving side is ready at the right moment."
-              }
-            ]
-          },
-          "qty": 7
-        },
-        {
           "id": 4,
           "name": "Kadai Paneer",
           "category": "veg",
@@ -331,20 +147,6 @@
           "qty": 3
         },
         {
-          "id": 41,
-          "title": "Performance Black Running Shoes",
-          "category": "shoes",
-          "subCategory": "male",
-          "brand": "Nike",
-          "price": 1316,
-          "discount": 5,
-          "rating": 4.1,
-          "stock": 6,
-          "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRsU83eKSuZOw1Gg14KRFNra9D1MMl1E2IK_HxzeHol132QKnaftRZ6OP3io3g9pX9zbP-FBjnKBS7KeG_mqJ3qUIhFsaaCHt6l8XZ7jlM2rQhkbbXwnHNXUxMh3GT4AkfXiR0YpA&usqp=CAc",
-          "searchKey": "performance black running shoes nike shoe footwear sneakers fashion sport sports casual comfort male men mens boys athletic jogging",
-          "qty": 2
-        },
-        {
           "id": 42,
           "title": "Flex Blue Sports Shoes",
           "category": "shoes",
@@ -370,20 +172,6 @@
           "stock": 10,
           "image": "https://gochk.com/cdn/shop/files/skanda4.06.2025CHK1072_56e081cb-d088-45f2-ab13-f5adde034de3.jpg?v=1774851142&width=1600",
           "searchKey": "active grey casual sneakers puma shoes shoe footwear fashion sport sports comfort male men mens boys sneaker lifestyle",
-          "qty": 1
-        },
-        {
-          "id": 81,
-          "title": "Pro Black Smartphone 5G",
-          "category": "electronics",
-          "subCategory": "general",
-          "brand": "Samsung",
-          "price": 3048,
-          "discount": 5,
-          "rating": 4.1,
-          "stock": 6,
-          "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRB2WjTG5cB6_-tkSTpX2jV7KojPGQZjEiskosbQwEsMvV0lHMgLVlz_YauxXq5HrMk6F2MtuFQ9Haph2kixKRnNDQjEpyjM9K2LbGMuMKDjiqtl8UVSNh7fTMq99euuyswPnkLew&usqp=CAc",
-          "searchKey": "pro black smartphone 5g samsung electronics gadgets tech technology device devices accessories phone mobile android handset",
           "qty": 1
         },
         {
@@ -583,6 +371,20 @@
             ]
           },
           "qty": 2
+        },
+        {
+          "id": 5,
+          "title": "Urban Grey Polo T-Shirt",
+          "category": "clothing",
+          "subCategory": "male",
+          "brand": "U.S. Polo Assn.",
+          "price": 1128,
+          "discount": 15,
+          "rating": 4.5,
+          "stock": 15,
+          "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQXBAtZ6eKlIxcuGYoPTn2att-9knQ4YKj8hfShZHVZxIC5CGqUnNA0heoFIsVCAzxmHRtZP4xyh2t4l0li_e7gNo-enS8U8IejnpogmoOHn6XQuepekzgT",
+          "searchKey": "urban grey polo t shirt u s assn us uspoloassn clothing clothes fashion wear outfit style male men mens boys tshirt casual top",
+          "qty": 1
         }
       ],
       "portfolio": {

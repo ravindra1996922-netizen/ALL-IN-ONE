@@ -5,12 +5,10 @@ import { useAuth } from "../../context/authContext/useAuth";
 import { useProducts } from "../../context/product_context/useProducts";
 import { useCart } from "../../context/cartContext/useCart";
 import { toast } from "react-toastify";
-import { useFood } from "../../context/foodContext/useFood";
 
 const Navbar = () => {
   const { user, authDispatch } = useAuth();
   const { productDispatch } = useProducts();
-  const { foodDispatcher } = useFood();
   const { cart } = useCart();
   const navigate = useNavigate();
 
@@ -112,9 +110,7 @@ const Navbar = () => {
                   to="/invest"
                   end
                   className="nav-link"
-                  onClick={() =>
-                    window.scrollTo({ top: 0, behavior: "smooth" })
-                  }
+                  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 >
                   Invest
                 </NavLink>
@@ -139,14 +135,12 @@ const Navbar = () => {
                   to="/orderFood"
                   end
                   className="nav-link"
-                  onClick={() => {
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                    foodDispatcher({ type: "SET_CATEGORY", payload: "all" });
-                  }}
+                  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 >
                   Order Food
                 </NavLink>
               </li>
+
             </ul>
 
             {/* Right Side */}
@@ -156,9 +150,7 @@ const Navbar = () => {
                   <Link
                     to="/login"
                     className="text-dark text-decoration-none"
-                    onClick={() =>
-                      window.scrollTo({ top: 0, behavior: "smooth" })
-                    }
+                    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                   >
                     Login
                   </Link>
@@ -167,9 +159,7 @@ const Navbar = () => {
                     to="/signup"
                     className="btn text-white"
                     style={{ background: "#008060" }}
-                    onClick={() =>
-                      window.scrollTo({ top: 0, behavior: "smooth" })
-                    }
+                    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                   >
                     Sign Up
                   </Link>
@@ -185,9 +175,7 @@ const Navbar = () => {
                       borderRadius: "50%",
                       background: "#f1f1f1",
                     }}
-                    onClick={() =>
-                      window.scrollTo({ top: 0, behavior: "smooth" })
-                    }
+                    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                   >
                     <FiShoppingCart />
                     <span
@@ -207,6 +195,7 @@ const Navbar = () => {
                 </>
               )}
             </div>
+
           </div>
         </div>
       </nav>
