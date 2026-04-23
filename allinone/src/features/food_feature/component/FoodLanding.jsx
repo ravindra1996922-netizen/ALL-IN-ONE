@@ -7,6 +7,8 @@ import { useNavigate } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 import { useCart } from "../../../context/cartContext/useCart";
 import { useAuth } from "../../../context/authContext/useAuth";
+import { addToCartApi } from "../../../utils/api/cartApis/cartApis";
+import { toast } from "react-toastify";
 
 // ✅ NEW: group by category (FULL DATA)
 const groupByCategory = (data) => {
@@ -69,6 +71,7 @@ const FoodLanding = () => {
   };
 
   const handleAddToCart = async (item) => {
+    console.log("handeladdtocart");
     if (!userId) {
       toast.error("Please login first");
       return;

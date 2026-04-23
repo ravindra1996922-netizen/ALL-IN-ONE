@@ -106,7 +106,11 @@ const CategoryPage = ({ type = "shopping" }) => {
                   <FeatureCard
                     title={item.title || item.name}
                     image={item.image}
-                    onClick={() => navigate(`/details/${type}/${item.id}`)}
+                    onClick={() => {
+                      if (type === "food") {
+                        navigate(`/details/food/${item.id}`);
+                      }
+                    }}
                   >
                     <div className="d-flex flex-column h-100">
                       {/* ✅ PRICE */}

@@ -1,11 +1,39 @@
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import { FiShoppingCart } from "react-icons/fi";
+import { useAuth } from "../../context/authContext/useAuth";
+import { useProducts } from "../../context/product_context/useProducts";
+import { useCart } from "../../context/cartContext/useCart";
+import { toast } from "react-toastify";
 
-const Navbar = ({ productDispatch, user, handleLogout, badgeQuantity }) => {
+const Navbar = () => {
+  const { user, authDispatch } = useAuth();
+  const { productDispatch } = useProducts();
+  const { cart } = useCart();
+  const navigate = useNavigate();
+
+  function badgeQuantity() {
+    return cart.reduce((acc, curr) => {
+      return acc + curr.qty;
+    }, 0);
+  }
+
+  const handleLogout = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    authDispatch({ type: "LOGOUT" });
+    localStorage.removeItem("user");
+    toast.info("Logged out successfully", {
+      style: {
+        background: "#3579d1",
+        color: "#100c0c",
+      },
+    });
+    navigate("/");
+  };
+
   return (
     <>
-      {/* ✅ Internal CSS */}
+      {/* Internal CSS */}
       <style>
         {`
           .custom-nav .nav-link {
@@ -16,7 +44,6 @@ const Navbar = ({ productDispatch, user, handleLogout, badgeQuantity }) => {
             transition: all 0.3s ease;
           }
 
-          /* Hover */
           .custom-nav .nav-link:hover {
             color: #000 !important;
             font-weight: 600;
@@ -24,7 +51,6 @@ const Navbar = ({ productDispatch, user, handleLogout, badgeQuantity }) => {
             transform: translateY(-2px);
           }
 
-          /* Underline base */
           .custom-nav .nav-link::after {
             content: "";
             position: absolute;
@@ -37,18 +63,15 @@ const Navbar = ({ productDispatch, user, handleLogout, badgeQuantity }) => {
             transform: translateX(-50%);
           }
 
-          /* Hover underline */
           .custom-nav .nav-link:hover::after {
             width: 60%;
           }
 
-          /* Active link (IMPORTANT) */
           .custom-nav .nav-link.active {
             color: #000 !important;
             font-weight: 600;
           }
 
-          /* Active underline stays */
           .custom-nav .nav-link.active::after {
             width: 60%;
           }
@@ -60,7 +83,6 @@ const Navbar = ({ productDispatch, user, handleLogout, badgeQuantity }) => {
         style={{ height: "55px" }}
       >
         <div className="container-fluid px-4 px-lg-5">
-          
           {/* Logo */}
           <Link
             className="navbar-brand fs-4 fw-bold"
@@ -81,18 +103,14 @@ const Navbar = ({ productDispatch, user, handleLogout, badgeQuantity }) => {
           </button>
 
           <div className="collapse navbar-collapse" id="nav">
-
             {/* Center Links */}
             <ul className="navbar-nav mx-auto gap-lg-4 text-center custom-nav">
-
               <li className="nav-item">
                 <NavLink
                   to="/invest"
                   end
                   className="nav-link"
-                  onClick={() =>
-                    window.scrollTo({ top: 0, behavior: "smooth" })
-                  }
+                  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 >
                   Invest
                 </NavLink>
@@ -105,10 +123,7 @@ const Navbar = ({ productDispatch, user, handleLogout, badgeQuantity }) => {
                   className="nav-link"
                   onClick={() => {
                     window.scrollTo({ top: 0, behavior: "smooth" });
-                    productDispatch({
-                      type: "SET_CATEGORY",
-                      payload: "all",
-                    });
+                    productDispatch({ type: "SET_CATEGORY", payload: "all" });
                   }}
                 >
                   Shop
@@ -120,13 +135,12 @@ const Navbar = ({ productDispatch, user, handleLogout, badgeQuantity }) => {
                   to="/orderFood"
                   end
                   className="nav-link"
-                  onClick={() =>
-                    window.scrollTo({ top: 0, behavior: "smooth" })
-                  }
+                  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 >
                   Order Food
                 </NavLink>
               </li>
+
             </ul>
 
             {/* Right Side */}
@@ -136,9 +150,7 @@ const Navbar = ({ productDispatch, user, handleLogout, badgeQuantity }) => {
                   <Link
                     to="/login"
                     className="text-dark text-decoration-none"
-                    onClick={() =>
-                      window.scrollTo({ top: 0, behavior: "smooth" })
-                    }
+                    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                   >
                     Login
                   </Link>
@@ -147,9 +159,7 @@ const Navbar = ({ productDispatch, user, handleLogout, badgeQuantity }) => {
                     to="/signup"
                     className="btn text-white"
                     style={{ background: "#008060" }}
-                    onClick={() =>
-                      window.scrollTo({ top: 0, behavior: "smooth" })
-                    }
+                    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                   >
                     Sign Up
                   </Link>
@@ -165,12 +175,9 @@ const Navbar = ({ productDispatch, user, handleLogout, badgeQuantity }) => {
                       borderRadius: "50%",
                       background: "#f1f1f1",
                     }}
-                    onClick={() =>
-                      window.scrollTo({ top: 0, behavior: "smooth" })
-                    }
+                    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                   >
                     <FiShoppingCart />
-
                     <span
                       className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
                       style={{ fontSize: "8px" }}
@@ -188,6 +195,7 @@ const Navbar = ({ productDispatch, user, handleLogout, badgeQuantity }) => {
                 </>
               )}
             </div>
+
           </div>
         </div>
       </nav>

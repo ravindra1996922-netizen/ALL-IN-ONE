@@ -10,17 +10,120 @@ import groceryImg from "../assets/images/grocery.jpg";
 import { useNavigate } from "react-router-dom";
 import FeatureCard from "../components/ui/FeatureCard";
 import { useProducts } from "../context/product_context/useProducts";
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { useFood } from "../context/foodContext/useFood";
 
 const HomePage = () => {
   const navigate = useNavigate();
-  const { productDispatch } = useProducts()
+  const { productDispatch, cache } = useProducts()
+  const { foodCache } = useFood();
+
+  console.log(foodCache)
+
+  const shuffleProd = (arr) => [...arr].sort(() => 0.5 - Math.random());
+
+
+  const getProductSlides = (() => {
+    let cachedSlides = null;
+
+    return (products) => {
+      if (cachedSlides) return cachedSlides;
+
+      const grouped = products.reduce((acc, item) => {
+        if (!acc[item.category]) acc[item.category] = [];
+        acc[item.category].push(item);
+        return acc;
+      }, {});
+
+      cachedSlides = Object.entries(grouped).map(([category, items]) => {
+        return {
+          category,
+          products: shuffleProd(items).slice(0, 6),
+        };
+      });
+
+      return cachedSlides;
+    };
+  })();
+
+  const productSlides = getProductSlides(cache);
+
+  const shuffleFood = (arr) => {
+    const newArr = [...arr];
+    for (let i = newArr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
+    }
+    return newArr;
+  };
+
+
+  const getFoodSlides = (() => {
+    let cachedSlides = null;
+
+    return (foods) => {
+      if (cachedSlides) return cachedSlides;
+
+      // ✅ filter only required categories
+      const filtered = foods.filter(
+        (item) => item.category === "veg" || item.category === "nonveg"
+      );
+
+      // ✅ group only veg & non-veg
+      const grouped = filtered.reduce((acc, item) => {
+        if (!acc[item.category]) acc[item.category] = [];
+        acc[item.category].push(item);
+        return acc;
+      }, {});
+
+      // ✅ ensure both categories exist (even if empty)
+      const categories = ["veg", "nonveg"];
+
+      cachedSlides = categories.map((cat) => ({
+        category: cat,
+        foods: shuffleFood(grouped[cat] || []).slice(0, 6),
+      }));
+
+      return cachedSlides;
+    };
+  })();
+
+  const foodSlides = getFoodSlides(foodCache);
+
+
+  // ✅ get random recipe (only once)
+  const getRandomRecipe = (() => {
+    let cached = null;
+
+    return (foods) => {
+      if (cached) return cached;
+
+      const withVideo = foods.filter(
+        (item) => item.recipe?.videoUrl
+      );
+
+      const random =
+        withVideo[Math.floor(Math.random() * withVideo.length)];
+
+      cached = random;
+      return cached;
+    };
+  })();
+
+  const randomRecipe = getRandomRecipe(foodCache);
+
+  // ✅ convert youtube link → embed link
+  const getEmbedUrl = (url) => {
+    if (!url) return "";
+
+    const videoId = url.split("v=")[1];
+    return `https://www.youtube.com/embed/${videoId}`;
+  };
 
   const [liveData, setLiveData] = useState([])
   const [gain, setGain] = useState(8.4)
 
   useEffect(() => {
-    // LIVE graph data
     const initial = Array.from({ length: 20 }, (_, i) => ({ name: i, value: 200 + Math.random() * 50 + i * 5 }))
     setLiveData(initial)
 
@@ -30,7 +133,7 @@ const HomePage = () => {
         return next
       })
       setGain(8 + Math.random() * 1.5)
-    }, 3000)
+    }, 8000)
     return () => clearInterval(interval)
   }, [])
 
@@ -107,64 +210,195 @@ const HomePage = () => {
             {/* Clothing */}
             <div className="col-lg-6">
               <div className="border rounded-4 p-3 h-100" style={{ background: '#fdfcfa' }}>
-                <h5 className="mb-3">🛍️ Clothing</h5>
-                <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
+                <h5 className="mb-3">🛍️ Products</h5>
+                <div id="carouselExample" className="carousel slide">
                   <div className="carousel-inner">
-                    
-                    <div className="carousel-item active">
-                      <div className="row g-2">
-                        {[1, 2, 3, 4, 5, 6].map(i => (
-                          <div className="col-4" key={i}>
-                            <div className="card border-0" onClick={() => { window.scrollTo({ top: 0, behavior: "smooth" }); productDispatch({ type: "SET_CATEGORY", payload: "all" }); navigate("/shopping") }} style={{ cursor: 'pointer' }}>
-                              <img src={ecommerceImg} className="card-img-top rounded" style={{ height: '90px', objectFit: 'cover' }} />
-                              <div className="p-1"><small>${49 + i * 5}.99</small></div>
+
+                    {productSlides.map((slide, index) => (
+                      <div
+                        key={slide.category}
+                        className={`carousel-item ${index === 0 ? "active" : ""}`}
+                      >
+                        <h5 className="mb-3 text-capitalize">{slide.category}</h5>
+
+                        <div className="row g-2">
+                          {slide.products.map((item, i) => (
+                            <div key={i} className="col-6 col-md-4 col-lg-2">
+
+                              <div className="card border-0 text-center h-100">
+
+                                {/* ✅ FIXED IMAGE BOX */}
+                                <div
+                                  style={{
+                                    height: "120px",
+                                    overflow: "hidden",
+                                    borderRadius: "8px",
+                                    background: "#f1f1f1"
+                                  }}
+                                >
+                                  <img
+                                    src={item.image}
+                                    alt=""
+                                    style={{
+                                      width: "100%",
+                                      height: "100%",
+                                      objectFit: "cover"
+                                    }}
+                                  />
+                                </div>
+
+                                {/* ✅ FIXED PRICE POSITION */}
+                                <div className="mt-2">
+                                  <p className="mb-0 fw-semibold text-dark">
+                                    ₹{item.price}
+                                  </p>
+                                </div>
+
+                              </div>
+
                             </div>
-                          </div>
-                        ))}
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                    
+                    ))}
+
                   </div>
-                  <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Previous</span>
+
+                  {/* Controls */}
+                  <button
+                    className="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#carouselExample"
+                    data-bs-slide="prev"
+                  >
+                    <span className="carousel-control-prev-icon"></span>
                   </button>
-                  <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Next</span>
+
+                  <button
+                    className="carousel-control-next"
+                    type="button"
+                    data-bs-target="#carouselExample"
+                    data-bs-slide="next"
+                  >
+                    <span className="carousel-control-next-icon"></span>
                   </button>
                 </div>
               </div>
             </div>
 
-            {/* Food & Recipes */}
             <div className="col-lg-6">
               <div className="border rounded-4 p-3 h-100" style={{ background: '#fdfcfa' }}>
-                <h5 className="mb-3">🍕 Food & Recipes</h5>
-                <p className="small text-muted">Popular Dishes</p>
-                <div className="d-flex gap-2">
-                  {['Pizza $4.49', 'Burger $6.99', 'Curry $6.49'].map((item, i) => (
-                    <div key={i} className="card flex-fill border-0" onClick={() => { window.scrollTo({ top: 0, behavior: "smooth" }); navigate("/orderFood") }} style={{ cursor: 'pointer' }}>
-                      <img src={foodImg} style={{ height: '80px', objectFit: 'cover' }} className="rounded-top" />
-                      <div className="p-2"><small>{item}</small></div>
-                    </div>
-                  ))}
+                <h5 className="mb-3">🍴 Food </h5>
+
+                <div id="foodCarousel" className="carousel slide">
+                  <div className="carousel-inner">
+
+                    {foodSlides.map((slide, index) => (
+                      <div
+                        key={slide.category}
+                        className={`carousel-item ${index === 0 ? "active" : ""}`}
+                      >
+                        <h5 className="mb-3 text-capitalize">{slide.category}</h5>
+
+                        {/* ✅ CENTERED ROW */}
+                        <div className="row g-2 justify-content-center">
+                          {slide.foods.map((item, i) => (
+                            <div key={i} className="col-6 col-md-4 col-lg-2">
+
+                              <div className="card border-0 text-center h-100">
+
+                                {/* Image */}
+                                <div
+                                  style={{
+                                    height: "120px",
+                                    overflow: "hidden",
+                                    borderRadius: "8px",
+                                    background: "#f1f1f1"
+                                  }}
+                                >
+                                  <img
+                                    src={item.image}
+                                    alt={item.name}
+                                    style={{
+                                      width: "100%",
+                                      height: "100%",
+                                      objectFit: "cover"
+                                    }}
+                                  />
+                                </div>
+
+                                {/* Name + Price */}
+                                <div className="mt-2">
+                                  <p className="mb-0 small fw-semibold text-dark text-truncate">
+                                    {item.name}
+                                  </p>
+                                  <p className="mb-0 fw-bold">
+                                    ₹{item.price}
+                                  </p>
+                                </div>
+
+                              </div>
+
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+
+                  </div>
+
+                  {/* Controls */}
+                  <button
+                    className="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#foodCarousel"
+                    data-bs-slide="prev"
+                  >
+                    <span className="carousel-control-prev-icon"></span>
+                  </button>
+
+                  <button
+                    className="carousel-control-next"
+                    type="button"
+                    data-bs-target="#foodCarousel"
+                    data-bs-slide="next"
+                  >
+                    <span className="carousel-control-next-icon"></span>
+                  </button>
                 </div>
               </div>
             </div>
 
-            {/* Grocery */}
+
             <div className="col-lg-6">
               <div className="border rounded-4 p-3 h-100" style={{ background: '#fdfcfa' }}>
-                <h5 className="mb-3">🛒 Grocery Shopping</h5>
-                <div className="row g-2">
-                  {['Vegetables', 'Fruits', 'Dairy'].map((cat, i) => (
-                    <div className="col-4" key={i}>
-                      <img src={groceryImg} className="w-100 rounded" style={{ height: '70px', objectFit: 'cover' }} />
-                      <small>{cat}</small>
+                <h5 className="mb-3">🧾 Recipe</h5>
+
+                {randomRecipe ? (
+                  <div>
+
+                    {/* Video */}
+                    <div style={{ borderRadius: "10px", overflow: "hidden" }}>
+                      <iframe
+                        width="100%"
+                        height="200"
+                        src={getEmbedUrl(randomRecipe.recipe.videoUrl)}
+                        title={randomRecipe.name}
+                        frameBorder="0"
+                        allowFullScreen
+                      ></iframe>
                     </div>
-                  ))}
-                </div>
+
+                    {/* Name + price */}
+                    <div className="mt-2">
+                      <p className="mb-0 fw-semibold">{randomRecipe.name}</p>
+                      <small className="text-muted">₹{randomRecipe.price}</small>
+                    </div>
+
+                  </div>
+                ) : (
+                  <p className="text-muted">No recipe available</p>
+                )}
               </div>
             </div>
 
@@ -182,7 +416,7 @@ const HomePage = () => {
                     <AreaChart data={liveData}>
                       <defs><linearGradient id="inv" x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stopColor="#5a6238" stopOpacity={0.8} /><stop offset="95%" stopColor="#5a6238" stopOpacity={0} /></linearGradient></defs>
                       <Tooltip />
-                      <Area type="monotone" dataKey="value" stroke="#5a6238" fill="url(#inv)" strokeWidth={2} dot={false} />
+                      <Area type="monotone" dataKey="value" stroke="#5a6238" fill="url(#inv)" strokeWidth={2} dot={false} isAnimationActive={false} />
                     </AreaChart>
                   </ResponsiveContainer>
                 </div>

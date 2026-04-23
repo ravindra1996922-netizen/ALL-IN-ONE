@@ -53,7 +53,6 @@ const DetailsPage = () => {
         </button>
       </div>
     );
-  // 🔥 ADD THIS LINE
   const recipeData = item.recipe || item;
 
   const getEmbed = (url) => {
@@ -163,13 +162,15 @@ const DetailsPage = () => {
                 </div>
 
                 <div className="mt-auto d-flex justify-content-between border-top pt-2">
-                  {item.type !== "recipe" && (<>
-                  <span className="fw-bold text-success fs-5">
-                    ₹{item.price}
-                  </span>
-                 
-                  <span className="text-muted small">per portion</span>
-                  </> )}
+                  {item.type !== "recipe" && (
+                    <>
+                      <span className="fw-bold text-success fs-5">
+                        ₹{item.price}
+                      </span>
+
+                      <span className="text-muted small">per portion</span>
+                    </>
+                  )}
                 </div>
               </div>
             </div>
@@ -208,7 +209,6 @@ const DetailsPage = () => {
               <div className="col-4">
                 <div className="card border rounded-3 p-2 text-center h-100">
                   <p className="mb-0 fw-bold">
-                    {/* {item.recipe?.steps?.length || 0} */}
                     {recipeData?.steps?.length || 0}
                   </p>
                   <small className="text-muted">Steps</small>
@@ -225,90 +225,7 @@ const DetailsPage = () => {
           </div>
         </div>
 
-        {/* Recipe Steps - Accordion Style */}
-        {/* <div className="mb-4">
-          <h4 className="fw-bold text-dark mb-3">
-            <ChefHat size={22} className="me-2 text-success" />
-            Recipe Steps
-          </h4>
-
-          <div className="accordion" id="recipeAccordion">
-            {item.recipe?.steps?.map((step, i) => (
-              <div key={i} className="accordion-item border rounded-2 mb-2">
-                <h2 className="accordion-header">
-                  <button
-                    className={`accordion-button ${expandedSteps[i] ? "" : "collapsed"}`}
-                    type="button"
-                    onClick={() => toggleStep(i)}
-                    style={{ cursor: "pointer" }}
-                  >
-                    <span
-                      className="rounded-circle text-white fw-bold d-flex align-items-center justify-content-center me-2"
-                      style={{
-                        width: "28px",
-                        height: "28px",
-                        background: "linear-gradient(135deg, #28a745, #20c997)",
-                        fontSize: "12px",
-                      }}
-                    >
-                      {step.stepNumber}
-                    </span>
-                    <span className="fw-bold">{step.title}</span>
-                    <span className="text-muted ms-auto me-2 small">
-                      {step.ingredients?.length} ingredients
-                    </span>
-                    {expandedSteps[i] ? (
-                      <ChevronUp size={16} className="text-muted" />
-                    ) : (
-                      <ChevronDown size={16} className="text-muted" />
-                    )}
-                  </button>
-                </h2>
-                <div
-                  className={`accordion-collapse ${expandedSteps[i] ? "show" : ""}`}
-                >
-                  <div className="accordion-body pt-2">
-                    <p
-                      className="text-muted small mb-3"
-                      style={{ lineHeight: "1.6" }}
-                    >
-                      {step.description}
-                    </p>
-
-                    <div className="d-flex flex-wrap gap-2">
-                      {step.ingredients?.map((ing, idx) => {
-                        const isAdded = addedIngredients.includes(ing.name);
-                        return (
-                          <button
-                            key={idx}
-                            onClick={() => !isAdded && handleAddIngredient(ing)}
-                            className={`btn btn-sm rounded-pill px-3 ${
-                              isAdded
-                                ? "btn-success text-white"
-                                : "btn-outline-success"
-                            }`}
-                          >
-                            {isAdded ? (
-                              <>
-                                <Check size={12} className="me-1" />
-                                {ing.name}
-                              </>
-                            ) : (
-                              <>
-                                <Plus size={12} className="me-1" />
-                                {ing.name} ({ing.quantity})
-                              </>
-                            )}
-                          </button>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div> */}
+        {/* Recipe Steps */}
         <div className="mb-4">
           <h4 className="fw-bold text-dark mb-3">
             <ChefHat size={22} className="me-2 text-success" />
@@ -370,7 +287,7 @@ const DetailsPage = () => {
                             ) : (
                               <>
                                 <Plus size={12} className="me-1" />
-                                {ing.name} ({ing.quantity})
+                                {ing.name} {ing.quantity && `(${ing.quantity})`}
                               </>
                             )}
                           </button>
@@ -414,8 +331,7 @@ const DetailsPage = () => {
                     ) : (
                       <>
                         <Plus size={12} className="me-1 text-success" />
-                        {ing.name}
-                        {/* {ing.name} ({ing.quantity}) */}
+                        {ing.name} {ing.quantity ? `(${ing.quantity})` : ""}
                       </>
                     )}
                   </button>
@@ -425,7 +341,7 @@ const DetailsPage = () => {
           </div>
         </div>
 
-        {/* Related Items */}
+        {/* Related Dishes */}
         <div className="mb-4">
           <h4 className="fw-bold text-dark mb-3">Related Dishes</h4>
           <div className="row g-3">

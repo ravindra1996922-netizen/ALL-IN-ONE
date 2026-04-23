@@ -24,7 +24,7 @@ function App() {
 
       <ToastContainer
         position="bottom-center"
-        autoClose={2000}
+        autoClose={500}
         theme="colored"
         hideProgressBar={false}
         newestOnTop

@@ -104,7 +104,7 @@
           "title": "Paneer",
           "price": 10,
           "image": "https://i.ytimg.com/vi/U1LVDFwi8qI/hqdefault.jpg",
-          "qty": 2
+          "qty": 3
         },
         {
           "id": 1,
@@ -118,6 +118,27 @@
           "stock": 6,
           "image": "https://www.aristobrat.in/cdn/shop/files/ClassicShirt25_French5.jpg?v=1755254057&width=1000",
           "searchKey": " navy slim fit shirt h&M clothing clothes  fashion wear outfit style male men mens boys shirts formal casual",
+          "qty": 1
+        },
+        {
+          "id": 2,
+          "title": "Modern Black Cotton T-Shirt",
+          "category": "clothing",
+          "subCategory": "male",
+          "brand": "Levis",
+          "price": 931,
+          "discount": 8,
+          "rating": 4.2,
+          "stock": 8,
+          "image": "https://tse3.mm.bing.net/th/id/OIP.8Jl07l3Zw_oZ10Y_d7a2AwHaJQ?pid=Api&P=0&h=180",
+          "searchKey": "modern black cotton tshirt levis clothing clothes fashion wear outfit style male men mens boys tshirt ",
+          "qty": 2
+        },
+        {
+          "id": "Coriander leaves",
+          "title": "Coriander leaves",
+          "price": 10,
+          "image": "https://i.ytimg.com/vi/cjGDsV6FvNE/hqdefault.jpg",
           "qty": 1
         }
       ],
