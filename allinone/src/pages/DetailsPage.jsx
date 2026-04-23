@@ -7,24 +7,18 @@ import { useAuth } from "../context/authContext/useAuth";
 import { addToCartApi } from "../utils/api/cartApis/cartApis";
 import { toast } from "react-toastify";
 import {
-  ShoppingCart,
   Clock,
   ChefHat,
-  Flame,
   Plus,
   ArrowLeft,
   Check,
-  Leaf,
-  Star,
-  ChevronDown,
-  ChevronUp,
+  Leaf
 } from "lucide-react";
 
 const DetailsPage = () => {
   const { id, type } = useParams();
   const navigate = useNavigate();
   const [addedIngredients, setAddedIngredients] = useState([]);
-  const [expandedSteps, setExpandedSteps] = useState({ 0: true }); // First step open by default
 
   const { cartDispatch } = useCart();
   const { user } = useAuth();
@@ -44,15 +38,6 @@ const DetailsPage = () => {
 
   const item = data.find((d) => String(d.id) === String(id));
 
-  if (!item)
-    return (
-      <div className="container my-5 text-center">
-        <h4>Item not found</h4>
-        <button className="btn btn-primary mt-3" onClick={() => navigate(-1)}>
-          Go Back
-        </button>
-      </div>
-    );
 
   const recipeData = item.recipe || item;
 
@@ -102,17 +87,11 @@ const DetailsPage = () => {
   const allIngredients =
     recipeData?.steps?.flatMap((step) => step.ingredients || []) || [];
 
-  const toggleStep = (index) => {
-    setExpandedSteps((prev) => ({
-      ...prev,
-      [index]: !prev[index],
-    }));
-  };
+
 
   return (
     <div className="bg-light min-vh-100">
       <div className="container py-3">
-        {/* Back Button */}
         <button
           className="btn btn-link text-secondary text-decoration-none d-inline-flex align-items-center gap-2 mb-3"
           onClick={() => navigate(-1)}
@@ -121,12 +100,9 @@ const DetailsPage = () => {
           Back
         </button>
 
-        {/* Top Section - Food Image + Video */}
         <div className="row g-3 mb-4 align-items-stretch">
-          {/* LEFT - FOOD CARD */}
           <div className="col-lg-4 d-flex">
             <div className="card border rounded-3 overflow-hidden w-100 h-100 shadow-sm">
-              {/* IMAGE */}
               <div className="position-relative">
                 <img
                   src={item.image}
@@ -135,7 +111,6 @@ const DetailsPage = () => {
                   style={{ height: "280px", objectFit: "cover" }}
                 />
 
-                {/* ADD BUTTON */}
                 {item.type !== "recipe" && (
                   <button
                     onClick={handleAddFood}
@@ -145,7 +120,6 @@ const DetailsPage = () => {
                   </button>
                 )}
 
-                {/* VEG BADGE */}
                 {item.category === "veg" && (
                   <span className="badge bg-success position-absolute top-0 start-0 m-2 rounded-pill">
                     Veg
@@ -153,7 +127,6 @@ const DetailsPage = () => {
                 )}
               </div>
 
-              {/* INFO */}
               <div className="card-body py-3 d-flex flex-column">
                 <h4 className="fw-bold mb-2">{item.name}</h4>
 
@@ -177,9 +150,7 @@ const DetailsPage = () => {
             </div>
           </div>
 
-          {/* RIGHT - VIDEO + STATS */}
           <div className="col-lg-8 d-flex flex-column">
-            {/* VIDEO */}
             <div className="card border rounded-3 overflow-hidden shadow-sm flex-grow-1">
               <div style={{ height: "320px" }}>
                 {videoUrl ? (
@@ -198,7 +169,6 @@ const DetailsPage = () => {
               </div>
             </div>
 
-            {/* STATS */}
             <div className="row g-2 mt-2">
               <div className="col-4">
                 <div className="card border rounded-3 p-2 text-center h-100">
@@ -226,7 +196,7 @@ const DetailsPage = () => {
           </div>
         </div>
 
-        {/* Recipe Steps */}
+       
         <div className="mb-4">
           <h4 className="fw-bold text-dark mb-3">
             <ChefHat size={22} className="me-2 text-success" />
@@ -236,9 +206,7 @@ const DetailsPage = () => {
           <div className="row g-3">
             {recipeData?.steps?.map((step, i) => (
               <div key={i} className="col-12">
-                {/* STEP CARD */}
                 <div className="card border rounded-3 shadow-sm">
-                  {/* HEADER */}
                   <div className="card-header bg-white d-flex align-items-center gap-2">
                     <span
                       className="rounded-circle text-white fw-bold d-flex align-items-center justify-content-center"
@@ -255,9 +223,7 @@ const DetailsPage = () => {
                     <h6 className="mb-0 fw-bold">{step.title}</h6>
                   </div>
 
-                  {/* BODY */}
                   <div className="card-body">
-                    {/* DESCRIPTION */}
                     <p
                       className="text-muted small mb-3"
                       style={{ lineHeight: "1.6" }}
@@ -265,7 +231,7 @@ const DetailsPage = () => {
                       {step.description}
                     </p>
 
-                    {/* INGREDIENTS */}
+                   
                     <div className="d-flex flex-wrap gap-2">
                       {step.ingredients?.map((ing, idx) => {
                         const isAdded = addedIngredients.includes(ing.name);
@@ -302,7 +268,6 @@ const DetailsPage = () => {
           </div>
         </div>
 
-        {/* All Ingredients */}
         <div className="mb-4">
           <h4 className="fw-bold text-dark mb-3">
             <Leaf size={22} className="me-2 text-success" />
@@ -342,7 +307,6 @@ const DetailsPage = () => {
           </div>
         </div>
 
-        {/* Related Dishes */}
         <div className="mb-4">
           <h4 className="fw-bold text-dark mb-3">Related Dishes</h4>
           <div className="row g-3">
@@ -357,7 +321,9 @@ const DetailsPage = () => {
                 <div
                   key={rel.id}
                   className="col-lg-3 col-md-6"
-                  onClick={() => navigate(`/details/${type}/${rel.id}`)}
+                  onClick={() => {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                    navigate(`/details/${type}/${rel.id}`)}}
                   style={{ cursor: "pointer" }}
                 >
                   <div className="card border rounded-3 overflow-hidden h-100">

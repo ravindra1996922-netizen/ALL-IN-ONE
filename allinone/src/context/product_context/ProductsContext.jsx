@@ -46,6 +46,7 @@ function productsReducer(productState, action) {
         ...productState,
         currentPage: action.payload,
       };
+
     case "SHOW_CATEGORY":
       return {
         ...productState,
@@ -94,6 +95,7 @@ export const ProductsProvider = ({ children }) => {
   );
 
   const { displayProduct, cache, currentPage, selectedCategory } = productState;
+
   // console.log(selectedCategory, "selectedcatogory");
 
   useEffect(() => {

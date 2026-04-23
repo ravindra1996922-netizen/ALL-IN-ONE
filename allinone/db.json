@@ -4,440 +4,144 @@
       "email": "lakdd123@gmail.com",
       "password": "$2a$10$1.N3QbJlDK2zOzjstCz7ReIRsmaHQqP5mhB2IlQQuPtKyOHqhB/eO",
       "name": "ravindra",
-      "id": 1,
-      "cart": [],
-      "portfolio": {
-        "stockQuantity": [],
-        "Stockprice": []
-      }
+      "id": 1
     },
     {
       "email": "lkdd123@gmail.com",
       "password": "$2a$10$eY.uzHoAlard6FHBZ0Oe8.a5f7hKPz4.vnrm3tUVJwVYA.0qkp50G",
       "username": "ravindra",
-      "id": 2,
-      "wallet": 3400,
-      "portfolio": {},
-      "cart": []
+      "id": 2
     },
     {
       "email": "ravindra2291996@gmail.com",
       "password": "$2a$10$6Bp2WsQahP2GjJK7glERkeJqwqbW4OgRNyY8fvC6t22ILSb/rD92G",
       "name": "Ravindra Kumar",
-      "id": 3,
-      "cart": []
+      "id": 3
     },
     {
       "email": "surya@gmail.com",
       "password": "$2a$10$j1QztU1gF/R7pYrzml.V1eiSS.rkdCxaol5mprxIDt4XW1uppm8OS",
       "name": "Generic H2 (Embedded)",
-      "id": 4,
-      "cart": []
+      "id": 4
     },
     {
       "email": "lall@gmail.com",
       "password": "$2a$10$YXMOosxTtq.fXVp5VQJBD.cOHD6v.Dyx1PYQZT59qsDSs6LySLHp.",
       "name": "llalo",
-      "id": 5,
-      "cart": []
+      "id": 5
     },
     {
       "email": "rnalApp@gmail.com",
       "password": "$2a$10$u.2jcBCO4OmkuFbg.mT2aeRa/rdpFEi2tUYIdoAe20oghE..qMo.S",
       "name": "mankdjd",
-      "id": 6,
-      "cart": []
+      "id": 6
     },
     {
       "email": "kk@gmail.com",
       "password": "$2a$10$cw7Sg0SdUU.szkreH4eQj.kM383gJ9qxaJuOiC4XkVb4qTo/KEAnu",
       "name": "kk",
-      "id": 7,
-      "cart": [
-        {
-          "id": 4,
-          "name": "Kadai Paneer",
-          "category": "veg",
-          "image": "https://i.ytimg.com/vi/gBnHovVnNwo/hqdefault.jpg",
-          "price": 260,
-          "type": "food",
-          "recipe": {
-            "cookTimeMinutes": 45,
-            "cookTimeCategory": "under45min",
-            "videoUrl": "https://youtube.com/watch?v=gBnHovVnNwo",
-            "steps": [
-              {
-                "stepNumber": 1,
-                "title": "Prep main",
-                "ingredients": [
-                  {
-                    "name": "Paneer",
-                    "quantity": "200 g"
-                  },
-                  {
-                    "name": "Capsicum",
-                    "quantity": "1 medium"
-                  }
-                ],
-                "description": "In step 1 of Kadai Paneer, which is 'Prep main', the ingredients used are Paneer and Capsicum. First, use 200 g of Paneer at the start of the recipe to prepare the main ingredient. Finally, use 1 medium of Capsicum during the preparation stage to prepare the supporting ingredient. Keep everything measured, cleaned, and organized in this stage so the later cooking steps move smoothly without interruption."
-              },
-              {
-                "stepNumber": 2,
-                "title": "Make base",
-                "ingredients": [
-                  {
-                    "name": "Oil",
-                    "quantity": "1 tbsp"
-                  },
-                  {
-                    "name": "Onion",
-                    "quantity": "2 medium"
-                  },
-                  {
-                    "name": "Tomato",
-                    "quantity": "2 medium"
-                  },
-                  {
-                    "name": "Ginger garlic",
-                    "quantity": "1 tbsp"
-                  }
-                ],
-                "description": "In step 2 of Kadai Paneer, which is 'Make base', the ingredients used are Oil, Onion, Tomato, and Ginger garlic. First, use 1 tbsp of Oil when starting the pan to build the base. Next, use 2 medium of Onion after the cooking fat is heated to add body. Next, use 2 medium of Tomato after the onion has started to soften to form the gravy base. Finally, use 1 tbsp of Ginger garlic during the masala stage to add depth. Cook this stage patiently so the aromatics soften properly and the base develops a balanced flavor before you move ahead."
-              },
-              {
-                "stepNumber": 3,
-                "title": "Simmer",
-                "ingredients": [
-                  {
-                    "name": "Onion tomato gravy",
-                    "quantity": "1 cup"
-                  },
-                  {
-                    "name": "Salt",
-                    "quantity": "1 tsp"
-                  },
-                  {
-                    "name": "Kadai masala",
-                    "quantity": "1 tsp"
-                  }
-                ],
-                "description": "In step 3 of Kadai Paneer, which is 'Simmer', the ingredients used are Onion tomato gravy, Salt, and Kadai masala. First, use 1 cup of Onion tomato gravy after the base is ready to set the body and consistency. Next, use 1 tsp of Salt during simmering to set the seasoning. Finally, use 1 tsp of Kadai masala during simmering to add the signature flavor. Maintain controlled heat in this stage so the mixture cooks evenly and each added ingredient integrates without losing its intended texture."
-              },
-              {
-                "stepNumber": 4,
-                "title": "Finish and serve",
-                "ingredients": [
-                  {
-                    "name": "Prepared Paneer",
-                    "quantity": "200 g"
-                  },
-                  {
-                    "name": "Coriander leaves",
-                    "quantity": "1 tbsp"
-                  },
-                  {
-                    "name": "Roti",
-                    "quantity": "1 portion"
-                  }
-                ],
-                "description": "In step 4 of Kadai Paneer, which is 'Finish and serve', the ingredients used are Prepared Paneer, Coriander leaves, and Roti. First, use 200 g of Prepared Paneer in the last cooking stage to finish the dish. Next, use 1 tbsp of Coriander leaves just before serving to garnish the dish. Finally, use 1 portion of Roti as a side accompaniment to complete the serving style. Keep this stage short and controlled so the main ingredient does not overcook, the garnish stays fresh, and the serving side is ready at the right moment."
-              }
-            ]
-          },
-          "qty": 3
-        },
-        {
-          "id": 42,
-          "title": "Flex Blue Sports Shoes",
-          "category": "shoes",
-          "subCategory": "male",
-          "brand": "Adidas",
-          "price": 1433,
-          "discount": 8,
-          "rating": 4.2,
-          "stock": 8,
-          "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQbMx8gF7XrHCUUcY6gxmhBh6Ti4zUKc_XoyyV-GdtlAsyQkLKzQjwOIkuGsAQAgxUYnWceRWlta8SoRWF-TyojH6xngYRmgbFzBKmKYzgirvwtFSYhJU3u&usqp=CAc",
-          "searchKey": "flex blue sports shoes adidas shoe footwear sneakers fashion sport casual comfort male men mens boys athletic training",
-          "qty": 1
-        },
-        {
-          "id": 43,
-          "title": "Active Grey Casual Sneakers",
-          "category": "shoes",
-          "subCategory": "male",
-          "brand": "Puma",
-          "price": 1550,
-          "discount": 10,
-          "rating": 4.3,
-          "stock": 10,
-          "image": "https://gochk.com/cdn/shop/files/skanda4.06.2025CHK1072_56e081cb-d088-45f2-ab13-f5adde034de3.jpg?v=1774851142&width=1600",
-          "searchKey": "active grey casual sneakers puma shoes shoe footwear fashion sport sports comfort male men mens boys sneaker lifestyle",
-          "qty": 1
-        },
-        {
-          "id": 82,
-          "title": "Plus Silver Laptop i5",
-          "category": "electronics",
-          "subCategory": "general",
-          "brand": "HP",
-          "price": 4597,
-          "discount": 8,
-          "rating": 4.2,
-          "stock": 8,
-          "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSy7nRgugcAPemRRrRtvdCfB8SGJWAQUDnShSbyZDKxgxz7grQyKLe8CqG3YC1lxIUGaU1YTI9ak-iir-IRn9KPnY50I4KBZgBiB1WeCVvuWO9GcRVvljp7LvB7HNOBwA&usqp=CAc",
-          "searchKey": "plus silver laptop i5 hp electronics gadgets tech technology device accessories notebook computerc",
-          "qty": 1
-        },
-        {
-          "id": 3,
-          "name": "Butter Chicken",
-          "category": "nonveg",
-          "image": "https://i.ytimg.com/vi/a03U45jFxOI/hqdefault.jpg",
-          "price": 290,
-          "type": "food",
-          "recipe": {
-            "cookTimeMinutes": 45,
-            "cookTimeCategory": "under45min",
-            "videoUrl": "https://youtube.com/watch?v=a03U45jFxOI",
-            "steps": [
-              {
-                "stepNumber": 1,
-                "title": "Prep main protein",
-                "ingredients": [
-                  {
-                    "name": "Chicken",
-                    "quantity": "500 g"
-                  },
-                  {
-                    "name": "Cream",
-                    "quantity": "2 tbsp"
-                  }
-                ],
-                "description": "In step 1 of Butter Chicken, prepare 500 g of Chicken first so the main protein is cleaned, portioned, and ready for cooking. Then measure 2 tbsp of Cream and keep it ready because it supports marination, richness, or flavor balance later in the recipe. This stage matters because the protein and the supporting ingredient must both be ready before the curry base is built."
-              },
-              {
-                "stepNumber": 2,
-                "title": "Build the curry base",
-                "ingredients": [
-                  {
-                    "name": "Butter",
-                    "quantity": "1 tbsp"
-                  },
-                  {
-                    "name": "Onion",
-                    "quantity": "2 medium"
-                  },
-                  {
-                    "name": "Tomato",
-                    "quantity": "2 medium"
-                  },
-                  {
-                    "name": "Ginger garlic",
-                    "quantity": "1 tbsp"
-                  }
-                ],
-                "description": "In step 2 of Butter Chicken, heat 1 tbsp of Butter first to start the base. Next, add 2 medium Onion and cook it until it softens and creates body. Then add 2 medium Tomato so the curry gains moisture and a proper gravy foundation. Finally, add 1 tbsp of Ginger garlic so the base develops depth before the simmering stage."
-              },
-              {
-                "stepNumber": 3,
-                "title": "Simmer the gravy",
-                "ingredients": [
-                  {
-                    "name": "Tomato cashew gravy",
-                    "quantity": "1 cup"
-                  },
-                  {
-                    "name": "Salt",
-                    "quantity": "1 tsp"
-                  },
-                  {
-                    "name": "Kasuri methi",
-                    "quantity": "1 tsp"
-                  }
-                ],
-                "description": "In step 3 of Butter Chicken, add 1 cup of Tomato cashew gravy once the masala base is ready so the dish develops its main body and consistency. Season with 1 tsp of Salt so the gravy becomes balanced. Then add 1 tsp of Kasuri methi during simmering so the curry develops its final signature flavor and aroma. Keep the heat controlled so the sauce thickens evenly and does not burn."
-              },
-              {
-                "stepNumber": 4,
-                "title": "Finish and serve",
-                "ingredients": [
-                  {
-                    "name": "Prepared Chicken",
-                    "quantity": "500 g"
-                  },
-                  {
-                    "name": "Coriander leaves",
-                    "quantity": "1 tbsp"
-                  },
-                  {
-                    "name": "Naan",
-                    "quantity": "1 portion"
-                  }
-                ],
-                "description": "In step 4 of Butter Chicken, add the prepared 500 g of Chicken in the final cooking stage so the protein cooks through in the gravy and absorbs flavor. Sprinkle 1 tbsp of Coriander leaves just before serving to add freshness. Finally, serve the dish with 1 portion of Naan so the meal is complete and ready to eat."
-              }
-            ]
-          },
-          "qty": 1
-        },
-        {
-          "id": 6,
-          "name": "Chicken Curry",
-          "category": "nonveg",
-          "image": "https://i.ytimg.com/vi/jwyge5daKUQ/hqdefault.jpg",
-          "price": 300,
-          "type": "food",
-          "recipe": {
-            "cookTimeMinutes": 45,
-            "cookTimeCategory": "under45min",
-            "videoUrl": "https://youtube.com/watch?v=jwyge5daKUQ",
-            "steps": [
-              {
-                "stepNumber": 1,
-                "title": "Prep main protein",
-                "ingredients": [
-                  {
-                    "name": "Chicken",
-                    "quantity": "500 g"
-                  },
-                  {
-                    "name": "Curd",
-                    "quantity": "2 tbsp"
-                  }
-                ],
-                "description": "In step 1 of Chicken Curry, prepare 500 g of Chicken first so the main protein is cleaned, portioned, and ready for cooking. Then measure 2 tbsp of Curd and keep it ready because it supports marination, richness, or flavor balance later in the recipe. This stage matters because the protein and the supporting ingredient must both be ready before the curry base is built."
-              },
-              {
-                "stepNumber": 2,
-                "title": "Build the curry base",
-                "ingredients": [
-                  {
-                    "name": "Oil",
-                    "quantity": "1 tbsp"
-                  },
-                  {
-                    "name": "Onion",
-                    "quantity": "2 medium"
-                  },
-                  {
-                    "name": "Tomato",
-                    "quantity": "2 medium"
-                  },
-                  {
-                    "name": "Ginger garlic",
-                    "quantity": "1 tbsp"
-                  }
-                ],
-                "description": "In step 2 of Chicken Curry, heat 1 tbsp of Oil first to start the base. Next, add 2 medium Onion and cook it until it softens and creates body. Then add 2 medium Tomato so the curry gains moisture and a proper gravy foundation. Finally, add 1 tbsp of Ginger garlic so the base develops depth before the simmering stage."
-              },
-              {
-                "stepNumber": 3,
-                "title": "Simmer the gravy",
-                "ingredients": [
-                  {
-                    "name": "Onion tomato gravy",
-                    "quantity": "1 cup"
-                  },
-                  {
-                    "name": "Salt",
-                    "quantity": "1 tsp"
-                  },
-                  {
-                    "name": "Garam masala",
-                    "quantity": "0.5 tsp"
-                  }
-                ],
-                "description": "In step 3 of Chicken Curry, add 1 cup of Onion tomato gravy once the masala base is ready so the dish develops its main body and consistency. Season with 1 tsp of Salt so the gravy becomes balanced. Then add 0.5 tsp of Garam masala during simmering so the curry develops its final signature flavor and aroma. Keep the heat controlled so the sauce thickens evenly and does not burn."
-              },
-              {
-                "stepNumber": 4,
-                "title": "Finish and serve",
-                "ingredients": [
-                  {
-                    "name": "Prepared Chicken",
-                    "quantity": "500 g"
-                  },
-                  {
-                    "name": "Coriander leaves",
-                    "quantity": "1 tbsp"
-                  },
-                  {
-                    "name": "Rice",
-                    "quantity": "1 portion"
-                  }
-                ],
-                "description": "In step 4 of Chicken Curry, add the prepared 500 g of Chicken in the final cooking stage so the protein cooks through in the gravy and absorbs flavor. Sprinkle 1 tbsp of Coriander leaves just before serving to add freshness. Finally, serve the dish with 1 portion of Rice so the meal is complete and ready to eat."
-              }
-            ]
-          },
-          "qty": 2
-        },
-        {
-          "id": 5,
-          "title": "Urban Grey Polo T-Shirt",
-          "category": "clothing",
-          "subCategory": "male",
-          "brand": "U.S. Polo Assn.",
-          "price": 1128,
-          "discount": 15,
-          "rating": 4.5,
-          "stock": 15,
-          "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQXBAtZ6eKlIxcuGYoPTn2att-9knQ4YKj8hfShZHVZxIC5CGqUnNA0heoFIsVCAzxmHRtZP4xyh2t4l0li_e7gNo-enS8U8IejnpogmoOHn6XQuepekzgT",
-          "searchKey": "urban grey polo t shirt u s assn us uspoloassn clothing clothes fashion wear outfit style male men mens boys tshirt casual top",
-          "qty": 1
-        }
-      ],
-      "portfolio": {
-        "totalShares": 10,
-        "totalInvested": 38880
-      }
+      "id": 7
     },
     {
       "email": "dd@gmail.com",
       "password": "$2a$10$ky7RE9Yb03wYkd6HMSfM5uh5PYoeCK0M0JBqSZ07w16hq2bhSVxSa",
       "name": "dd",
-      "id": 8,
-      "cart": []
+      "id": 8
     },
     {
       "email": "hh@gmail.com",
       "password": "$2a$10$VyikEezBubvgGtkl8a9N.e3C01io41VDiYikpY/0gJySbPjcl4ANC",
       "name": "hh",
-      "id": 9,
-      "cart": []
+      "id": 9
     },
     {
       "email": "nayanasr.04@gmail.com",
       "password": "$2a$10$7/CJtD.Ee.2.I12WxVNX/ub7Y/GFatdKduiILnJBpSzYO7AmR139O",
       "name": "NAYANA S R",
-      "id": 10,
-      "cart": []
+      "id": 10
     },
     {
       "email": "qw@gmail.com",
       "password": "$2a$10$5WnziA1KkLjqbEPUC3/pVeVsqbdD//O.13ooofKIrpCoF7Zo1BOCi",
       "name": "qw",
-      "id": 11,
-      "cart": []
+      "id": 11
     },
     {
       "email": "hi@gmail.com",
       "password": "$2a$10$ldoW2QYmVBhVNA4jktU.1OXf11/VVHgEslux/BQpEQ.hFPvoRi5fu",
       "name": "hi",
-      "id": 12,
-      "cart": []
+      "id": 12
     },
     {
-      "email": "qwerty12@gmail.com",
-      "password": "$2a$10$CAdWRFdDZbui118YqVQaNOcWUsTS4gcS2vtKzhLajGA0GBfXFH/zC",
-      "name": "qwerty",
-      "id": 13
-    },
-    {
-      "email": "a@gmail.com",
-      "password": "$2a$10$SXLQTFzoBmDdoHkXVxEuxuoTfsgJ8CQ1scsmEWKqBdPQ0GDfTNLRW",
-      "name": "a",
-      "id": 14
+      "email": "nayana@gmail.com",
+      "password": "$2a$10$iXNrhIH4sDxgfviZXqRnDecHrQZKGhjnSYQePmiczBU11bBRFmNxK",
+      "name": "Nayana S R",
+      "id": 13,
+      "cart": [
+        {
+          "id": 83,
+          "title": "Max Blue Wireless Earbuds",
+          "category": "electronics",
+          "subCategory": "general",
+          "brand": "Lenovo",
+          "price": 6145,
+          "discount": 10,
+          "rating": 4.3,
+          "stock": 10,
+          "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTPD8j_QYKQmRWYBnGPBBmVHCDveHLUqCFFSraSE5PA3mkgqRTOWgKFn11a0M1s240iFCcDlXcGIREmMvrkR7CFlxvS7RNS924Igk5KOjMFkLUin44OFGJGN-9-9knlO1CkNiX3WBU&usqp=CAc",
+          "searchKey": "max blue wireless earbuds lenovo electronics gadgets tech technology device devices accessories earbud earphones bluetooth audio tws",
+          "qty": 1
+        },
+        {
+          "id": "Cardamom powder",
+          "title": "Cardamom powder",
+          "price": 10,
+          "image": "https://i.ytimg.com/vi/T9hQV22Uezw/hqdefault.jpg",
+          "qty": 1
+        },
+        {
+          "id": "Paneer",
+          "title": "Paneer",
+          "price": 10,
+          "image": "https://i.ytimg.com/vi/U1LVDFwi8qI/hqdefault.jpg",
+          "qty": 4
+        },
+        {
+          "id": 1,
+          "title": "Classic Navy Slim Fit Shirt",
+          "category": "clothing",
+          "subCategory": "male",
+          "brand": "H&M",
+          "price": 865,
+          "discount": 5,
+          "rating": 4.1,
+          "stock": 6,
+          "image": "https://www.aristobrat.in/cdn/shop/files/ClassicShirt25_French5.jpg?v=1755254057&width=1000",
+          "searchKey": " navy slim fit shirt h&M clothing clothes  fashion wear outfit style male men mens boys shirts formal casual",
+          "qty": 1
+        },
+        {
+          "id": 2,
+          "title": "Modern Black Cotton T-Shirt",
+          "category": "clothing",
+          "subCategory": "male",
+          "brand": "Levis",
+          "price": 931,
+          "discount": 8,
+          "rating": 4.2,
+          "stock": 8,
+          "image": "https://tse3.mm.bing.net/th/id/OIP.8Jl07l3Zw_oZ10Y_d7a2AwHaJQ?pid=Api&P=0&h=180",
+          "searchKey": "modern black cotton tshirt levis clothing clothes fashion wear outfit style male men mens boys tshirt ",
+          "qty": 2
+        },
+        {
+          "id": "Coriander leaves",
+          "title": "Coriander leaves",
+          "price": 10,
+          "image": "https://i.ytimg.com/vi/cjGDsV6FvNE/hqdefault.jpg",
+          "qty": 1
+        }
+      ]
     },
     {
       "email": "qq@gmail.com",
@@ -446,10 +150,38 @@
       "id": 15
     },
     {
-      "email": "q@gmail.com",
-      "password": "$2a$10$Rwe36qO0gxTJS5GhZLkXWOWvHuBxIt1Fk6JgM1EzcgjUMxH6eo6Vu",
-      "name": "q",
+      "email": "n@gmail.com",
+      "password": "$2a$10$hbUUVvBKUKljCTg1nyu/KOy7RoagQbzJEOdQfSj5qSehDVi/WGDtC",
+      "name": "ssss",
       "id": 16
+    },
+    {
+      "email": "b@gmail.com",
+      "password": "$2a$10$K31C1XwgsPBnbNBgjgKCLOj2xWfARzj7Ya.oU77opXDNXKLM8bBuG",
+      "name": "Suraj S",
+      "id": 17
+    },
+    {
+      "email": "c@gmail.com",
+      "password": "$2a$10$HIF8cLi0E64e1dghehzKB.1qyH/yrzL0tX7IZCfNiVkdVHqTd/hbi",
+      "name": "Suraj S",
+      "id": 18,
+      "cart": [],
+      "portfolio": {
+        "totalShares": 10,
+        "totalInvested": 37340
+      }
+    },
+    {
+      "email": "g@gmail.com",
+      "password": "$2a$10$RCHoIwlzoNuDP.sgCkepLO2VRQNzgpbqsIykzqTs6b8scS7jZXcF2",
+      "name": "Suraj S",
+      "id": 19,
+      "portfolio": {
+        "totalShares": 0,
+        "totalInvested": 0
+      },
+      "cart": []
     }
   ],
   "userStock": [],

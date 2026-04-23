@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { useProducts } from "../../../context/product_context/useProducts";
 import { getAllCategoryPreview } from "../shopingDataModel/buildShopingmodel";
@@ -24,11 +23,15 @@ const ShopingLanding = () => {
   const [searchText, setSearchText] = useState("");
   const navigate = useNavigate();
   const { cartDispatch } = useCart();
-
   const { user } = useAuth();
+
   const userId = user?.user?.id;
 
-  const previewData = getAllCategoryPreview(displayProduct);
+  // ✅ FIX: ensure it's always an array
+  const safeProducts = Array.isArray(displayProduct) ? displayProduct : [];
+
+  // ✅ FIX: safe preview generation
+  const previewData = getAllCategoryPreview(safeProducts);
 
   // ✅ FILTER
   useEffect(() => {
@@ -54,7 +57,7 @@ const ShopingLanding = () => {
 
   // ✅ CART
   const handleAddToCart = async (item) => {
-    if (!user?.user?.id) {
+    if (!userId) {
       toast.error("Please login first", {
         style: { background: "#d03f3f", color: "black" },
       });
@@ -79,19 +82,20 @@ const ShopingLanding = () => {
     }
   };
 
+  // ✅ LOADING / ERROR
   if (loading) return <p className="text-center mt-4">Loading...</p>;
   if (error) return <p className="text-center mt-4">Error: {error}</p>;
 
   return (
     <>
-      {/* ✅ IMPORTANT (explicit type) */}
+      {/* FILTER BAR */}
       <FilterBar
         searchText={searchText}
         setSearchText={setSearchText}
         data={cache}
         dispatch={productDispatch}
         activeCategory={selectedCategory}
-        type="shopping" // 🔥 ADD THIS
+        type="shopping"
       />
 
       <div className="container my-4">
@@ -118,43 +122,47 @@ const ShopingLanding = () => {
 
         {/* PRODUCTS */}
         <div id="products-section">
-          {Object.keys(previewData).map((category) => (
-            <div key={category} className="mb-5">
-              <div className="d-flex justify-content-between align-items-center mb-3">
-                <h4 className="text-capitalize">{category}</h4>
+          {Object.keys(previewData).length === 0 ? (
+            <p className="text-center">No products found</p>
+          ) : (
+            Object.keys(previewData).map((category) => (
+              <div key={category} className="mb-5">
+                <div className="d-flex justify-content-between align-items-center mb-3">
+                  <h4 className="text-capitalize">{category}</h4>
 
-                <button
-                  className="btn btn-outline-primary btn-sm"
-                  onClick={() => navigate(`/category/${category}`)}
-                >
-                  View All
-                </button>
-              </div>
+                  <button
+                    className="btn btn-outline-primary btn-sm"
+                    onClick={() => navigate(`/category/${category}`)}
+                  >
+                    View All
+                  </button>
+                </div>
 
-              <div className="row">
-                {previewData[category].map((item) => (
-                  <div className="col-md-3 mb-4 d-flex" key={item.id}>
-                    <div className="w-100">
-                      <FeatureCard title={item.title} image={item.image}>
-                        <div className="d-flex flex-column h-100">
-                          <p className="text-success fw-bold text-center mb-2">
-                            ₹{item.price}
-                          </p>
+                <div className="row">
+                  {previewData[category].map((item) => (
+                    <div className="col-md-3 mb-4 d-flex" key={item.id}>
+                      <div className="w-100">
+                        <FeatureCard title={item.name} image={item.image}>
+                          <div className="d-flex flex-column h-100">
+                            <p className="text-success fw-bold text-center mb-2">
+                              ₹{item.price}
+                            </p>
 
-                          <button
-                            className="btn btn-dark btn-sm mt-auto w-100"
-                            onClick={() => handleAddToCart(item)}
-                          >
-                            Add to Cart
-                          </button>
-                        </div>
-                      </FeatureCard>
+                            <button
+                              className="btn btn-dark btn-sm mt-auto w-100"
+                              onClick={() => handleAddToCart(item)}
+                            >
+                              Add to Cart
+                            </button>
+                          </div>
+                        </FeatureCard>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))
+          )}
         </div>
       </div>
     </>

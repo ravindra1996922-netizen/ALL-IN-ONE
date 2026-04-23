@@ -1,5 +1,4 @@
 
-
 import React, { createContext, useEffect, useReducer } from "react";
 import { fetchFoods, fetchRecipes } from "../../utils/api/FoodApi/foodApi";
 import { buildUnifiedFoodData } from "../../features/food_feature/food-model/foodModel";
@@ -65,7 +64,7 @@ function reducer(state, action) {
 
 const FoodProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialValue);
-  console.log(state.foodCache[0], "fc");
+  // console.log(state.foodCache[0], "fc");
 
   useEffect(() => {
     const loadData = async () => {
