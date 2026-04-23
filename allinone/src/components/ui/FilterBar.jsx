@@ -13,7 +13,7 @@ const FilterBar = ({
   const navigate = useNavigate();
 
   // ✅ SAFE CATEGORY BUILD
-  const categories = ["all", ...new Set((data || []).map((p) => p.category))];
+  const categories = ["all", ...new Set((data || []).map((p) =>  p.category))];
 
   return (
     <div
@@ -33,7 +33,7 @@ const FilterBar = ({
                 });
 
                 // ✅ FIX: DIFFERENT ROUTING
-                if (cat === "all") {
+                if (cat === "All") {
                   navigate(type === "food" ? "/orderFood" : "/shopping");
                 } else {
                   navigate(
@@ -49,7 +49,7 @@ const FilterBar = ({
                 activeCategory === cat ? "btn-dark" : "btn-light border"
               }`}
             >
-              {cat}
+              {cat.charAt(0).toUpperCase() + cat.slice(1)}
             </button>
           ))}
         </div>

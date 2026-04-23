@@ -148,12 +148,7 @@ const HomePage = () => {
       <section className="py-4" style={{ background: '#f8f6f0' }}>
         <div className="container text-center">
           <h1 className="fw-bold mb-3" style={{ color: '#3e432e', letterSpacing: '1px' }}>Invest • Shop • Eat • Learn</h1>
-          <div className="d-flex gap-3 justify-content-center">
-            <button onClick={() => { window.scrollTo({ top: 0, behavior: "smooth" }); navigate("/invest") }}
-              className="btn px-4" style={{ backgroundColor: '#5a6238', color: 'white' }}>Invest Now</button>
-            <button onClick={() => { window.scrollTo({ top: 0, behavior: "smooth" }); navigate("/orderFood") }}
-              className="btn btn-outline-dark px-4">Order Food</button>
-          </div>
+          
         </div>
       </section>
 
@@ -209,10 +204,10 @@ const HomePage = () => {
 
             {/* Clothing */}
             <div className="col-lg-6">
-              <div className="border rounded-4 p-3 h-100" style={{ background: '#fdfcfa' }}>
+              <div className="border rounded-4 p-3 h-100" style={{ background: '#fdfcfa', cursor:"pointer"}}>
                 <h5 className="mb-3">🛍️ Products</h5>
-                <div id="carouselExample" className="carousel slide">
-                  <div className="carousel-inner">
+                <div id="carouselExample" className="carousel slide ">
+                  <div className="carousel-inner ">
 
                     {productSlides.map((slide, index) => (
                       <div
@@ -392,7 +387,7 @@ const HomePage = () => {
                     {/* Name + price */}
                     <div className="mt-2">
                       <p className="mb-0 fw-semibold">{randomRecipe.name}</p>
-                      <small className="text-muted">₹{randomRecipe.price}</small>
+                      {/* <small className="text-muted">₹{randomRecipe.price}</small> */}
                     </div>
 
                   </div>
