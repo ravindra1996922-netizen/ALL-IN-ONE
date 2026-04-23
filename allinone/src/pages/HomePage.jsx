@@ -296,6 +296,7 @@ const HomePage = () => {
                onClick={()=> {
                   navigate("/orderFood")
                   foodDispatcher({type: "SET_CATEGORY", payload: "all"})
+                   window.scrollTo({ top: 0, behavior: "smooth" });
                 }}>
                 <h5 className="mb-3">🍴 Food </h5>
 
