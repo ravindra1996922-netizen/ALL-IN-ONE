@@ -5,10 +5,12 @@ import { useAuth } from "../../context/authContext/useAuth";
 import { useProducts } from "../../context/product_context/useProducts";
 import { useCart } from "../../context/cartContext/useCart";
 import { toast } from "react-toastify";
+import { useFood } from "../../context/foodContext/useFood";
 
 const Navbar = () => {
   const { user, authDispatch } = useAuth();
   const { productDispatch } = useProducts();
+  const { foodDispatcher } = useFood();
   const { cart } = useCart();
   const navigate = useNavigate();
 
@@ -137,9 +139,10 @@ const Navbar = () => {
                   to="/orderFood"
                   end
                   className="nav-link"
-                  onClick={() =>
-                    window.scrollTo({ top: 0, behavior: "smooth" })
-                  }
+                  onClick={() => {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                    foodDispatcher({ type: "SET_CATEGORY", payload: "all" });
+                  }}
                 >
                   Order Food
                 </NavLink>

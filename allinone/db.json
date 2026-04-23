@@ -55,62 +55,6 @@
       "id": 7,
       "cart": [
         {
-          "id": 202,
-          "title": "Fresh Cool Beard Oil",
-          "category": "beauty",
-          "subCategory": "male",
-          "brand": "Beardo",
-          "price": 311,
-          "discount": 8,
-          "rating": 4.2,
-          "stock": 8,
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoGcu4PiDgTx3QU4eCmsUPKYtQp0XQDkU1mg&s",
-          "searchKey": "fresh cool beard oil beardo beauty skincare grooming self care cosmetic cosmetics male men mens boys",
-          "qty": 1
-        },
-        {
-          "id": 91,
-          "title": "Pro Black Wireless Earbuds",
-          "category": "electronics",
-          "subCategory": "general",
-          "brand": "Lenovo",
-          "price": 18536,
-          "discount": 12,
-          "rating": 4.3,
-          "stock": 6,
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQk-QaqOBbZBhJYQaUIosws4Y1vmMMgMKRzA&s",
-          "searchKey": "pro black wireless earbuds lenovo electronics gadgets tech technology device devices accessories earbud earphones bluetooth audio tws",
-          "qty": 2
-        },
-        {
-          "id": 2,
-          "title": "Modern Black Cotton T-Shirt",
-          "category": "clothing",
-          "subCategory": "male",
-          "brand": "Levis",
-          "price": 931,
-          "discount": 8,
-          "rating": 4.2,
-          "stock": 8,
-          "image": "https://tse3.mm.bing.net/th/id/OIP.8Jl07l3Zw_oZ10Y_d7a2AwHaJQ?pid=Api&P=0&h=180",
-          "searchKey": "modern black cotton tshirt levis clothing clothes fashion wear outfit style male men mens boys tshirt ",
-          "qty": 13
-        },
-        {
-          "id": 3,
-          "title": "Essential White Casual Trouser",
-          "category": "clothing",
-          "subCategory": "male",
-          "brand": "Allen Solly",
-          "price": 997,
-          "discount": 10,
-          "rating": 4.3,
-          "stock": 10,
-          "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTXK3kGAR64TqZ2dKh1ao0YvqsA5bJUqjAuO2XEAHlNmu7N3XaaKuba7UdVmi_CvL2DByqaWRTOQ_LPEXc_ESiJz7LimyuZustaP0uoSHJOvWdlQnfVzmuxqg",
-          "searchKey": "essential white casual trouser allen solly allensolly clothing clothes apparel fashion wear outfit style male men mens boys trousers pants chinos bottomwear",
-          "qty": 5
-        },
-        {
           "id": 1,
           "name": "Paneer Butter Masala",
           "category": "veg",
@@ -200,104 +144,19 @@
               }
             ]
           },
-          "quantity": 1,
-          "qty": 15
+          "qty": 7
         },
         {
-          "id": "Paneer",
-          "title": "Paneer",
-          "price": 10,
-          "image": "https://i.ytimg.com/vi/U1LVDFwi8qI/hqdefault.jpg",
-          "qty": 2
-        },
-        {
-          "id": 5,
-          "title": "Urban Grey Polo T-Shirt",
-          "category": "clothing",
-          "subCategory": "male",
-          "brand": "U.S. Polo Assn.",
-          "price": 1128,
-          "discount": 15,
-          "rating": 4.5,
-          "stock": 15,
-          "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQXBAtZ6eKlIxcuGYoPTn2att-9knQ4YKj8hfShZHVZxIC5CGqUnNA0heoFIsVCAzxmHRtZP4xyh2t4l0li_e7gNo-enS8U8IejnpogmoOHn6XQuepekzgT",
-          "searchKey": "urban grey polo t shirt u s assn us uspoloassn clothing clothes fashion wear outfit style male men mens boys tshirt casual top",
-          "qty": 1
-        },
-        {
-          "id": 4,
-          "title": "Signature Olive Denim Jeans",
-          "category": "clothing",
-          "subCategory": "male",
-          "brand": "Van Heusen",
-          "price": 1062,
-          "discount": 12,
-          "rating": 4.4,
-          "stock": 12,
-          "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQiaUGCzLOYxWTn5BebG2gHxsWCDo54MNY9gk4dJUVc1c5ezEbpqWDoR6UAcUZFmmcA3piBB677K6QcEVb8dCGKwSu5wnijNjZUH-xGF3ji",
-          "searchKey": "signature olive denim jeans van heusen vanheusen clothing clothes apparel fashion wear outfit style male men mens boys pants bottoms",
-          "qty": 2
-        },
-        {
-          "id": 6,
-          "title": "Classic Navy Formal Shirt",
-          "category": "clothing",
-          "subCategory": "male",
-          "brand": "H&M",
-          "price": 1194,
-          "discount": 18,
-          "rating": 4.6,
-          "stock": 18,
-          "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcREubP-myCivM-UdtoxRBq2ln0Nq9rIJI-a3-weS3LfJANKkfWPrHHUU-ah7TAPexyGoWMfS4CZocH41gRwAG4eoCv63dANPA",
-          "searchKey": "classic navy formal shirt h and m hm clothing clothes apparel fashion wear outfit style male men mens boys shirts office",
-          "qty": 1
-        },
-        {
-          "id": 241,
-          "title": "Balanced Chicken Dog Food Premium",
-          "category": "pet",
-          "subCategory": "general",
-          "brand": "Pedigree",
-          "price": 328,
-          "discount": 5,
-          "rating": 4.1,
-          "stock": 6,
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGwXnTXF0n8Yz4jXPP8pZY2M79sD7lE-TH_A&s",
-          "searchKey": "balanced chicken dog food premium pedigree pet pets petcare supplies animal companion kibble dogs canine puppy",
-          "qty": 1
-        },
-        {
-          "id": "Milk",
-          "title": "Milk",
-          "price": 10,
-          "image": "https://i.ytimg.com/vi/T9hQV22Uezw/hqdefault.jpg",
-          "qty": 1
-        },
-        {
-          "id": "Ginger garlic",
-          "title": "Ginger garlic",
-          "price": 10,
-          "image": "https://i.ytimg.com/vi/U1LVDFwi8qI/hqdefault.jpg",
-          "qty": 1
-        },
-        {
-          "id": "Cream",
-          "title": "Cream",
-          "price": 10,
-          "image": "https://i.ytimg.com/vi/U1LVDFwi8qI/hqdefault.jpg",
-          "qty": 1
-        },
-        {
-          "id": 7,
-          "name": "Matar Paneer",
+          "id": 2,
+          "name": "Shahi Paneer",
           "category": "veg",
-          "image": "https://i.ytimg.com/vi/4u-IsmZ5hFI/hqdefault.jpg",
-          "price": 270,
+          "image": "https://i.ytimg.com/vi/T9hQV22Uezw/hqdefault.jpg",
+          "price": 290,
           "type": "food",
           "recipe": {
             "cookTimeMinutes": 45,
             "cookTimeCategory": "under45min",
-            "videoUrl": "https://youtube.com/watch?v=4u-IsmZ5hFI",
+            "videoUrl": "https://youtube.com/watch?v=T9hQV22Uezw",
             "steps": [
               {
                 "stepNumber": 1,
@@ -305,14 +164,106 @@
                 "ingredients": [
                   {
                     "name": "Paneer",
-                    "quantity": "180 g"
+                    "quantity": "200 g"
                   },
                   {
-                    "name": "Green peas",
-                    "quantity": "0.75 cup"
+                    "name": "Milk",
+                    "quantity": "0.25 cup"
                   }
                 ],
-                "description": "In step 1 of Matar Paneer, which is 'Prep main', the ingredients used are Paneer and Green peas. First, use 180 g of Paneer at the start of the recipe to prepare the main ingredient. Finally, use 0.75 cup of Green peas during the preparation stage to prepare the supporting ingredient. Keep everything measured, cleaned, and organized in this stage so the later cooking steps move smoothly without interruption."
+                "description": "In step 1 of Shahi Paneer, which is 'Prep main', the ingredients used are Paneer and Milk. First, use 200 g of Paneer at the start of the recipe to prepare the main ingredient. Finally, use 0.25 cup of Milk during the preparation stage to prepare the supporting ingredient. Keep everything measured, cleaned, and organized in this stage so the later cooking steps move smoothly without interruption."
+              },
+              {
+                "stepNumber": 2,
+                "title": "Make base",
+                "ingredients": [
+                  {
+                    "name": "Butter",
+                    "quantity": "1 tbsp"
+                  },
+                  {
+                    "name": "Onion",
+                    "quantity": "2 medium"
+                  },
+                  {
+                    "name": "Tomato",
+                    "quantity": "2 medium"
+                  },
+                  {
+                    "name": "Ginger garlic",
+                    "quantity": "1 tbsp"
+                  }
+                ],
+                "description": "In step 2 of Shahi Paneer, which is 'Make base', the ingredients used are Butter, Onion, Tomato, and Ginger garlic. First, use 1 tbsp of Butter when starting the pan to build the base. Next, use 2 medium of Onion after the cooking fat is heated to add body. Next, use 2 medium of Tomato after the onion has started to soften to form the gravy base. Finally, use 1 tbsp of Ginger garlic during the masala stage to add depth. Cook this stage patiently so the aromatics soften properly and the base develops a balanced flavor before you move ahead."
+              },
+              {
+                "stepNumber": 3,
+                "title": "Simmer",
+                "ingredients": [
+                  {
+                    "name": "Cashew gravy",
+                    "quantity": "1 cup"
+                  },
+                  {
+                    "name": "Salt",
+                    "quantity": "1 tsp"
+                  },
+                  {
+                    "name": "Cardamom powder",
+                    "quantity": "0.25 tsp"
+                  }
+                ],
+                "description": "In step 3 of Shahi Paneer, which is 'Simmer', the ingredients used are Cashew gravy, Salt, and Cardamom powder. First, use 1 cup of Cashew gravy after the base is ready to set the body and consistency. Next, use 1 tsp of Salt during simmering to set the seasoning. Finally, use 0.25 tsp of Cardamom powder during simmering to add the signature flavor. Maintain controlled heat in this stage so the mixture cooks evenly and each added ingredient integrates without losing its intended texture."
+              },
+              {
+                "stepNumber": 4,
+                "title": "Finish and serve",
+                "ingredients": [
+                  {
+                    "name": "Prepared Paneer",
+                    "quantity": "200 g"
+                  },
+                  {
+                    "name": "Coriander leaves",
+                    "quantity": "1 tbsp"
+                  },
+                  {
+                    "name": "Naan",
+                    "quantity": "1 portion"
+                  }
+                ],
+                "description": "In step 4 of Shahi Paneer, which is 'Finish and serve', the ingredients used are Prepared Paneer, Coriander leaves, and Naan. First, use 200 g of Prepared Paneer in the last cooking stage to finish the dish. Next, use 1 tbsp of Coriander leaves just before serving to garnish the dish. Finally, use 1 portion of Naan as a side accompaniment to complete the serving style. Keep this stage short and controlled so the main ingredient does not overcook, the garnish stays fresh, and the serving side is ready at the right moment."
+              }
+            ]
+          },
+          "qty": 7
+        },
+        {
+          "id": 4,
+          "name": "Kadai Paneer",
+          "category": "veg",
+          "image": "https://i.ytimg.com/vi/gBnHovVnNwo/hqdefault.jpg",
+          "price": 260,
+          "type": "food",
+          "recipe": {
+            "cookTimeMinutes": 45,
+            "cookTimeCategory": "under45min",
+            "videoUrl": "https://youtube.com/watch?v=gBnHovVnNwo",
+            "steps": [
+              {
+                "stepNumber": 1,
+                "title": "Prep main",
+                "ingredients": [
+                  {
+                    "name": "Paneer",
+                    "quantity": "200 g"
+                  },
+                  {
+                    "name": "Capsicum",
+                    "quantity": "1 medium"
+                  }
+                ],
+                "description": "In step 1 of Kadai Paneer, which is 'Prep main', the ingredients used are Paneer and Capsicum. First, use 200 g of Paneer at the start of the recipe to prepare the main ingredient. Finally, use 1 medium of Capsicum during the preparation stage to prepare the supporting ingredient. Keep everything measured, cleaned, and organized in this stage so the later cooking steps move smoothly without interruption."
               },
               {
                 "stepNumber": 2,
@@ -335,14 +286,176 @@
                     "quantity": "1 tbsp"
                   }
                 ],
-                "description": "In step 2 of Matar Paneer, which is 'Make base', the ingredients used are Oil, Onion, Tomato, and Ginger garlic. First, use 1 tbsp of Oil when starting the pan to build the base. Next, use 2 medium of Onion after the cooking fat is heated to add body. Next, use 2 medium of Tomato after the onion has started to soften to form the gravy base. Finally, use 1 tbsp of Ginger garlic during the masala stage to add depth. Cook this stage patiently so the aromatics soften properly and the base develops a balanced flavor before you move ahead."
+                "description": "In step 2 of Kadai Paneer, which is 'Make base', the ingredients used are Oil, Onion, Tomato, and Ginger garlic. First, use 1 tbsp of Oil when starting the pan to build the base. Next, use 2 medium of Onion after the cooking fat is heated to add body. Next, use 2 medium of Tomato after the onion has started to soften to form the gravy base. Finally, use 1 tbsp of Ginger garlic during the masala stage to add depth. Cook this stage patiently so the aromatics soften properly and the base develops a balanced flavor before you move ahead."
               },
               {
                 "stepNumber": 3,
                 "title": "Simmer",
                 "ingredients": [
                   {
-                    "name": "Tomato gravy",
+                    "name": "Onion tomato gravy",
+                    "quantity": "1 cup"
+                  },
+                  {
+                    "name": "Salt",
+                    "quantity": "1 tsp"
+                  },
+                  {
+                    "name": "Kadai masala",
+                    "quantity": "1 tsp"
+                  }
+                ],
+                "description": "In step 3 of Kadai Paneer, which is 'Simmer', the ingredients used are Onion tomato gravy, Salt, and Kadai masala. First, use 1 cup of Onion tomato gravy after the base is ready to set the body and consistency. Next, use 1 tsp of Salt during simmering to set the seasoning. Finally, use 1 tsp of Kadai masala during simmering to add the signature flavor. Maintain controlled heat in this stage so the mixture cooks evenly and each added ingredient integrates without losing its intended texture."
+              },
+              {
+                "stepNumber": 4,
+                "title": "Finish and serve",
+                "ingredients": [
+                  {
+                    "name": "Prepared Paneer",
+                    "quantity": "200 g"
+                  },
+                  {
+                    "name": "Coriander leaves",
+                    "quantity": "1 tbsp"
+                  },
+                  {
+                    "name": "Roti",
+                    "quantity": "1 portion"
+                  }
+                ],
+                "description": "In step 4 of Kadai Paneer, which is 'Finish and serve', the ingredients used are Prepared Paneer, Coriander leaves, and Roti. First, use 200 g of Prepared Paneer in the last cooking stage to finish the dish. Next, use 1 tbsp of Coriander leaves just before serving to garnish the dish. Finally, use 1 portion of Roti as a side accompaniment to complete the serving style. Keep this stage short and controlled so the main ingredient does not overcook, the garnish stays fresh, and the serving side is ready at the right moment."
+              }
+            ]
+          },
+          "qty": 3
+        },
+        {
+          "id": 41,
+          "title": "Performance Black Running Shoes",
+          "category": "shoes",
+          "subCategory": "male",
+          "brand": "Nike",
+          "price": 1316,
+          "discount": 5,
+          "rating": 4.1,
+          "stock": 6,
+          "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRsU83eKSuZOw1Gg14KRFNra9D1MMl1E2IK_HxzeHol132QKnaftRZ6OP3io3g9pX9zbP-FBjnKBS7KeG_mqJ3qUIhFsaaCHt6l8XZ7jlM2rQhkbbXwnHNXUxMh3GT4AkfXiR0YpA&usqp=CAc",
+          "searchKey": "performance black running shoes nike shoe footwear sneakers fashion sport sports casual comfort male men mens boys athletic jogging",
+          "qty": 2
+        },
+        {
+          "id": 42,
+          "title": "Flex Blue Sports Shoes",
+          "category": "shoes",
+          "subCategory": "male",
+          "brand": "Adidas",
+          "price": 1433,
+          "discount": 8,
+          "rating": 4.2,
+          "stock": 8,
+          "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQbMx8gF7XrHCUUcY6gxmhBh6Ti4zUKc_XoyyV-GdtlAsyQkLKzQjwOIkuGsAQAgxUYnWceRWlta8SoRWF-TyojH6xngYRmgbFzBKmKYzgirvwtFSYhJU3u&usqp=CAc",
+          "searchKey": "flex blue sports shoes adidas shoe footwear sneakers fashion sport casual comfort male men mens boys athletic training",
+          "qty": 1
+        },
+        {
+          "id": 43,
+          "title": "Active Grey Casual Sneakers",
+          "category": "shoes",
+          "subCategory": "male",
+          "brand": "Puma",
+          "price": 1550,
+          "discount": 10,
+          "rating": 4.3,
+          "stock": 10,
+          "image": "https://gochk.com/cdn/shop/files/skanda4.06.2025CHK1072_56e081cb-d088-45f2-ab13-f5adde034de3.jpg?v=1774851142&width=1600",
+          "searchKey": "active grey casual sneakers puma shoes shoe footwear fashion sport sports comfort male men mens boys sneaker lifestyle",
+          "qty": 1
+        },
+        {
+          "id": 81,
+          "title": "Pro Black Smartphone 5G",
+          "category": "electronics",
+          "subCategory": "general",
+          "brand": "Samsung",
+          "price": 3048,
+          "discount": 5,
+          "rating": 4.1,
+          "stock": 6,
+          "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRB2WjTG5cB6_-tkSTpX2jV7KojPGQZjEiskosbQwEsMvV0lHMgLVlz_YauxXq5HrMk6F2MtuFQ9Haph2kixKRnNDQjEpyjM9K2LbGMuMKDjiqtl8UVSNh7fTMq99euuyswPnkLew&usqp=CAc",
+          "searchKey": "pro black smartphone 5g samsung electronics gadgets tech technology device devices accessories phone mobile android handset",
+          "qty": 1
+        },
+        {
+          "id": 82,
+          "title": "Plus Silver Laptop i5",
+          "category": "electronics",
+          "subCategory": "general",
+          "brand": "HP",
+          "price": 4597,
+          "discount": 8,
+          "rating": 4.2,
+          "stock": 8,
+          "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSy7nRgugcAPemRRrRtvdCfB8SGJWAQUDnShSbyZDKxgxz7grQyKLe8CqG3YC1lxIUGaU1YTI9ak-iir-IRn9KPnY50I4KBZgBiB1WeCVvuWO9GcRVvljp7LvB7HNOBwA&usqp=CAc",
+          "searchKey": "plus silver laptop i5 hp electronics gadgets tech technology device accessories notebook computerc",
+          "qty": 1
+        },
+        {
+          "id": 3,
+          "name": "Butter Chicken",
+          "category": "nonveg",
+          "image": "https://i.ytimg.com/vi/a03U45jFxOI/hqdefault.jpg",
+          "price": 290,
+          "type": "food",
+          "recipe": {
+            "cookTimeMinutes": 45,
+            "cookTimeCategory": "under45min",
+            "videoUrl": "https://youtube.com/watch?v=a03U45jFxOI",
+            "steps": [
+              {
+                "stepNumber": 1,
+                "title": "Prep main protein",
+                "ingredients": [
+                  {
+                    "name": "Chicken",
+                    "quantity": "500 g"
+                  },
+                  {
+                    "name": "Cream",
+                    "quantity": "2 tbsp"
+                  }
+                ],
+                "description": "In step 1 of Butter Chicken, prepare 500 g of Chicken first so the main protein is cleaned, portioned, and ready for cooking. Then measure 2 tbsp of Cream and keep it ready because it supports marination, richness, or flavor balance later in the recipe. This stage matters because the protein and the supporting ingredient must both be ready before the curry base is built."
+              },
+              {
+                "stepNumber": 2,
+                "title": "Build the curry base",
+                "ingredients": [
+                  {
+                    "name": "Butter",
+                    "quantity": "1 tbsp"
+                  },
+                  {
+                    "name": "Onion",
+                    "quantity": "2 medium"
+                  },
+                  {
+                    "name": "Tomato",
+                    "quantity": "2 medium"
+                  },
+                  {
+                    "name": "Ginger garlic",
+                    "quantity": "1 tbsp"
+                  }
+                ],
+                "description": "In step 2 of Butter Chicken, heat 1 tbsp of Butter first to start the base. Next, add 2 medium Onion and cook it until it softens and creates body. Then add 2 medium Tomato so the curry gains moisture and a proper gravy foundation. Finally, add 1 tbsp of Ginger garlic so the base develops depth before the simmering stage."
+              },
+              {
+                "stepNumber": 3,
+                "title": "Simmer the gravy",
+                "ingredients": [
+                  {
+                    "name": "Tomato cashew gravy",
                     "quantity": "1 cup"
                   },
                   {
@@ -351,33 +464,125 @@
                   },
                   {
                     "name": "Kasuri methi",
-                    "quantity": "0.5 tsp"
+                    "quantity": "1 tsp"
                   }
                 ],
-                "description": "In step 3 of Matar Paneer, which is 'Simmer', the ingredients used are Tomato gravy, Salt, and Kasuri methi. First, use 1 cup of Tomato gravy after the base is ready to set the body and consistency. Next, use 1 tsp of Salt during simmering to set the seasoning. Finally, use 0.5 tsp of Kasuri methi during simmering to add the signature flavor. Maintain controlled heat in this stage so the mixture cooks evenly and each added ingredient integrates without losing its intended texture."
+                "description": "In step 3 of Butter Chicken, add 1 cup of Tomato cashew gravy once the masala base is ready so the dish develops its main body and consistency. Season with 1 tsp of Salt so the gravy becomes balanced. Then add 1 tsp of Kasuri methi during simmering so the curry develops its final signature flavor and aroma. Keep the heat controlled so the sauce thickens evenly and does not burn."
               },
               {
                 "stepNumber": 4,
                 "title": "Finish and serve",
                 "ingredients": [
                   {
-                    "name": "Prepared Paneer",
-                    "quantity": "180 g"
+                    "name": "Prepared Chicken",
+                    "quantity": "500 g"
                   },
                   {
                     "name": "Coriander leaves",
                     "quantity": "1 tbsp"
                   },
                   {
-                    "name": "Paratha",
+                    "name": "Naan",
                     "quantity": "1 portion"
                   }
                 ],
-                "description": "In step 4 of Matar Paneer, which is 'Finish and serve', the ingredients used are Prepared Paneer, Coriander leaves, and Paratha. First, use 180 g of Prepared Paneer in the last cooking stage to finish the dish. Next, use 1 tbsp of Coriander leaves just before serving to garnish the dish. Finally, use 1 portion of Paratha as a side accompaniment to complete the serving style. Keep this stage short and controlled so the main ingredient does not overcook, the garnish stays fresh, and the serving side is ready at the right moment."
+                "description": "In step 4 of Butter Chicken, add the prepared 500 g of Chicken in the final cooking stage so the protein cooks through in the gravy and absorbs flavor. Sprinkle 1 tbsp of Coriander leaves just before serving to add freshness. Finally, serve the dish with 1 portion of Naan so the meal is complete and ready to eat."
               }
             ]
           },
           "qty": 1
+        },
+        {
+          "id": 6,
+          "name": "Chicken Curry",
+          "category": "nonveg",
+          "image": "https://i.ytimg.com/vi/jwyge5daKUQ/hqdefault.jpg",
+          "price": 300,
+          "type": "food",
+          "recipe": {
+            "cookTimeMinutes": 45,
+            "cookTimeCategory": "under45min",
+            "videoUrl": "https://youtube.com/watch?v=jwyge5daKUQ",
+            "steps": [
+              {
+                "stepNumber": 1,
+                "title": "Prep main protein",
+                "ingredients": [
+                  {
+                    "name": "Chicken",
+                    "quantity": "500 g"
+                  },
+                  {
+                    "name": "Curd",
+                    "quantity": "2 tbsp"
+                  }
+                ],
+                "description": "In step 1 of Chicken Curry, prepare 500 g of Chicken first so the main protein is cleaned, portioned, and ready for cooking. Then measure 2 tbsp of Curd and keep it ready because it supports marination, richness, or flavor balance later in the recipe. This stage matters because the protein and the supporting ingredient must both be ready before the curry base is built."
+              },
+              {
+                "stepNumber": 2,
+                "title": "Build the curry base",
+                "ingredients": [
+                  {
+                    "name": "Oil",
+                    "quantity": "1 tbsp"
+                  },
+                  {
+                    "name": "Onion",
+                    "quantity": "2 medium"
+                  },
+                  {
+                    "name": "Tomato",
+                    "quantity": "2 medium"
+                  },
+                  {
+                    "name": "Ginger garlic",
+                    "quantity": "1 tbsp"
+                  }
+                ],
+                "description": "In step 2 of Chicken Curry, heat 1 tbsp of Oil first to start the base. Next, add 2 medium Onion and cook it until it softens and creates body. Then add 2 medium Tomato so the curry gains moisture and a proper gravy foundation. Finally, add 1 tbsp of Ginger garlic so the base develops depth before the simmering stage."
+              },
+              {
+                "stepNumber": 3,
+                "title": "Simmer the gravy",
+                "ingredients": [
+                  {
+                    "name": "Onion tomato gravy",
+                    "quantity": "1 cup"
+                  },
+                  {
+                    "name": "Salt",
+                    "quantity": "1 tsp"
+                  },
+                  {
+                    "name": "Garam masala",
+                    "quantity": "0.5 tsp"
+                  }
+                ],
+                "description": "In step 3 of Chicken Curry, add 1 cup of Onion tomato gravy once the masala base is ready so the dish develops its main body and consistency. Season with 1 tsp of Salt so the gravy becomes balanced. Then add 0.5 tsp of Garam masala during simmering so the curry develops its final signature flavor and aroma. Keep the heat controlled so the sauce thickens evenly and does not burn."
+              },
+              {
+                "stepNumber": 4,
+                "title": "Finish and serve",
+                "ingredients": [
+                  {
+                    "name": "Prepared Chicken",
+                    "quantity": "500 g"
+                  },
+                  {
+                    "name": "Coriander leaves",
+                    "quantity": "1 tbsp"
+                  },
+                  {
+                    "name": "Rice",
+                    "quantity": "1 portion"
+                  }
+                ],
+                "description": "In step 4 of Chicken Curry, add the prepared 500 g of Chicken in the final cooking stage so the protein cooks through in the gravy and absorbs flavor. Sprinkle 1 tbsp of Coriander leaves just before serving to add freshness. Finally, serve the dish with 1 portion of Rice so the meal is complete and ready to eat."
+              }
+            ]
+          },
+          "qty": 2
         }
       ],
       "portfolio": {
