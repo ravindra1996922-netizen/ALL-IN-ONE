@@ -13,7 +13,7 @@ const FilterBar = ({
   const navigate = useNavigate();
 
   // ✅ SAFE CATEGORY BUILD
-  const categories = ["all", ...new Set((data || []).map((p) =>  p.category))];
+  const categories = ["all", ...new Set((data || []).map((p) => p.category))];
 
   return (
     <div
@@ -32,14 +32,11 @@ const FilterBar = ({
                   payload: cat,
                 });
 
-                // ✅ FIX: DIFFERENT ROUTING
-                if (cat === "All") {
+                if (cat === "all") {
                   navigate(type === "food" ? "/orderFood" : "/shopping");
                 } else {
                   navigate(
-                    type === "food"
-                      ? `/food/${cat}` // ✅ FOOD ROUTE
-                      : `/category/${cat}`, // ✅ SHOP ROUTE
+                    type === "food" ? `/food/${cat}` : `/category/${cat}`,
                   );
                 }
 
