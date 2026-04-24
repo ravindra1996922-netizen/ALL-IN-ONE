@@ -357,5 +357,4 @@ const DetailsPage = () => {
     </div>
   );
 };
-
 export default DetailsPage;

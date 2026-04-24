@@ -6,6 +6,7 @@ const CartContext = createContext();
 
 const initialState = {
   cart: [],
+  paid:false
 };
 
 export const cartReducer = (state, action) => {

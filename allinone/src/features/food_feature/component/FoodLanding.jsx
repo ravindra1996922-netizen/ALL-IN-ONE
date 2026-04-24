@@ -10,7 +10,7 @@ import { useAuth } from "../../../context/authContext/useAuth";
 import { addToCartApi } from "../../../utils/api/cartApis/cartApis";
 import { toast } from "react-toastify";
 
-// ✅ NEW: group by category (FULL DATA)
+
 const groupByCategory = (data) => {
   const result = {};
 
@@ -40,10 +40,10 @@ const FoodLanding = () => {
   const { user } = useAuth();
   const userId = user?.user?.id;
 
-  // ✅ SEARCH MODE CHECK
+ 
   const isSearching = searchFood.trim() !== "";
 
-  // ✅ FINAL DATA LOGIC
+ 
   const previewData = isSearching
     ? groupByCategory(displayFoods)
     : buildLandingData(foodCache);
@@ -122,7 +122,7 @@ const FoodLanding = () => {
             .filter((cat) => previewData[cat].length > 0)
             .map((category) => (
               <div key={category} className="mb-5">
-                {/* ✅ FIX: HEADING + VIEW ALL SAME ROW */}
+                
                 <div className="d-flex justify-content-between align-items-center mb-3">
                   <h4 className="text-capitalize mb-0">{category}</h4>
 
@@ -134,7 +134,7 @@ const FoodLanding = () => {
                   </button>
                 </div>
 
-                {/* ✅ PRODUCTS */}
+                
                 <div className="row">
                   {previewData[category].map((item) => (
                     <div className="col-md-3 mb-4" key={item.id}>
@@ -153,12 +153,13 @@ const FoodLanding = () => {
                             </p>
                           )}
 
-                          {/* ✅ BUTTON */}
+                         
                           {item.type === "recipe" ? (
                             <button
                               className="btn btn-info mt-auto w-100"
                               onClick={(e) => {
-                                e.stopPropagation(); // 🔥 important
+                                e.stopPropagation(); 
+                                 window.scrollTo({ top: 0, behavior: "auto" });
                                 navigate(`/details/food/${item.id}`);
                               }}
                             >

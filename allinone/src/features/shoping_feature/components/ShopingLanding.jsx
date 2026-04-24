@@ -142,7 +142,7 @@ const ShopingLanding = () => {
                   {previewData[category].map((item) => (
                     <div className="col-md-3 mb-4 d-flex" key={item.id}>
                       <div className="w-100">
-                        <FeatureCard title={item.name} image={item.image}>
+                        <FeatureCard title={item.title} image={item.image}>
                           <div className="d-flex flex-column h-100">
                             <p className="text-success fw-bold text-center mb-2">
                               ₹{item.price}
