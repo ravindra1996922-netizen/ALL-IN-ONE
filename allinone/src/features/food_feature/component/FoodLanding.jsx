@@ -103,7 +103,7 @@ const FoodLanding = () => {
 
           <p className="lead mb-2">
             Explore trending items across all categories
-          </p>
+          </p> 
 
           <p className="text-light mb-4">
             Best deals on fashion, electronics, home essentials & more — all in

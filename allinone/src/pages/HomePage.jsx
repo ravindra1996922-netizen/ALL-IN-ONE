@@ -200,7 +200,7 @@ const HomePage = () => {
               <div className="border rounded-4 p-3 h-100" style={{ background: '#fdfcfa' }}>
                 <h5 className="mb-3"
                 >🛍️ Products</h5>
-                <div id="carouselExample" className="carousel slide">
+                <div id="carouselExample" className="carousel slide" onClick={(e)=>{e.stopPropagation()}}>
                   <div className="carousel-inner">
 
                     {productSlides.map((slide, index) => (
@@ -226,13 +226,16 @@ const HomePage = () => {
                                   }}
                                 >
                                   <img
+                                    onClick={(()=>{navigate("/shopping")})}
                                     src={item.image}
                                     alt=""
                                     style={{
                                       width: "100%",
                                       height: "100%",
-                                      objectFit: "cover"
+                                      objectFit: "cover",
+                                     
                                     }}
+                                   
                                   />
                                 </div>
 
@@ -283,7 +286,7 @@ const HomePage = () => {
                 }} >
                 <h5 className="mb-3">🍴 Food </h5>
 
-                <div id="foodCarousel" className="carousel slide">
+                <div id="foodCarousel" className="carousel slide" onClick={(e)=>{e.stopPropagation()}}>
                   <div className="carousel-inner">
 
                     {foodSlides.map((slide, index) => (
@@ -310,6 +313,7 @@ const HomePage = () => {
                                   }}
                                 >
                                   <img
+                                   onClick={(()=>{navigate("/orderFood")})}
                                     src={item.image}
                                     alt={item.name}
                                     style={{

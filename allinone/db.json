@@ -4,127 +4,141 @@
       "email": "lakdd123@gmail.com",
       "password": "$2a$10$1.N3QbJlDK2zOzjstCz7ReIRsmaHQqP5mhB2IlQQuPtKyOHqhB/eO",
       "name": "ravindra",
-      "id": 1
+      "id": 1,
+      "cart": [],
+      "portfolio": {
+        "stockQuantity": [],
+        "Stockprice": []
+      }
     },
     {
       "email": "lkdd123@gmail.com",
       "password": "$2a$10$eY.uzHoAlard6FHBZ0Oe8.a5f7hKPz4.vnrm3tUVJwVYA.0qkp50G",
       "username": "ravindra",
-      "id": 2
+      "id": 2,
+      "wallet": 3400,
+      "portfolio": {},
+      "cart": []
     },
     {
       "email": "ravindra2291996@gmail.com",
       "password": "$2a$10$6Bp2WsQahP2GjJK7glERkeJqwqbW4OgRNyY8fvC6t22ILSb/rD92G",
       "name": "Ravindra Kumar",
-      "id": 3
+      "id": 3,
+      "cart": []
     },
     {
       "email": "surya@gmail.com",
       "password": "$2a$10$j1QztU1gF/R7pYrzml.V1eiSS.rkdCxaol5mprxIDt4XW1uppm8OS",
       "name": "Generic H2 (Embedded)",
-      "id": 4
+      "id": 4,
+      "cart": []
     },
     {
       "email": "lall@gmail.com",
       "password": "$2a$10$YXMOosxTtq.fXVp5VQJBD.cOHD6v.Dyx1PYQZT59qsDSs6LySLHp.",
       "name": "llalo",
-      "id": 5
+      "id": 5,
+      "cart": []
     },
     {
       "email": "rnalApp@gmail.com",
       "password": "$2a$10$u.2jcBCO4OmkuFbg.mT2aeRa/rdpFEi2tUYIdoAe20oghE..qMo.S",
       "name": "mankdjd",
-      "id": 6
+      "id": 6,
+      "cart": []
     },
     {
       "email": "kk@gmail.com",
       "password": "$2a$10$cw7Sg0SdUU.szkreH4eQj.kM383gJ9qxaJuOiC4XkVb4qTo/KEAnu",
       "name": "kk",
-      "id": 7
+      "id": 7,
+      "cart": [
+        {
+          "id": "Cream",
+          "title": "Cream",
+          "price": 10,
+          "image": "https://i.ytimg.com/vi/a03U45jFxOI/hqdefault.jpg",
+          "qty": 1
+        },
+        {
+          "id": 123,
+          "title": "Essential Silver Mixer Grinder",
+          "category": "home_appliance",
+          "subCategory": "general",
+          "brand": "Philips",
+          "price": 4316,
+          "discount": 10,
+          "rating": 4.3,
+          "stock": 10,
+          "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSYrxZxRb1XmpJep4kC7r4MFfuV6JpVDe6nuD1vNi68QO5EulEvEYViYXqH1KuCahv2T8vSssdmrum51BuRudX4Gy246TMdLgwXyYz8HP1MH86oeSfQSOzH9WiyAIiMPVJ8V0ZRrIM&usqp=CAc",
+          "searchKey": "essential silver mixer grinder philips home appliance appliances kitchen utility machine household blender",
+          "qty": 1
+        }
+      ],
+      "portfolio": {
+        "totalShares": 10,
+        "totalInvested": 38880
+      }
     },
     {
       "email": "dd@gmail.com",
       "password": "$2a$10$ky7RE9Yb03wYkd6HMSfM5uh5PYoeCK0M0JBqSZ07w16hq2bhSVxSa",
       "name": "dd",
-      "id": 8
+      "id": 8,
+      "cart": []
     },
     {
       "email": "hh@gmail.com",
       "password": "$2a$10$VyikEezBubvgGtkl8a9N.e3C01io41VDiYikpY/0gJySbPjcl4ANC",
       "name": "hh",
-      "id": 9
+      "id": 9,
+      "cart": []
     },
     {
       "email": "nayanasr.04@gmail.com",
       "password": "$2a$10$7/CJtD.Ee.2.I12WxVNX/ub7Y/GFatdKduiILnJBpSzYO7AmR139O",
       "name": "NAYANA S R",
-      "id": 10
+      "id": 10,
+      "cart": []
     },
     {
       "email": "qw@gmail.com",
       "password": "$2a$10$5WnziA1KkLjqbEPUC3/pVeVsqbdD//O.13ooofKIrpCoF7Zo1BOCi",
       "name": "qw",
-      "id": 11
+      "id": 11,
+      "cart": []
     },
     {
       "email": "hi@gmail.com",
       "password": "$2a$10$ldoW2QYmVBhVNA4jktU.1OXf11/VVHgEslux/BQpEQ.hFPvoRi5fu",
       "name": "hi",
-      "id": 12
+      "id": 12,
+      "cart": []
     },
     {
-      "email": "nayana@gmail.com",
-      "password": "$2a$10$iXNrhIH4sDxgfviZXqRnDecHrQZKGhjnSYQePmiczBU11bBRFmNxK",
-      "name": "Nayana S R",
-      "id": 13,
-      "cart": [
-        {
-          "id": "Paneer",
-          "title": "Paneer",
-          "price": 10,
-          "image": "https://i.ytimg.com/vi/U1LVDFwi8qI/hqdefault.jpg",
-          "qty": 4
-        },
-        {
-          "id": "Onion",
-          "title": "Onion",
-          "price": 10,
-          "image": "https://i.ytimg.com/vi/T9hQV22Uezw/hqdefault.jpg",
-          "qty": 1
-        },
-        {
-          "id": 2,
-          "title": "Modern Black Cotton T-Shirt",
-          "category": "clothing",
-          "subCategory": "male",
-          "brand": "Levis",
-          "price": 931,
-          "discount": 8,
-          "rating": 4.2,
-          "stock": 8,
-          "image": "https://tse3.mm.bing.net/th/id/OIP.8Jl07l3Zw_oZ10Y_d7a2AwHaJQ?pid=Api&P=0&h=180",
-          "searchKey": "modern black cotton tshirt levis clothing clothes fashion wear outfit style male men mens boys tshirt ",
-          "qty": 2
-        },
-        {
-          "id": 3,
-          "title": "Essential White Casual Trouser",
-          "category": "clothing",
-          "subCategory": "male",
-          "brand": "Allen Solly",
-          "price": 997,
-          "discount": 10,
-          "rating": 4.3,
-          "stock": 10,
-          "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTXK3kGAR64TqZ2dKh1ao0YvqsA5bJUqjAuO2XEAHlNmu7N3XaaKuba7UdVmi_CvL2DByqaWRTOQ_LPEXc_ESiJz7LimyuZustaP0uoSHJOvWdlQnfVzmuxqg",
-          "searchKey": "essential white casual trouser allen solly allensolly clothing clothes apparel fashion wear outfit style male men mens boys trousers pants chinos bottomwear",
-          "qty": 1
-        }
-      ],
-      "portfolio": {
-        "totalShares": 20,
-        "totalInvested": 89660
-      }
+      "email": "qwerty12@gmail.com",
+      "password": "$2a$10$CAdWRFdDZbui118YqVQaNOcWUsTS4gcS2vtKzhLajGA0GBfXFH/zC",
+      "name": "qwerty",
+      "id": 13
+    },
+    {
+      "email": "a@gmail.com",
+      "password": "$2a$10$SXLQTFzoBmDdoHkXVxEuxuoTfsgJ8CQ1scsmEWKqBdPQ0GDfTNLRW",
+      "name": "a",
+      "id": 14
+    },
+    {
+      "email": "qq@gmail.com",
+      "password": "$2a$10$U2Rxi0XGytQa41I8WElKkusgNimVL309JwYHltJAJuUMkfl83b//m",
+      "name": "kk",
+      "id": 15
+    },
+    {
+      "email": "q@gmail.com",
+      "password": "$2a$10$Rwe36qO0gxTJS5GhZLkXWOWvHuBxIt1Fk6JgM1EzcgjUMxH6eo6Vu",
+      "name": "q",
+      "id": 16
     }
   ],
   "userStock": [],
