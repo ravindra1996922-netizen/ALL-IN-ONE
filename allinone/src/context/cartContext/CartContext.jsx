@@ -6,7 +6,6 @@ const CartContext = createContext();
 
 const initialState = {
   cart: [],
-  paid:false
 };
 
 export const cartReducer = (state, action) => {
@@ -18,33 +17,42 @@ export const cartReducer = (state, action) => {
       };
 
     case "ADD_TO_CART": {
-      const exist = state.cart.find((item) => item.id === action.payload.id);
+      const newItem = action.payload;
+
+      // 🔥 UNIQUE KEY FIX
+      const exist = state.cart.find(
+        (item) => item.id === newItem.id && item.type === newItem.type,
+      );
 
       if (exist) {
         const updatedCart = state.cart.map((item) =>
-          item.id === action.payload.id ? { ...item, qty: item.qty + 1 } : item,
+          item.id === newItem.id && item.type === newItem.type
+            ? { ...item, qty: item.qty + 1 }
+            : item,
         );
 
         return { ...state, cart: updatedCart };
-      } else {
-        return {
-          ...state,
-          cart: [...state.cart, { ...action.payload, qty: 1 }],
-        };
       }
+
+      return {
+        ...state,
+        cart: [...state.cart, { ...newItem, qty: 1 }],
+      };
     }
 
     case "REMOVE_FROM_CART":
       return {
         ...state,
-        cart: state.cart.filter((item) => item.id !== action.payload),
+        cart: state.cart.filter(
+          (item) =>
+            !(
+              item.id === action.payload.id && item.type === action.payload.type
+            ),
+        ),
       };
 
     case "CLEAR_CART":
-      return {
-        ...state,
-        cart: [],
-      };
+      return { ...state, cart: [] };
 
     default:
       return state;

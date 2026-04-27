@@ -1,4 +1,3 @@
-
 import React, { createContext, useEffect, useReducer } from "react";
 import { fetchFoods, fetchRecipes } from "../../utils/api/FoodApi/foodApi";
 import { buildUnifiedFoodData } from "../../features/food_feature/food-model/foodModel";
@@ -69,12 +68,16 @@ const FoodProvider = ({ children }) => {
   useEffect(() => {
     const loadData = async () => {
       dispatch({ type: "FETCH_START" });
+      console.log("fetch food start");
 
       try {
         const foods = await fetchFoods();
         const recipes = await fetchRecipes();
+        console.log(foods, "food");
+        console.log(recipes, "reci");
 
         const unifiedData = buildUnifiedFoodData(foods, recipes);
+        console.log(unifiedData, "uni");
 
         dispatch({
           type: "FETCH_SUCCESS",

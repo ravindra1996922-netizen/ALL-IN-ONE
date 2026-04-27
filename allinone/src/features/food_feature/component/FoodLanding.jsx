@@ -9,7 +9,8 @@ import { useCart } from "../../../context/cartContext/useCart";
 import { useAuth } from "../../../context/authContext/useAuth";
 import { addToCartApi } from "../../../utils/api/cartApis/cartApis";
 import { toast } from "react-toastify";
-
+import foodImg from "../../../assets/images/food11.jpg";
+import food2 from "../../../assets/images/food.jpg";
 
 const groupByCategory = (data) => {
   const result = {};
@@ -25,6 +26,28 @@ const groupByCategory = (data) => {
 };
 
 const FoodLanding = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const slides = [
+    {
+      image: foodImg,
+      title: "Delicious Meals",
+      subtitle: "Fresh & Hot Food",
+    },
+    {
+      image: food2,
+      title: "Healthy Recipes",
+      subtitle: "Cook Like a Chef",
+    },
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 4000);
+
+    return () => clearInterval(timer);
+  }, []);
   const {
     foodCache,
     displayFoods,
@@ -40,10 +63,8 @@ const FoodLanding = () => {
   const { user } = useAuth();
   const userId = user?.user?.id;
 
- 
   const isSearching = searchFood.trim() !== "";
 
- 
   const previewData = isSearching
     ? groupByCategory(displayFoods)
     : buildLandingData(foodCache);
@@ -71,13 +92,18 @@ const FoodLanding = () => {
   };
 
   const handleAddToCart = async (item) => {
-    console.log("handeladdtocart");
     if (!userId) {
       toast.error("Please login first");
       return;
     }
 
-    const updatedCart = await addToCartApi(userId, item);
+    const cartItem = {
+      ...item,
+      id: `food-${item.id}`,
+      type: "food",
+    };
+
+    const updatedCart = await addToCartApi(userId, cartItem);
 
     cartDispatch({
       type: "SET_CART",
@@ -98,31 +124,60 @@ const FoodLanding = () => {
       />
 
       <div className="container my-4">
-        <div className="bg-dark text-white p-5 rounded mb-5 text-center">
-          <h1 className="fw-bold">Discover Your Perfect Products</h1>
+        <div
+          className="mb-5 rounded overflow-hidden position-relative"
+          style={{ height: "300px" }}
+        >
+          {slides.length > 0 && (
+            <>
+              {slides.map((slide, i) => (
+                <div
+                  key={i}
+                  className="position-absolute top-0 start-0 w-100 h-100"
+                  style={{
+                    opacity: i === currentSlide ? 1 : 0,
+                    transition: "opacity 0.6s ease",
+                  }}
+                >
+                  {/* background */}
+                  <div
+                    className="w-100 h-100"
+                    style={{
+                      backgroundImage: `url(${slide.image})`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                    }}
+                  />
 
-          <p className="lead mb-2">
-            Explore trending items across all categories
-          </p> 
+                  {/* overlay */}
+                  <div className="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50" />
 
-          <p className="text-light mb-4">
-            Best deals on fashion, electronics, home essentials & more — all in
-            one place.
-          </p>
+                  {/* content */}
+                  <div className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center text-center text-white">
+                    <div>
+                      <h2 className="fw-bold">
+                        {slide.title}{" "}
+                        <span className="text-warning">{slide.subtitle}</span>
+                      </h2>
 
-          <button
-            className="btn btn-warning fw-bold"
-            onClick={scrollToProducts}
-          >
-            <FaShoppingCart /> Start Shopping
-          </button>
+                      <button
+                        className="btn btn-warning mt-2"
+                        onClick={scrollToProducts}
+                      >
+                        <FaShoppingCart /> Explore
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </>
+          )}
         </div>
         <div id="products-section">
           {Object.keys(previewData)
             .filter((cat) => previewData[cat].length > 0)
             .map((category) => (
               <div key={category} className="mb-5">
-                
                 <div className="d-flex justify-content-between align-items-center mb-3">
                   <h4 className="text-capitalize mb-0">{category}</h4>
 
@@ -134,16 +189,16 @@ const FoodLanding = () => {
                   </button>
                 </div>
 
-                
                 <div className="row">
                   {previewData[category].map((item) => (
                     <div className="col-md-3 mb-4" key={item.id}>
                       <FeatureCard
                         title={item.name}
                         image={item.image}
-                        onClick={() =>{
+                        onClick={() => {
                           window.scrollTo({ top: 0, behavior: "smooth" });
-                          navigate(`/details/food/${item.id}`)}}
+                          navigate(`/details/food/${item.id}`);
+                        }}
                       >
                         <div className="d-flex flex-column h-100">
                           {/* ✅ PRICE (ONLY FOR NON-RECIPE) */}
@@ -153,13 +208,12 @@ const FoodLanding = () => {
                             </p>
                           )}
 
-                         
                           {item.type === "recipe" ? (
                             <button
                               className="btn btn-info mt-auto w-100"
                               onClick={(e) => {
-                                e.stopPropagation(); 
-                                 window.scrollTo({ top: 0, behavior: "auto" });
+                                e.stopPropagation();
+                                window.scrollTo({ top: 0, behavior: "auto" });
                                 navigate(`/details/food/${item.id}`);
                               }}
                             >

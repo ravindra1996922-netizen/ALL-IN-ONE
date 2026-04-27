@@ -13,6 +13,7 @@ import Footer from "./components/layout/Footer";
 import CategoryPage from "./pages/CategoryPage";
 import CartsPage from "./pages/CartsPage";
 import DetailsPage from "./pages/DetailsPage";
+import YourOrders from "./pages/YourOrders";
 
 // ✅ ADD THIS
 // import FoodCategoryPage from "./pages/FoodCategoryPage";
@@ -39,6 +40,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/cart" element={<CartsPage />} />
+        <Route path="/orders" element={<YourOrders />} />
 
         <Route
           path="/category/:name"

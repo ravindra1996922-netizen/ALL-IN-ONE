@@ -1,6 +1,6 @@
-import React from "react";
-import { NavLink, Link, useNavigate } from "react-router-dom";
-import { FiShoppingCart } from "react-icons/fi";
+import React, { useState, useEffect, useRef } from "react";
+import { NavLink, Link, useNavigate, useLocation } from "react-router-dom";
+import { FiShoppingCart, FiPackage, FiLogOut } from "react-icons/fi";
 import { useAuth } from "../../context/authContext/useAuth";
 import { useProducts } from "../../context/product_context/useProducts";
 import { useCart } from "../../context/cartContext/useCart";
@@ -12,198 +12,225 @@ const Navbar = () => {
   const { productDispatch } = useProducts();
   const { cart } = useCart();
   const navigate = useNavigate();
-  const{foodDispatcher}=useFood()
+  const location = useLocation();
+  const { foodDispatcher } = useFood();
 
-  function badgeQuantity() {
-    return cart.reduce((acc, curr) => {
-      return acc + curr.qty;
-    }, 0);
-  }
+  const [openProfile, setOpenProfile] = useState(false);
+  const profileRef = useRef(null);
+
+  const firstName =
+    user?.user?.name?.split(" ")[0] || user?.user?.firstName || "User";
+
+  const badgeQuantity = () => cart.reduce((acc, curr) => acc + curr.qty, 0);
 
   const handleLogout = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
     authDispatch({ type: "LOGOUT" });
     localStorage.removeItem("user");
-    toast.info("Logged out successfully", {
-      style: {
-        background: "#3579d1",
-        color: "#100c0c",
-      },
-    });
+    toast.info("Logged out successfully");
     navigate("/");
   };
 
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (profileRef.current && !profileRef.current.contains(e.target)) {
+        setOpenProfile(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const isActive = (type) => {
+    const path = location.pathname;
+
+    if (type === "shopping") {
+      return path.startsWith("/shopping") || path.startsWith("/category");
+    }
+
+    if (type === "food") {
+      return path.startsWith("/orderFood") || path.startsWith("/food");
+    }
+
+    if (type === "invest") {
+      return path.startsWith("/invest");
+    }
+
+    return false;
+  };
+
+  const linkStyle = (type) => ({
+    textDecoration: "none",
+    color: isActive(type) ? "#000" : "#555",
+    fontWeight: isActive(type) ? "700" : "500",
+  });
+
   return (
-    <>
-      {/* Internal CSS */}
-      <style>
-        {`
-          .custom-nav .nav-link {
-            color: #555;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            position: relative;
-            transition: all 0.3s ease;
-          }
+    <nav
+      className="navbar navbar-expand-lg bg-white shadow-sm sticky-top"
+      style={{ height: "55px" }}
+    >
+      <div className="container-fluid px-4 px-lg-5">
+        <Link
+          className="navbar-brand fs-4 fw-bold"
+          to="/"
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+        >
+          All In One
+        </Link>
 
-          .custom-nav .nav-link:hover {
-            color: #000 !important;
-            font-weight: 600;
-            letter-spacing: 1px;
-            transform: translateY(-2px);
-          }
+        <button
+          className="navbar-toggler"
+          data-bs-toggle="collapse"
+          data-bs-target="#nav"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
 
-          .custom-nav .nav-link::after {
-            content: "";
-            position: absolute;
-            left: 50%;
-            bottom: -4px;
-            width: 0%;
-            height: 2px;
-            background-color: #000;
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-          }
+        <div className="collapse navbar-collapse" id="nav">
+          <ul className="navbar-nav mx-auto gap-lg-4 text-center">
+            <li>
+              <NavLink
+                to="/invest"
+                style={linkStyle("invest")}
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+              >
+                Invest
+              </NavLink>
+            </li>
 
-          .custom-nav .nav-link:hover::after {
-            width: 60%;
-          }
+            <li>
+              <NavLink
+                to="/shopping"
+                style={linkStyle("shopping")}
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                  productDispatch({ type: "SET_CATEGORY", payload: "all" });
+                }}
+              >
+                Shop
+              </NavLink>
+            </li>
 
-          .custom-nav .nav-link.active {
-            color: #000 !important;
-            font-weight: 600;
-          }
+            <li>
+              <NavLink
+                to="/orderFood"
+                style={linkStyle("food")}
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                  foodDispatcher({ type: "SET_CATEGORY", payload: "all" });
+                }}
+              >
+                Order Food
+              </NavLink>
+            </li>
+          </ul>
 
-          .custom-nav .nav-link.active::after {
-            width: 60%;
-          }
-        `}
-      </style>
-
-      <nav
-        className="navbar navbar-expand-lg bg-white shadow-sm sticky-top"
-        style={{ height: "55px" }}
-      >
-        <div className="container-fluid px-4 px-lg-5">
-          {/* Logo */}
-          <Link
-            className="navbar-brand fs-4 fw-bold"
-            to="/"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          >
-            All In One
-          </Link>
-
-          {/* Toggle */}
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#nav"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-
-          <div className="collapse navbar-collapse" id="nav">
-            {/* Center Links */}
-            <ul className="navbar-nav mx-auto gap-lg-4 text-center custom-nav">
-              <li className="nav-item">
-                <NavLink
-                  to="/invest"
-                  end
-                  className="nav-link"
-                  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                >
-                  Invest
-                </NavLink>
-              </li>
-
-              <li className="nav-item">
-                <NavLink
-                  to="/shopping"
-                  end
-                  className="nav-link"
+          <div className="d-flex align-items-center gap-3">
+            {!user ? (
+              <>
+                <Link
+                  to="/login"
+                  className="text-dark text-decoration-none"
                   onClick={() => {
                     window.scrollTo({ top: 0, behavior: "smooth" });
-                    productDispatch({ type: "SET_CATEGORY", payload: "all" });
                   }}
                 >
-                  Shop
-                </NavLink>
-              </li>
+                  Login
+                </Link>
 
-              <li className="nav-item">
-                <NavLink
-                  to="/orderFood"
-                  end
-                  className="nav-link"
-                  onClick={() =>{
-                  foodDispatcher({type:"SET_CATEGORY",payload:"all"})
-                    window.scrollTo({ top: 0, behavior: "smooth" })}}
+                <Link
+                  to="/signup"
+                  className="btn text-white"
+                  style={{ background: "#008060" }}
+                  onClick={() => {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
                 >
-                  Order Food
+                  Sign Up
+                </Link>
+              </>
+            ) : (
+              <>
+                <NavLink
+                  to="/cart"
+                  className="position-relative d-flex align-items-center justify-content-center"
+                  style={{
+                    width: "38px",
+                    height: "38px",
+                    borderRadius: "50%",
+                    background: "#f1f1f1",
+                  }}
+                >
+                  <FiShoppingCart />
+                  <span className="position-absolute top-0 start-100 translate-middle badge bg-danger">
+                    {badgeQuantity()}
+                  </span>
                 </NavLink>
-              </li>
 
-            </ul>
-
-            {/* Right Side */}
-            <div className="d-flex flex-column flex-lg-row align-items-center gap-2">
-              {!user ? (
-                <>
-                  <Link
-                    to="/login"
-                    className="text-dark text-decoration-none"
-                    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                  >
-                    Login
-                  </Link>
-
-                  <Link
-                    to="/signup"
-                    className="btn text-white"
-                    style={{ background: "#008060" }}
-                    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                  >
-                    Sign Up
-                  </Link>
-                </>
-              ) : (
-                <>
-                  <NavLink
-                    to="/cart"
-                    className="position-relative text-dark fs-5 d-flex align-items-center justify-content-center"
+                <div className="position-relative" ref={profileRef}>
+                  <div
+                    onClick={() => setOpenProfile(!openProfile)}
                     style={{
                       width: "38px",
                       height: "38px",
                       borderRadius: "50%",
                       background: "#f1f1f1",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      cursor: "pointer",
+                      fontWeight: "bold",
                     }}
-                    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                   >
-                    <FiShoppingCart />
-                    <span
-                      className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-                      style={{ fontSize: "8px" }}
+                    {firstName[0]?.toUpperCase()}
+                  </div>
+
+                  {openProfile && (
+                    <div
+                      className="position-absolute bg-white shadow rounded"
+                      style={{
+                        right: 0,
+                        top: "45px",
+                        width: "200px",
+                        zIndex: 1000,
+                      }}
                     >
-                      {badgeQuantity()}
-                    </span>
-                  </NavLink>
+                      <div className="text-center py-2 border-bottom">
+                        <div className="fw-bold">{firstName}</div>
+                      </div>
 
-                  <button
-                    onClick={handleLogout}
-                    className="btn btn-danger btn-sm px-3 rounded-pill"
-                  >
-                    Logout
-                  </button>
-                </>
-              )}
-            </div>
+                      <Link
+                        to="/orders"
+                        className="d-block px-3 py-2 text-dark text-decoration-none"
+                        onClick={() => setOpenProfile(false)}
+                      >
+                        <FiPackage className="me-2" />
+                        Your Orders
+                      </Link>
 
+                      <hr className="m-0" />
+
+                      <button
+                        className="btn w-100 text-start px-3 py-2"
+                        onClick={handleLogout}
+                      >
+                        <FiLogOut className="me-2" />
+                        Logout
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </>
+            )}
           </div>
         </div>
-      </nav>
-    </>
+      </div>
+    </nav>
   );
 };
 

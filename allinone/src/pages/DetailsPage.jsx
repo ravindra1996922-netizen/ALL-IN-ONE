@@ -6,14 +6,7 @@ import { useCart } from "../context/cartContext/useCart";
 import { useAuth } from "../context/authContext/useAuth";
 import { addToCartApi } from "../utils/api/cartApis/cartApis";
 import { toast } from "react-toastify";
-import {
-  Clock,
-  ChefHat,
-  Plus,
-  ArrowLeft,
-  Check,
-  Leaf
-} from "lucide-react";
+import { Clock, ChefHat, Plus, ArrowLeft, Check, Leaf } from "lucide-react";
 
 const DetailsPage = () => {
   const { id, type } = useParams();
@@ -38,7 +31,6 @@ const DetailsPage = () => {
 
   const item = data.find((d) => String(d.id) === String(id));
 
-
   const recipeData = item.recipe || item;
 
   const getEmbed = (url) => {
@@ -62,6 +54,7 @@ const DetailsPage = () => {
       title: ing.name,
       price: 10,
       image: item.image,
+      category: "ingredient",
     });
 
     cartDispatch({ type: "SET_CART", payload: updated });
@@ -86,8 +79,6 @@ const DetailsPage = () => {
   const totalTime = recipeData?.cookTimeMinutes || 0;
   const allIngredients =
     recipeData?.steps?.flatMap((step) => step.ingredients || []) || [];
-
-
 
   return (
     <div className="bg-light min-vh-100">
@@ -196,7 +187,6 @@ const DetailsPage = () => {
           </div>
         </div>
 
-       
         <div className="mb-4">
           <h4 className="fw-bold text-dark mb-3">
             <ChefHat size={22} className="me-2 text-success" />
@@ -231,7 +221,6 @@ const DetailsPage = () => {
                       {step.description}
                     </p>
 
-                   
                     <div className="d-flex flex-wrap gap-2">
                       {step.ingredients?.map((ing, idx) => {
                         const isAdded = addedIngredients.includes(ing.name);
@@ -323,7 +312,8 @@ const DetailsPage = () => {
                   className="col-lg-3 col-md-6"
                   onClick={() => {
                     window.scrollTo({ top: 0, behavior: "smooth" });
-                    navigate(`/details/${type}/${rel.id}`)}}
+                    navigate(`/details/${type}/${rel.id}`);
+                  }}
                   style={{ cursor: "pointer" }}
                 >
                   <div className="card border rounded-3 overflow-hidden h-100">
