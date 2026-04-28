@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../../context/authContext/useAuth";
-import Login_Register_Form from "./Login_Register_Form";
 import { loginUser } from "../../../utils/api/authApis/authapis";
 import {
   FaShoppingBag,
@@ -12,6 +11,7 @@ import {
 } from "react-icons/fa";
 import heroImage from "../../../assets/images/allinonelogo.png";
 import { toast } from "react-toastify";
+import Login_Register_Form from "./LoginRegisterForm";
 
 export default function LoginForm() {
   const { authDispatch } = useAuth();
@@ -22,7 +22,7 @@ export default function LoginForm() {
     const user = await loginUser(data);
 
     if (!user) {
-      // toast.error("Invalid credentials");
+
       return;
     }
 
@@ -33,7 +33,7 @@ export default function LoginForm() {
     navigate("/");
 
   } catch (error) {
-    // toast.error(error.message);
+
   }
 };
 

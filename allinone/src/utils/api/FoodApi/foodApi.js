@@ -7,11 +7,10 @@ export async function fetchFoods() {
   try {
     const foodsResponse = await fetch(url);
     const foodsData = await foodsResponse.json();
-    // console.log(foodsData)
+
     return foodsData;
   } catch (error) {}
 }
-
 
 export async function fetchRecipes() {
   const recipes = END_POINTS.recipes;
@@ -21,7 +20,7 @@ export async function fetchRecipes() {
   try {
     const recipesResponse = await fetch(url);
     const recipesData = await recipesResponse.json();
-    // console.log(recipesData)
+
     return recipesData;
   } catch (error) {}
 }

@@ -19,7 +19,6 @@ export const cartReducer = (state, action) => {
     case "ADD_TO_CART": {
       const newItem = action.payload;
 
-      // 🔥 UNIQUE KEY FIX
       const exist = state.cart.find(
         (item) => item.id === newItem.id && item.type === newItem.type,
       );

@@ -15,9 +15,6 @@ import CartsPage from "./pages/CartsPage";
 import DetailsPage from "./pages/DetailsPage";
 import YourOrders from "./pages/YourOrders";
 
-// ✅ ADD THIS
-// import FoodCategoryPage from "./pages/FoodCategoryPage";
-
 function App() {
   return (
     <>

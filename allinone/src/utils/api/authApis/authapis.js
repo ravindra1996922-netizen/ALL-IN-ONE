@@ -20,7 +20,6 @@ export async function registerUser(userData) {
     console.log(data);
     return data;
   } catch (error) {
-    // console.error("Error registering user:", error);
     toast.error(`Invalid credentials :${error.message}`, {
       style: {
         background: "red",
@@ -32,7 +31,7 @@ export async function registerUser(userData) {
 }
 
 export async function loginUser(credentials) {
-  console.log("login");
+  console.log(credentials);
   try {
     const login = END_POINTS.login;
     const response = await fetch(buildURL(login), {
@@ -52,7 +51,6 @@ export async function loginUser(credentials) {
           color: "black",
         },
       });
-      // throw new Error("Login failed");
     }
 
     const data = await response.json();
@@ -62,34 +60,4 @@ export async function loginUser(credentials) {
     console.error("Error logging in user:", error);
     throw error;
   }
-}
-const BASE_URL = "http://localhost:3000";
-
-// GET
-export async function getPortfolio(userId) {
-  const res = await fetch(`${BASE_URL}/portfolios?userId=${userId}`);
-  const data = await res.json();
-  return data[0];
-}
-
-// POST
-export async function createPortfolio(payload) {
-  const res = await fetch(`${BASE_URL}/portfolios`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload),
-  });
-
-  return res.json();
-}
-
-// PUT
-export async function updatePortfolio(id, payload) {
-  const res = await fetch(`${BASE_URL}/portfolios/${id}`, {
-    method: "PUT",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload),
-  });
-
-  return res.json();
 }

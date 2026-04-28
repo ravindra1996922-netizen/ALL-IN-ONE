@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../../context/authContext/useAuth";
-import Login_Register_Form from "./Login_Register_Form";
 import { registerUser } from "../../../utils/api/authApis/authapis";
 import {
   FaUserPlus,
@@ -12,6 +11,7 @@ import {
 } from "react-icons/fa";
 import heroImage from "../../../assets/images/allinonelogo.png";
 import { toast } from "react-toastify";
+import Login_Register_Form from "./LoginRegisterForm";
 
 export default function Register() {
   const { authDispatch } = useAuth();
@@ -32,12 +32,7 @@ export default function Register() {
         navigate("/login");
       }, 1500);
     } catch (err) {
-      // toast.error("Registration failed", {
-      //   style: {
-      //     background: "red",
-      //     color: "black",
-      //   },
-      // });
+
     }
   };
 

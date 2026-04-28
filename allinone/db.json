@@ -53,7 +53,22 @@
       "password": "$2a$10$cw7Sg0SdUU.szkreH4eQj.kM383gJ9qxaJuOiC4XkVb4qTo/KEAnu",
       "name": "kk",
       "id": 7,
-      "cart": [],
+      "cart": [
+        {
+          "id": 1,
+          "title": "Classic Navy Slim Fit Shirt",
+          "category": "clothing",
+          "subCategory": "male",
+          "brand": "H&M",
+          "price": 865,
+          "discount": 5,
+          "rating": 4.1,
+          "stock": 6,
+          "image": "https://www.aristobrat.in/cdn/shop/files/ClassicShirt25_French5.jpg?v=1755254057&width=1000",
+          "searchKey": " navy slim fit shirt h&M clothing clothes  fashion wear outfit style male men mens boys shirts formal casual",
+          "qty": 1
+        }
+      ],
       "portfolio": {
         "totalShares": 30,
         "totalInvested": 82360
@@ -123,6 +138,17 @@
       "password": "$2a$10$gv/fLdUpzGX82x5eUG8LTehvWQmxPKY.z/Rk6AAOGWBPqv.ApjbZ6",
       "name": "Zamil",
       "id": 17
+    },
+    {
+      "email": "az@gmail.com",
+      "password": "$2a$10$VF8/SOg2XZYonDtgTG8DOuKSa5PY26X9ydWcPizbZjeympjrIFj5q",
+      "name": "az",
+      "id": 18,
+      "cart": [],
+      "portfolio": {
+        "totalShares": 10,
+        "totalInvested": 43760
+      }
     }
   ],
   "userStock": [],

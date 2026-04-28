@@ -65,11 +65,6 @@ const Footer = () => {
                 <FaLinkedinIn />
               </a>
             </div>
-            {/* <h6>Subscribe to our Newsletter</h6>
-            <div className="d-flex gap-2">
-              <input className="form-control" placeholder="Enter your email"/>
-              <button className="btn text-white" style={{backgroundColor:'#008060'}}>Subscribe</button>
-            </div> */}
           </div>
         </div>
       </div>

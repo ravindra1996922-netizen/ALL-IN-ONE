@@ -2,10 +2,10 @@ import React, { useState, useEffect, useRef } from "react";
 import { NavLink, Link, useNavigate, useLocation } from "react-router-dom";
 import { FiShoppingCart, FiPackage, FiLogOut } from "react-icons/fi";
 import { useAuth } from "../../context/authContext/useAuth";
-import { useProducts } from "../../context/product_context/useProducts";
 import { useCart } from "../../context/cartContext/useCart";
 import { toast } from "react-toastify";
 import { useFood } from "../../context/foodContext/useFood";
+import { useProducts } from "../../context/productContext/useProducts";
 
 const Navbar = () => {
   const { user, authDispatch } = useAuth();
@@ -165,6 +165,9 @@ const Navbar = () => {
                     borderRadius: "50%",
                     background: "#f1f1f1",
                   }}
+                  onClick={() => {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
                 >
                   <FiShoppingCart />
                   <span className="position-absolute top-0 start-100 translate-middle badge bg-danger">
@@ -217,7 +220,11 @@ const Navbar = () => {
 
                       <button
                         className="btn w-100 text-start px-3 py-2"
-                        onClick={handleLogout}
+                        onClick={() => {
+                          handleLogout();
+
+                          window.scrollTo({ top: 0, behavior: "smooth" });
+                        }}
                       >
                         <FiLogOut className="me-2" />
                         Logout

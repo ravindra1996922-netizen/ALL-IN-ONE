@@ -139,7 +139,6 @@ const FoodLanding = () => {
                     transition: "opacity 0.6s ease",
                   }}
                 >
-                  {/* background */}
                   <div
                     className="w-100 h-100"
                     style={{
@@ -149,10 +148,8 @@ const FoodLanding = () => {
                     }}
                   />
 
-                  {/* overlay */}
                   <div className="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50" />
 
-                  {/* content */}
                   <div className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center text-center text-white">
                     <div>
                       <h2 className="fw-bold">
@@ -201,7 +198,6 @@ const FoodLanding = () => {
                         }}
                       >
                         <div className="d-flex flex-column h-100">
-                          {/* ✅ PRICE (ONLY FOR NON-RECIPE) */}
                           {item.type !== "recipe" && item.price && (
                             <p className="text-success fw-bold text-center mb-2">
                               ₹{item.price}
@@ -224,7 +220,7 @@ const FoodLanding = () => {
                               className="btn btn-dark mt-auto w-100"
                               onClick={(e) => {
                                 e.stopPropagation();
-                                handleAddToCart(item); // ✅ ADD THIS
+                                handleAddToCart(item);
                               }}
                             >
                               Add to Cart

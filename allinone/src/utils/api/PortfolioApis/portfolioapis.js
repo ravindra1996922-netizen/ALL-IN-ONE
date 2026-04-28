@@ -1,17 +1,11 @@
 const BASE_URL = "http://localhost:3000/users";
 
-// =======================
-// ✅ GET USER
-// =======================
 const getUser = async (userId) => {
   const res = await fetch(`${BASE_URL}/${userId}`);
   if (!res.ok) throw new Error("Failed to fetch user");
   return await res.json();
 };
 
-// =======================
-// ✅ UPDATE USER
-// =======================
 const updateUser = async (userId, data) => {
   const res = await fetch(`${BASE_URL}/${userId}`, {
     method: "PATCH",
@@ -22,9 +16,6 @@ const updateUser = async (userId, data) => {
   if (!res.ok) throw new Error("Failed to update user");
 };
 
-// =======================
-// ✅ SAFE PORTFOLIO EXTRACTOR (IMPORTANT)
-// =======================
 const getSafePortfolio = (user) => {
   return {
     totalShares: Number(user.portfolio?.totalShares) || 0,
@@ -32,17 +23,11 @@ const getSafePortfolio = (user) => {
   };
 };
 
-// =======================
-// ✅ GET PORTFOLIO
-// =======================
 export const getPortfolio = async (userId) => {
   const user = await getUser(userId);
   return getSafePortfolio(user);
 };
 
-// =======================
-// ✅ BUY STOCK
-// =======================
 export const buyAndSell = async (userId, stockquantity,stockprice) => {
   const user = await getUser(userId);
 

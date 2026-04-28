@@ -1,5 +1,5 @@
 export const getAllCategoryPreview = (products) => {
-  if (!Array.isArray(products)) return {}; // ✅ FIX
+  if (!Array.isArray(products)) return {};
 
   const result = {};
 

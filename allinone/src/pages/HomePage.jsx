@@ -8,7 +8,6 @@ import groceryImg from "../assets/images/grocery.jpg";
 
 import { useNavigate } from "react-router-dom";
 import FeatureCard from "../components/ui/FeatureCard";
-import { useProducts } from "../context/product_context/useProducts";
 import {
   AreaChart,
   Area,
@@ -19,6 +18,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { useFood } from "../context/foodContext/useFood";
+import { useProducts } from "../context/productContext/useProducts";
 const HomePage = () => {
   const navigate = useNavigate();
   const { productDispatch, cache } = useProducts();
@@ -239,7 +239,6 @@ const HomePage = () => {
       <section className="py-5 bg-white">
         <div className="container">
           <div className="row g-4">
-            {/* Clothing */}
             <div className="col-lg-6"
               onClick={()=> {
                   navigate("/shopping")
@@ -279,9 +278,9 @@ const HomePage = () => {
                                       width: "100%",
                                       height: "100%",
                                       objectFit: "cover",
-                                     
+
                                     }}
-                                   
+
                                   />
                                 </div>
 
@@ -346,7 +345,6 @@ const HomePage = () => {
                           {slide.foods.map((item, i) => (
                             <div key={i} className="col-6 col-md-4 col-lg-2">
                               <div className="card border-0 text-center h-100">
-                                {/* Image */}
                                 <div
                                   style={{
                                     height: "120px",
@@ -367,7 +365,6 @@ const HomePage = () => {
                                   />
                                 </div>
 
-                                {/* Name + Price */}
                                 <div className="mt-2">
                                   <p className="mb-0 small fw-semibold text-dark text-truncate">
                                     {item.name}
@@ -382,7 +379,6 @@ const HomePage = () => {
                     ))}
                   </div>
 
-                  {/* Controls */}
                   <button
                     className="carousel-control-prev"
                     type="button"
@@ -420,7 +416,6 @@ const HomePage = () => {
 
                 {randomRecipe ? (
                   <div>
-                    {/* Video */}
                     <div style={{ borderRadius: "10px", overflow: "hidden" }}>
                       <iframe
                         width="100%"
@@ -432,10 +427,8 @@ const HomePage = () => {
                       ></iframe>
                     </div>
 
-                    {/* Name + price */}
                     <div className="mt-2">
                       <p className="mb-0 fw-semibold">{randomRecipe.name}</p>
-                      {/* <small className="text-muted">₹{randomRecipe.price}</small> */}
                     </div>
                   </div>
                 ) : (
@@ -444,7 +437,6 @@ const HomePage = () => {
               </div>
             </div>
 
-            {/* INVESTMENT DASHBOARD - SABSE LAST ME */}
             <div className="col-lg-6">
               <div
                 className="border rounded-4 p-3 h-100"

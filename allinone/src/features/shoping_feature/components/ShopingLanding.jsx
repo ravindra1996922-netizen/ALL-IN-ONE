@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useProducts } from "../../../context/product_context/useProducts";
 import { getAllCategoryPreview } from "../shopingDataModel/buildShopingmodel";
 import FeatureCard from "../../../components/ui/FeatureCard";
 import { useNavigate } from "react-router-dom";
@@ -8,11 +7,10 @@ import { useCart } from "../../../context/cartContext/useCart";
 import { useAuth } from "../../../context/authContext/useAuth";
 import { addToCartApi } from "../../../utils/api/cartApis/cartApis";
 import { toast } from "react-toastify";
-import { FaShoppingCart } from "react-icons/fa";
-
-/* 👉 IMAGES (CHANGE ONLY HERE LATER) */
+import { FaShoppingCart } from "react-icons/fa"
 import img1 from "../../../assets/images/shpw.jpg";
 import img2 from "../../../assets/images/shopi.jpeg";
+import { useProducts } from "../../../context/productContext/useProducts";
 
 const ShopingLanding = () => {
   const {
@@ -36,7 +34,6 @@ const ShopingLanding = () => {
   const safeProducts = Array.isArray(displayProduct) ? displayProduct : [];
   const previewData = getAllCategoryPreview(safeProducts);
 
-  /* 👉 CAROUSEL SLIDES */
   const slides = [
     {
       image: img1,
@@ -50,7 +47,6 @@ const ShopingLanding = () => {
     },
   ];
 
-  /* 👉 AUTO SLIDE */
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -59,7 +55,6 @@ const ShopingLanding = () => {
     return () => clearInterval(timer);
   }, []);
 
-  /* FILTER */
   useEffect(() => {
     const timer = setTimeout(() => {
       productDispatch({
@@ -111,7 +106,6 @@ const ShopingLanding = () => {
       />
 
       <div className="container my-4">
-        {/* ================= HERO CAROUSEL ================= */}
         <div
           className="mb-5 rounded overflow-hidden position-relative"
           style={{ height: "300px" }}
@@ -125,7 +119,6 @@ const ShopingLanding = () => {
                 transition: "opacity 0.6s ease",
               }}
             >
-              {/* Background */}
               <div
                 className="w-100 h-100"
                 style={{
@@ -135,10 +128,8 @@ const ShopingLanding = () => {
                 }}
               />
 
-              {/* Overlay */}
               <div className="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50" />
 
-              {/* Content */}
               <div className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center text-center text-white">
                 <div>
                   <h2 className="fw-bold">
@@ -158,7 +149,6 @@ const ShopingLanding = () => {
           ))}
         </div>
 
-        {/* ================= PRODUCTS ================= */}
         <div id="products-section">
           {Object.keys(previewData).length === 0 ? (
             <p className="text-center">No products found</p>

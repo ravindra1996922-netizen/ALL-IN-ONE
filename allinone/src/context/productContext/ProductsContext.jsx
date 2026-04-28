@@ -96,8 +96,6 @@ export const ProductsProvider = ({ children }) => {
 
   const { displayProduct, cache, currentPage, selectedCategory } = productState;
 
-  // console.log(selectedCategory, "selectedcatogory");
-
   useEffect(() => {
     const loadProducts = async () => {
       productDispatch({ type: "FETCH_START" });

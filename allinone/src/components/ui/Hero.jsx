@@ -14,7 +14,6 @@ const Hero = () => {
         >
           <div className="carousel-inner">
 
-            {/* SLIDE 1 */}
             <div className="carousel-item active">
               <div className="row align-items-center hero-slide">
                 <div className="col-lg-5">
@@ -38,7 +37,6 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* SLIDE 2 */}
             <div className="carousel-item">
               <div className="row align-items-center hero-slide">
                 <div className="col-lg-5">
@@ -62,7 +60,6 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* SLIDE 3 */}
             <div className="carousel-item">
               <div className="row align-items-center hero-slide">
                 <div className="col-lg-5">
@@ -88,7 +85,6 @@ const Hero = () => {
 
           </div>
 
-          {/* CONTROLS */}
           <button
             className="carousel-control-prev custom-arrow"
             type="button"
@@ -109,7 +105,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* 🔥 MARQUEE */}
       <div className="marquee-wrapper">
         <div className="marquee">
           <span>🔥 30% OFF on Branded Shoes <small>(T&C)</small></span>
@@ -134,7 +129,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* 🔥 CUSTOM CSS */}
       <style>
         {`
           .hero-slide {

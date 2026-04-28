@@ -23,7 +23,6 @@ const YourOrders = () => {
     "Delivered",
   ];
 
-  /* ================= SIMULATION ================= */
   useEffect(() => {
     if (!orders.length || !userId) return;
 
@@ -62,7 +61,7 @@ const YourOrders = () => {
 
   return (
     <div className="container my-5">
-      <h2 className="mb-4">📦 Your Orders</h2>
+      <h2 className="mb-4"> Your Orders</h2>
 
       {orders.map((order) => {
         const steps = order.type === "food" ? foodSteps : shoppingSteps;
@@ -73,17 +72,14 @@ const YourOrders = () => {
             key={order.id}
             className="card p-4 mb-4 shadow-sm border-0 rounded-4"
           >
-            {/* HEADER */}
             <div className="d-flex justify-content-between mb-3">
               <h5>
-                {order.type === "food" ? "🍔 Food Order" : "🛍️ Shopping Order"}
+                {order.type === "food" ? " Food Order" : " Shopping Order"}
               </h5>
               <span className="fw-bold text-success">₹{order.total}</span>
             </div>
 
-            {/* ================= 2 COLUMN LAYOUT ================= */}
             <div className="row">
-              {/* ================= LEFT → ITEMS ================= */}
               <div className="col-md-7">
                 {order.items.map((item) => (
                   <div
@@ -110,7 +106,6 @@ const YourOrders = () => {
                 ))}
               </div>
 
-              {/* ================= RIGHT → TRACKING ================= */}
               <div className="col-md-5">
                 <div className="border rounded p-3 h-100">
                   <p className="fw-bold text-primary">
@@ -123,7 +118,6 @@ const YourOrders = () => {
                         key={index}
                         className="d-flex align-items-center mb-3"
                       >
-                        {/* DOT */}
                         <div
                           style={{
                             height: "12px",
@@ -134,7 +128,6 @@ const YourOrders = () => {
                           }}
                         ></div>
 
-                        {/* LINE */}
                         <div
                           style={{
                             width: "30px",
@@ -144,7 +137,6 @@ const YourOrders = () => {
                           }}
                         ></div>
 
-                        {/* TEXT */}
                         <p
                           className={`mb-0 ${
                             index <= currentStep

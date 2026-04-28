@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { useProducts } from "../context/product_context/useProducts";
 import { useFood } from "../context/foodContext/useFood";
 import { useCart } from "../context/cartContext/useCart";
 import { useAuth } from "../context/authContext/useAuth";
 import { addToCartApi } from "../utils/api/cartApis/cartApis";
 import { toast } from "react-toastify";
 import { Clock, ChefHat, Plus, ArrowLeft, Check, Leaf } from "lucide-react";
+import { useProducts } from "../context/productContext/useProducts";
 
 const DetailsPage = () => {
   const { id, type } = useParams();

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useProducts } from "../context/product_context/useProducts";
 import { useFood } from "../context/foodContext/useFood";
 import FeatureCard from "../components/ui/FeatureCard";
 import FilterBar from "../components/ui/FilterBar";
@@ -10,6 +9,7 @@ import { useAuth } from "../context/authContext/useAuth";
 import { addToCartApi } from "../utils/api/cartApis/cartApis";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { useProducts } from "../context/productContext/useProducts";
 
 const CategoryPage = ({ type = "shopping" }) => {
   const { name } = useParams();
@@ -90,7 +90,7 @@ const CategoryPage = ({ type = "shopping" }) => {
         data={cache}
         dispatch={dispatch}
         activeCategory={selectedCategory}
-        type={type} // 🔥 IMPORTANT
+        type={type}
       />
 
       <div className="container my-4">
@@ -114,7 +114,6 @@ const CategoryPage = ({ type = "shopping" }) => {
                     }}
                   >
                     <div className="d-flex flex-column h-100">
-                      {/* ✅ PRICE */}
                       {item.price && (
                         <p className="text-success fw-bold text-center mb-2">
                           ₹{item.price}
@@ -125,7 +124,7 @@ const CategoryPage = ({ type = "shopping" }) => {
                         <button
                           className="btn btn-info mt-auto w-100"
                           onClick={(e) => {
-                            e.stopPropagation(); // 🔥 important
+                            e.stopPropagation();
                             navigate(`/details/food/${item.id}`);
                             window.scrollTo({ top: 0, behavior: "smooth" });
                           }}

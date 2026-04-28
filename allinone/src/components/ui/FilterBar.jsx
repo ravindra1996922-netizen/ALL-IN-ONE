@@ -8,11 +8,10 @@ const FilterBar = ({
   data,
   dispatch,
   activeCategory,
-  type = "shopping", // ✅ IMPORTANT
+  type = "shopping",
 }) => {
   const navigate = useNavigate();
 
-  // ✅ SAFE CATEGORY BUILD
   const categories = ["all", ...new Set((data || []).map((p) => p.category))];
 
   return (
@@ -21,7 +20,6 @@ const FilterBar = ({
       style={{ top: "55px", zIndex: 999 }}
     >
       <div className="px-3 py-2 border d-flex justify-content-between flex-wrap gap-2">
-        {/* ✅ CATEGORY BUTTONS */}
         <div className="d-flex gap-2 flex-wrap">
           {categories.map((cat) => (
             <button
@@ -51,7 +49,6 @@ const FilterBar = ({
           ))}
         </div>
 
-        {/* 🔍 SEARCH */}
         <div style={{ maxWidth: "250px", width: "100%" }}>
           <SearchBar
             value={searchText}

@@ -29,9 +29,6 @@ const CartsPage = () => {
     "pet",
   ];
 
-  // ======================
-  // QTY UPDATE
-  // ======================
   const handleInc = async (id) => {
     if (!userId) return;
     const updatedCart = await updateQtyApi(userId, id, "inc");
@@ -44,9 +41,6 @@ const CartsPage = () => {
     cartDispatch({ type: "SET_CART", payload: updatedCart });
   };
 
-  // ======================
-  // REMOVE
-  // ======================
   const handleRemove = async (id) => {
     try {
       if (!userId) return;
@@ -62,9 +56,6 @@ const CartsPage = () => {
     }
   };
 
-  // ======================
-  // CART SPLIT
-  // ======================
   const foodCart = cart.filter(
     (item) =>
       item.category === "veg" ||
@@ -76,9 +67,6 @@ const CartsPage = () => {
     shoppingCategories.includes(item.category),
   );
 
-  // ======================
-  // TOTALS
-  // ======================
   const foodTotal = foodCart.reduce(
     (acc, item) => acc + item.price * item.qty,
     0,
@@ -89,9 +77,6 @@ const CartsPage = () => {
     0,
   );
 
-  // ======================
-  // FOOD PAY
-  // ======================
   const handleFoodPay = async () => {
     if (!foodCart.length) return;
 
@@ -111,12 +96,10 @@ const CartsPage = () => {
       },
     });
 
-    // backend remove
     for (let item of foodCart) {
       await removeFromCartApi(userId, item.id);
     }
 
-    // frontend sync (IMPORTANT FIX)
     const updatedCart = cart.filter(
       (item) =>
         item.category !== "veg" &&
@@ -130,9 +113,6 @@ const CartsPage = () => {
     navigate("/orders");
   };
 
-  // ======================
-  // SHOPPING PAY
-  // ======================
   const handleShoppingPay = async () => {
     if (!shoppingCart.length) return;
 
@@ -166,16 +146,12 @@ const CartsPage = () => {
     navigate("/orders");
   };
 
-  // ======================
-  // EMPTY
-  // ======================
   if (cart.length === 0) {
     return <h3 className="text-center mt-5">🛒 Your cart is empty</h3>;
   }
 
   return (
     <div className="container my-5">
-      {/* ================= SHOPPING ================= */}
       <div className="p-4 mb-5 bg-white rounded shadow-sm">
         <div className="d-flex justify-content-between align-items-center mb-3">
           <h4>🛍️ Shopping Cart</h4>
@@ -247,7 +223,6 @@ const CartsPage = () => {
         )}
       </div>
 
-      {/* ================= FOOD ================= */}
       <div className="p-4 bg-white rounded shadow-sm">
         <div className="d-flex justify-content-between align-items-center mb-3">
           <h4>🍔 Food Cart</h4>

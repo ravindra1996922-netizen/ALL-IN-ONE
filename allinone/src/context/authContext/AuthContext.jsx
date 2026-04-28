@@ -5,12 +5,9 @@ export const AuthContext = createContext();
 const initialState = {
   user: null,
   page: "home",
-  stockQuantity: [],
-  stockPrice: [],
 };
 
 function reducer(state, action) {
-  // console.log(state);
   switch (action.type) {
     case "LOGIN":
       return {
@@ -32,25 +29,8 @@ export function AuthProvider({ children }) {
   const [authState, authDispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    const storedUser = localStorage.getItem("user");
-    if (storedUser) {
-      authDispatch({
-        type: "LOGIN",
-        payload: JSON.parse(storedUser),
-      });
-    }
-  }, []);
-
-  useEffect(() => {
-    if (authState.user) {
-      localStorage.setItem("user", JSON.stringify(authState.user));
-    } else {
-      localStorage.removeItem("user");
-    }
-  }, [authState.user]);
-
-  useEffect(() => {
     const handleStorageChange = (event) => {
+      console.log("run");
       if (event.key === "user") {
         const newUser = event.newValue;
 
@@ -70,6 +50,24 @@ export function AuthProvider({ children }) {
     return () => {
       window.removeEventListener("storage", handleStorageChange);
     };
+  }, []);
+
+  useEffect(() => {
+    if (authState.user) {
+      localStorage.setItem("user", JSON.stringify(authState.user));
+    } else {
+      localStorage.removeItem("user");
+    }
+  }, [authState.user]);
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      authDispatch({
+        type: "LOGIN",
+        payload: JSON.parse(storedUser),
+      });
+    }
   }, []);
 
   return (
